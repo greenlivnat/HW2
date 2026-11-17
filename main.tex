@@ -1,0 +1,34 @@
+% main.tex — שלד מינימלי (שלב M1)
+% הידור: latexmk -xelatex main.tex   (או: xelatex main.tex פעמיים)
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\setotherlanguage{english}
+
+% גופן עברי מותקן בפועל במערכת (Assistant, רישיון OFL)
+\newfontfamily\hebrewfont[Script=Hebrew]{Assistant}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Assistant}
+\setmainfont{Assistant}
+
+\usepackage{xcolor}
+\definecolor{nightblue}{HTML}{14213D}
+\definecolor{turquoise}{HTML}{2EC4B6}
+
+\title{\textcolor{nightblue}{מאחורי הקלעים של הבינה המלאכותית}}
+\author{מהנתון הראשון ועד לתשובה שעל המסך}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{שורת בדיקה}
+זוהי שורת בדיקה לעברית מימין לשמאל, עם מונח באנגלית \textenglish{Machine Learning}
+ומספר 2026, ונוסחה:
+\[
+  z = \sum_{i=1}^{n} w_i x_i + b
+\]
+\textcolor{turquoise}{\textbf{הקמת הפרויקט הושלמה.}}
+
+\end{document}
