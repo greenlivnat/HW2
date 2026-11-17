@@ -1,0 +1,35 @@
+M3 WRITING, unit ch07, round 1.
+
+Read first (in order):
+1. agents/writer_agent.md (role spec).
+2. docs/STYLE_GUIDE.md — BINDING: literary voice, scientific-integrity rules, the dough-story arc (§3, row for chapter 7), the five content boxes and their markers (§4), illustration/formula/table/placeholder markers (§5), palette (§6), length (§7).
+3. docs/PRD.md v1.4 §4, §5 (chapter 7), §6, §10; docs/OUTLINE.md.
+4. chapters/chapter_01.txt — APPROVED by the user; it defines the voice and the story's starting point. Read it for continuity; do NOT repeat its content, analogies or examples (matryoshka, recipe vs. cook, mixing console are taken).
+5. docs/SOURCES.md (§1, §3.7, §3.8, §4) and the full records in docs/sources/chapter_07.md. Cross-chapter records may be used only where SOURCES.md §4 explicitly links them to this chapter.
+
+TASK: write chapter 7, "האדם במעגל והעתיד", into chapters/chapter_07.txt (overwrite the skeleton). Write ONLY that file; no .tex.
+
+Content (PRD §5): effects on learning and work; human–machine collaboration; skills for checking outputs; thinking about the future.
+
+Story (STYLE_GUIDE §3): the reader checks, compares and decides — she is the human in the loop. Close the book's story arc: what truly 'rose' is her judgement (do not state whether the dough rose — no factual baking claims). End with key insights and a short look forward to the appendix (how this book itself was made by agents and reviewed).
+
+Boxes: 2–4 boxes chosen to fit the topic, using the exact markers in STYLE_GUIDE §4. Suggested for this chapter: רגע של מחשבה; מושג שכדאי להכיר (human in the loop / automation bias as a legal concept per X2); במעבדה (what studies found — always with population and task). No two boxes of the same type in a row; each box adds something the body doesn't say.
+
+Visual: at least one original visualization to be generated in code in M4, as an [איור 7.N: ...] line in the exact STYLE_GUIDE §5 format (type, content, palette colours, data source). Required/suggested: at least one: e.g., a TikZ cycle 'ask → receive → check against sources → decide → refine the question', or a simple TikZ comparison card of the studies (population, task, finding) — text only, no invented numbers.
+
+Length: 1,000–1,300 clean words of body text (excluding the source list). You cannot run Python; the Orchestrator will count. Stay inside the band — do not overshoot.
+
+CHAPTER-SPECIFIC SOURCE RULES (binding; from docs/STATUS.md §4 and SOURCES.md gaps):
+- Every effect size must come with its population and task. Bastani et al. and Kestin et al. are small/narrow studies — no generalization beyond them. Prefer the peer-reviewed version's wording where versions differ.
+- No numeric labour-market forecasts.
+- Forbidden: SSRN data (S-ch07-12); the Dell'Acqua et al. HBS working-paper figures; the 'more than twice as much' phrasing from the Research Square preprint; a specific age from UNESCO guidance; any 34% figure not from the NBER working paper itself.
+- Content of the Bastani correction (S-ch07-11) not verified — don't describe it.
+- EU AI Act: dates only via S-ch07-09 (bibliographic/historical); the Official Journal publication date is not verified.
+- automation bias: only as the legal concept (X2); no empirical claims about it.
+- S-ch07-10 and S-ch07-13 were read for focused questions only — stay within the recorded claims.
+
+GENERAL RULES: cite only IDs that exist in docs/SOURCES.md, right after the claim, within each record's access level and listed supported claims; metadata-only records → bibliographic/historical mention only; no item from SOURCES.md §3.8; every number/date has an ID and its context (population, task, year); invented examples clearly framed as illustrations ("דמיינו", "לדוגמה", "מספרים להמחשה בלבד"); no facts about baking chemistry (the dough story is about the reader's experience with the system). If a claim needs a missing source, don't write it — list it under "Needs research".
+
+Structure: first line "פרק 7 — האדם במעגל והעתיד"; the opening question on its own line; "## " section headings; the boxes; the illustration line(s); "## תובנות מרכזיות" (4–6 bullets); "## מקורות לפרק" (cited IDs with short bibliographic info copied from SOURCES.md §5).
+
+FINAL MESSAGE (SHORT, ≤ 300 words): file + rough word count; source IDs used (one line each, main claim); boxes used (type + title); illustration line(s) as written; Needs research; one line on how the dough story advances.

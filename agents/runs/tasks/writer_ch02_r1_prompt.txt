@@ -1,0 +1,34 @@
+M3 WRITING, unit ch02, round 1.
+
+Read first (in order):
+1. agents/writer_agent.md (role spec).
+2. docs/STYLE_GUIDE.md — BINDING: literary voice, scientific-integrity rules, the dough-story arc (§3, row for chapter 2), the five content boxes and their markers (§4), illustration/formula/table/placeholder markers (§5), palette (§6), length (§7).
+3. docs/PRD.md v1.4 §4, §5 (chapter 2), §6, §10; docs/OUTLINE.md.
+4. chapters/chapter_01.txt — APPROVED by the user; it defines the voice and the story's starting point. Read it for continuity; do NOT repeat its content, analogies or examples (matryoshka, recipe vs. cook, mixing console are taken).
+5. docs/SOURCES.md (§1, §3.2, §3.8, §4) and the full records in docs/sources/chapter_02.md. Cross-chapter records may be used only where SOURCES.md §4 explicitly links them to this chapter.
+
+TASK: write chapter 2, "מנתונים ללמידה", into chapters/chapter_02.txt (overwrite the skeleton). Write ONLY that file; no .tex.
+
+Content (PRD §5): collecting and cleaning data; training, validation and test sets; labels; bias in data; generalization; data leakage; one continuous example story.
+
+Story (STYLE_GUIDE §3): time 'rewinds': long before the reader typed her question, the system had already learned from many examples. The reader recalls how she herself learned to bake from experience (illustration only). Close by pointing to chapter 3: how do those examples turn into numbers inside the machine?
+
+Boxes: 2–4 boxes chosen to fit the topic, using the exact markers in STYLE_GUIDE §4. Suggested for this chapter: מאחורי הקלעים (the train/validation/test split); מיתוס מול מציאות (more data does not automatically mean less bias); רגע של מחשבה. No two boxes of the same type in a row; each box adds something the body doesn't say.
+
+Visual: at least one original visualization to be generated in code in M4, as an [איור 2.N: ...] line in the exact STYLE_GUIDE §5 format (type, content, palette colours, data source). Required/suggested: a data-flow diagram (TikZ): raw examples → labeling → cleaning → split into train / validation / test → training → evaluation, with the test set visibly 'locked' until the end; palette per STYLE_GUIDE §6.
+
+Length: 1,400–1,800 clean words of body text (excluding the source list). You cannot run Python; the Orchestrator will count. Stay inside the band — do not overshoot.
+
+CHAPTER-SPECIFIC SOURCE RULES (binding; from docs/STATUS.md §4 and SOURCES.md gaps):
+- Do not describe details of the leakage cases in the INFORMS 2010 / IJCNN 2011 competitions (abstract-level mention only, if at all). Kaufman et al. at abstract level only.
+- The leakage example in S-ch02-08 is synthetic — say so if used. No real leakage case with numbers.
+- LFW demographic figures (77.5% / 83.5%) are a secondary citation — do NOT use.
+- Datasheets: only pages actually read. No academic definition of 'data cleaning' was found — describe it plainly without attributing a definition.
+- Gender Shades (S-ch02-01) is this chapter's main bias source; keep to its record's claims and caveats.
+- Google MLCC pages have no update dates; cite them without dates.
+
+GENERAL RULES: cite only IDs that exist in docs/SOURCES.md, right after the claim, within each record's access level and listed supported claims; metadata-only records → bibliographic/historical mention only; no item from SOURCES.md §3.8; every number/date has an ID and its context (population, task, year); invented examples clearly framed as illustrations ("דמיינו", "לדוגמה", "מספרים להמחשה בלבד"); no facts about baking chemistry (the dough story is about the reader's experience with the system). If a claim needs a missing source, don't write it — list it under "Needs research".
+
+Structure: first line "פרק 2 — מנתונים ללמידה"; the opening question on its own line; "## " section headings; the boxes; the illustration line(s); "## תובנות מרכזיות" (4–6 bullets); "## מקורות לפרק" (cited IDs with short bibliographic info copied from SOURCES.md §5).
+
+FINAL MESSAGE (SHORT, ≤ 300 words): file + rough word count; source IDs used (one line each, main claim); boxes used (type + title); illustration line(s) as written; Needs research; one line on how the dough story advances.
