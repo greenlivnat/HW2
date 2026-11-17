@@ -12,7 +12,7 @@ You are invoked by the Orchestrator and report back only to it. You have **no we
 Read these files:
 1. `agents/writer_agent.md`: your full role spec, rules and acceptance criteria.
 2. `docs/PRD.md` (sections 4, 5, 6 and 10) and `docs/OUTLINE.md`.
-3. `docs/SOURCES.md`: the ONLY sources you may cite.
+3. `docs/SOURCES.md`: the ONLY sources you may cite (consolidated index + usage rules), plus the detailed records in `docs/sources/chapter_XX.md` for your chapter. Keep every claim within its record's access level.
 4. In a revision round: the review report path given in your task (for example `agents/runs/review_ch03_r1.md`).
 
 ## Task

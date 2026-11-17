@@ -1,5 +1,7 @@
 # Python dependencies (נבדק ב-Python 3.13.2, 17.11.2026)
-# matplotlib משמש ליצירת הגרף בשלב M4 (python/generate_chart.py).
-# numpy מותקן כתלות של matplotlib. הגרסאות שהותקנו בפועל: matplotlib 3.11.2, numpy 2.2.4.
+# matplotlib: יצירת הגרף בשלב M4 (python/generate_chart.py).
+# scikit-learn: הניסוי על UCI Digits בפרק 5 (sklearn.datasets.load_digits, מערך הנתונים כלול בחבילה).
+# numpy מותקן כתלות. הגרסאות שהותקנו בפועל: matplotlib 3.11.2, scikit-learn 1.9.1, numpy 2.2.4.
 # הערה: להגדיר plt.rcParams["pdf.fonttype"] = 42, כדי שהגופנים בגרף יוטמעו כ-TrueType ולא כ-Type 3.
 matplotlib>=3.8
+scikit-learn>=1.5
