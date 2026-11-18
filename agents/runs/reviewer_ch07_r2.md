@@ -5,7 +5,7 @@
 | תאריך | 2026-11-17 |
 | סוכן | `reviewer-agent` |
 | הופעל על ידי | Orchestrator |
-| שימוש | לא נמסר בעת כתיבת הקובץ |
+| שימוש | 13 קריאות לכלים, 61,582 טוקנים, 138.8 שניות |
 | דוח שהסוכן כתב | `agents/runs/review_ch07_r2.md` |
 | קלט שנבדק | `agents/runs/versions/chapter_07_r2.txt` (MD5 c154340b) |
 

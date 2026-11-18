@@ -1,0 +1,108 @@
+# הרצה: reviewer-agent, יחידה ch04, סבב 1 (M3)
+
+| שדה | ערך |
+|---|---|
+| תאריך | 2026-11-17 |
+| סוכן | `reviewer-agent` |
+| הופעל על ידי | Orchestrator |
+| שימוש | 19 קריאות לכלים, 113,411 טוקנים, 282.1 שניות |
+| דוח שהסוכן כתב | `agents/runs/review_ch04_r1.md` |
+| קלט שנבדק | `agents/runs/versions/chapter_04_r1.txt` (MD5 25b56d35) |
+
+## הפרומפט המלא שנשלח
+ההפעלה הפנתה לקובץ המשימה `agents/runs/tasks/reviewer_ch04_r1_prompt.txt`. זה התוכן המלא שלו:
+
+```
+M3 REVIEW, unit ch04, round 1.
+
+Read first: agents/reviewer_agent.md; docs/STYLE_GUIDE.md (binding: voice, integrity rules, dough-story arc §3, box markers §4, illustration/formula/table/placeholder markers §5, palette §6, length §7); docs/PRD.md v1.4 (§5 chapter 4, §6, §10, §11); docs/OUTLINE.md; docs/SOURCES.md (§1, §3.4, §3.8, §4); docs/sources/chapter_04.md (full records); the Writer's task file agents/runs/tasks/writer_ch04_r1_prompt.txt (it lists the chapter-specific source rules the Writer had to obey); chapters/chapter_01.txt (approved; for continuity and to detect repeated analogies).
+
+
+Deliverable: chapters/chapter_04.txt (= agents/runs/versions/chapter_04_r1.txt). No .tex/PDF yet: PDF-dependent DoD items are "לא רלוונטי בשלב זה".
+
+Orchestrator gate note: clean word count from gate below; 3 boxes; 2 illustrations (4.1 illustrative bar chart, 4.2 the 9-block diagram). Verify the 9 blocks exactly match OUTLINE incl. 'קבלת הטקסט' and the loop, and that every number (512, 8 heads, 1,024, 1.5B, 175B, 40,478, 50,257, 30k–50k) is within its record.
+
+Check:
+1. FACTS & SOURCES (highest priority): every citation against its record's supported claims and access level; metadata-only records used only bibliographically; no item from SOURCES.md §3.8; no violation of the chapter-specific rules in the task file; every number/date carries a source and context; invented examples clearly framed as illustrations; no facts about baking chemistry; uncited substantive claims. Spot-check at least 2 claims against the original online source with WebFetch where reachable (blocked sites per STATUS §6: nature.com, science.org, ACM DL, PubMed, deeplearningbook.org, EUR-Lex — use the record instead).
+2. STRUCTURE: PRD §5 topics for chapter 4 covered; opening question; "תובנות מרכזיות" (4–6); required special elements (chapter 3: formula + explanation of each component; chapter 4: the 9-block diagram exactly per OUTLINE incl. 'קבלת הטקסט' and the loop; chapter 5: table + chart markers and [ממתין ל-M4] placeholders with NO invented results); at least one [איור] line in STYLE_GUIDE §5 format using the palette.
+3. STORY & CONTINUITY: the dough story advances per STYLE_GUIDE §3 (not restarted); consistent with chapter 1; no repeated analogies from chapter 1.
+4. BOXES: 2–4 boxes, correct markers, fit the topic, no two of the same type in a row, each adds content, 40–120 words each.
+5. STYLE: original voice (no imitation of any author), rich and accessible Hebrew, no clichés, no repetition, terms explained at first use, grammar/gender agreement, no Hebrew sentence starting with a Latin-script word.
+6. LENGTH: STYLE_GUIDE §7 band; count clean words with Python (`python`, remove [..] markers and '##', count tokens containing a word character, body before "## מקורות לפרק").
+7. ORIGINALITY: no near-translations of source sentences.
+
+Output: write ONLY agents/runs/review_ch04_r1.md (Hebrew): header (incl. URLs fetched + result); defect table (ID R-ch04-NN, location, category עובדות/מקורות/מבנה/סגנון/מקוריות/עיצוב/טכני, severity קריטי/בינוני/קל, description, suggested fix); citation verification table; boxes & illustration checklist; short style assessment; DoD summary; `SCORE: <n>/100` (facts & sources 40, structure 20, style 25, length & format 15); LAST line exactly `VERDICT: PASS` or `VERDICT: REVISE` (REVISE if any open קריטי or בינוני defect). For each defect say whether fixing it needs a NEW source (route to research) or only rewriting.
+
+Final message (SHORT, ≤ 200 words): path, defect counts by severity and category, IDs of קריטי/בינוני defects with one line each, which defects need new sources, score, verdict line.
+```
+
+## הפלט הגולמי שהסוכן החזיר (כלשונו)
+
+```
+פרק 4, סבב 1: הפסק הוא REVISE בציון 88/100. הפרק נעצר בגלל שתי טענות לא מדויקות שמופיעות עם ציטוט. שתיהן מתוקנות בניסוח מחדש של משפט אחד, בלי מחקר נוסף.
+
+הדוח: `C:\biu01\HW2\ai_book_starter\agents\runs\review_ch04_r1.md`
+
+**ליקויים:** 8 בסך הכול. 0 קריטיים, 2 בינוניים ו-6 קלים.
+- עובדות: 3 (שניים בינוניים ואחד קל)
+- סגנון: 3 (קלים)
+- עיצוב: 2 (קלים)
+
+**הליקויים הבינוניים:**
+- **R-ch04-01 (עובדות):** הפרק כותב שמיקולוב ועמיתיו (2013) "הציגו" את ייצוג המילים כווקטורים. המאמר המצוטט אומר את ההפך: "Representation of words as continuous vectors has a long history". אימתתי זאת ב-PDF. המאמר הציע דרך יעילה ללמוד ייצוגים כאלה, ולא את הרעיון עצמו.
+- **R-ch04-02 (עובדות):** הפרק כותב שקידוד המיקום והשכבות "כל אלה מוערמים שש פעמים". בפועל קידוד המיקום מתווסף פעם אחת בכניסה, ורק שכבות העיבוד מוערמות שש פעמים.
+
+**הליקויים הקלים:** משפט שנפתח ב-"GPT-2", הסתייגות בסוגריים, אי-דיוקים קטנים בתיאור הקשב ("כל מיקום אחר", "במאמרים"), חזרות ("חתיכה" 6 פעמים, 175 מיליארד פעמיים, "כפתור" שמזכיר את מערבל הקול מפרק 1), התאמה חסרה בין איור 4.1 להסתברויות שבגוף, והביטוי "מפה, לא השטח".
+
+**מקורות חדשים:** אף ליקוי לא דורש מקור חדש. כולם מנותבים ל-writer-agent.
+
+**מה עבר:** 1,510 מילים נקיות (בטווח 1,400–1,800). תרשים 9 הבלוקים זהה ל-OUTLINE, כולל "קבלת הטקסט" והלולאה. כל המספרים תואמים לרשומות, וכל הכללים הייעודיים לפרק נשמרו. בדקתי את המקורות ב-WebFetch בחמש כתובות, וכל הבדיקות הצליחו.
+
+VERDICT: REVISE
+```
+
+## שער האיכות של ה-Orchestrator (21:35)
+- הפרק לא השתנה בזמן הביקורת (MD5 זהה לעותק).
+- השורה האחרונה בדוח: `VERDICT: REVISE`. SCORE: 88/100.
+- `git status --short` (יש סוכנים אחרים שרצים במקביל):
+```
+ M chapters/chapter_02.txt
+ M chapters/chapter_03.txt
+ M chapters/chapter_04.txt
+ M chapters/chapter_05.txt
+ M chapters/chapter_06.txt
+ M chapters/chapter_07.txt
+?? agents/runs/review_ch02_r1.md
+?? agents/runs/review_ch03_r1.md
+?? agents/runs/review_ch04_r1.md
+?? agents/runs/review_ch05_r1.md
+?? agents/runs/review_ch06_r1.md
+?? agents/runs/review_ch07_r1.md
+?? agents/runs/reviewer_ch02_r1.md
+?? agents/runs/reviewer_ch03_r1.md
+?? agents/runs/reviewer_ch05_r1.md
+?? agents/runs/reviewer_ch07_r1.md
+?? agents/runs/tasks/reviewer_ch02_r1_prompt.txt
+?? agents/runs/tasks/reviewer_ch03_r1_prompt.txt
+?? agents/runs/tasks/reviewer_ch04_r1_prompt.txt
+?? agents/runs/tasks/reviewer_ch05_r1_prompt.txt
+?? agents/runs/tasks/reviewer_ch06_r1_prompt.txt
+?? agents/runs/tasks/reviewer_ch07_r1_prompt.txt
+?? agents/runs/tasks/writer_ch02_r2_prompt.txt
+?? agents/runs/tasks/writer_ch03_r2_prompt.txt
+?? agents/runs/tasks/writer_ch05_r2_prompt.txt
+?? agents/runs/tasks/writer_ch07_r2_prompt.txt
+?? agents/runs/versions/chapter_02_r1.txt
+?? agents/runs/versions/chapter_03_r1.txt
+?? agents/runs/versions/chapter_04_r1.txt
+?? agents/runs/versions/chapter_05_r1.txt
+?? agents/runs/versions/chapter_06_r1.txt
+?? agents/runs/versions/chapter_07_r1.txt
+?? agents/runs/writer_ch02_r1.md
+?? agents/runs/writer_ch03_r1.md
+?? agents/runs/writer_ch04_r1.md
+?? agents/runs/writer_ch05_r1.md
+?? agents/runs/writer_ch06_r1.md
+?? agents/runs/writer_ch07_r1.md
+```
+- **החלטה:** REVISE (88/100). 2 ליקויים בינוניים (עובדות, מתוקנים בניסוח) ו-6 קלים. כולם עוברים ל-writer-agent (סבב 2).
