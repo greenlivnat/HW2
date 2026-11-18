@@ -29,12 +29,15 @@
 
 ## פקודות
 ```bash
-latexmk -xelatex main.tex      # הידור (MiKTeX, XeTeX)
+python scripts/build.py        # בנייה מלאה: איורים, bib, TXT->TeX, LuaLaTeX+biber, book.pdf, QA (מ-M5A)
+python scripts/qa.py super     # בדיקות האיכות (Skills qa-*), דוח ב-agents/runs/qa/
+latexmk main.tex               # הידור בלבד (LuaLaTeX לפי .latexmkrc)
 latexmk -c                     # ניקוי קבצי ביניים
-pdfinfo book.pdf               # בדיקת מספר עמודים (נדרשים 20 לפחות)
+pdfinfo book.pdf               # בדיקת מספר עמודים (יעד פנימי: 25 לפחות)
 python -m pip install -r requirements.txt
 ```
-- גופן עברי: **Assistant** (מותקן, רישיון OFL). עברית ב-LaTeX: `fontspec` + `polyglossia`.
+- גופן עברי: **Assistant** (מותקן, רישיון OFL). עברית ב-LaTeX: `fontspec` + `polyglossia`, במנוע **LuaLaTeX** (מ-PRD 1.5). התבנית: `latex/aibook.cls`. את קובצי `latex/chapters/*.tex` לא עורכים ידנית, כי הם נוצרים מה-TXT.
+- **כיווניות ב-LuaLaTeX:** TikZ ו-tcolorbox רק דרך הסביבות של המחלקה (`bookdiagram`, תיבות התוכן), כמתועד ב-`docs/INCIDENTS.md` IR-05 ו-IR-09 עד IR-11.
 - להרצת Python השתמש ב-`python` (גרסה 3.13) ולא ב-`py`, שמפעיל גרסת אלפא של 3.14.
 - **סדר טעינה ב-LaTeX:** את `graphicx`, `tikz` ו-`tcolorbox` טוענים **לפני** `polyglossia`, כי `bidi` צריך להיטען אחרון. בסדר הפוך ההידור מסתיים ב-exit 0, אבל ה-PDF יוצא ריק (שגיאות "No current point" ב-poppler). זה נבדק בשלב M2.
 - **Matplotlib:** להגדיר `plt.rcParams["pdf.fonttype"] = 42` (גופני TrueType ולא Type 3).

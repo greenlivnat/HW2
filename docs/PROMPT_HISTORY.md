@@ -429,3 +429,57 @@
 
 ### סטטוס התוצאה
 ✅ **M3 הושלם.** 19 ליקויים קלים פתוחים מתועדים ב-STATUS §5א. הצעד הבא: M4.
+
+## רשומה 010: ‏M4 + M5A: ניסוי, המחשות, תבנית CLS, הידור LuaLaTeX, ‏Detector ו-Fixer (2026-11-18)
+- **פרומפטים:** `prompts/10_m4_m5a.txt` (בקשת המשתמשת), `prompts/11_resume_after_api_disconnect_m4.txt` (המשך אחרי ניתוק).
+- **ניהול משאבים:** סוכן אחד בכל רגע, ‏model=sonnet בכל הפעלה. ארבע הפעלות בסך הכול.
+
+### מה עשה ה-Orchestrator (כלים דטרמיניסטיים)
+- **ניסוי UCI Digits** (`python/experiment_config.json`, נקבע לפני ההרצה):
+  - הגדרות: ‏MLP עם 32 נוירונים, ‏40 תקופות, ‏seed 42, חלוקה 75/25 מרובדת, ‏Scaler על קבוצת האימון בלבד.
+  - תוצאה סופית: אימון 0.9978, בדיקה 0.9756.
+  - פער מרבי 0.0376 בתקופה 8. ירידה יחידה בבדיקה בתקופה 37.
+- **המחשות:** איורי Matplotlib 3.1, 4.1 ו-5.1, ואיורי TikZ 1.1, 2.1, 3.2, 4.2, 6.1, 7.1 ונ.1.
+- **תשתית:**
+  - `latex/aibook.cls` (גרסה 1.0.0, ואחר כך 1.1.0) ו-`main.tex`.
+  - `scripts/txt2tex.py`, ‏`make_bib.py` (63 רשומות IEEE), ‏`build.py`, ‏`qa.py`.
+  - ‏`python/describe_results.py`.
+- **מסמכים:**
+  - PRD 1.5 (כולל §16, ביקורת בתפקיד ועדת מומחים, שלא כללה דיון או הרצה), ‏PLAN, ‏TODO.
+  - `docs/INCIDENTS.md` (IR-01 עד IR-13).
+  - 13 Skills ב-`.claude/skills/`, ‏fixer-agent, ומצב Detector ל-reviewer-agent.
+- **בעיות שיטתיות שתוקנו בכלי ולא בטקסט:**
+  - IR-05: כיווניות של TikZ ו-tcolorbox ב-LuaLaTeX.
+  - IR-08: תווים חסרים בגופן.
+  - IR-09 עד IR-11: תבנית.
+  - IR-13: חריגה מהשוליים.
+
+### הפעלות סוכנים
+| # | סוכן | קובץ הרצה | תוצאה |
+|---|---|---|---|
+| 1 | writer-agent | `agents/runs/writer_m4_r1.md` | 4 המקומות בפרק 5, ‏`chapters/abstract.txt`, עדכון הנספח. השער: חריגת אורך קלה |
+| 2 | reviewer-agent (Detector) | `agents/runs/reviewer_m5a_r1.md`, ‏`review_m5a_r1.md` | ‏SCORE 84, ‏REVISE. ‏8 ממצאים (4 בינוניים: 3 בתבנית ו-1 עובדתי, שמקורו בקובץ העובדות של ה-Orchestrator, ‏IR-12). ‏qa-super עמד על 78/0/0 ולא תפס אותם |
+| 3 | fixer-agent | `agents/runs/fixer_m5a_r1.md` | ‏16 ליקויי M3 ו-D-m5a-04 עד 07 תוקנו. ‏R-ch03-11 הוסלם ל-Research |
+| 4 | reviewer-agent (Detector) | `agents/runs/reviewer_m5a_r2.md`, ‏`review_m5a_r2.md` | ‏SCORE 96, ‏**PASS**. פתוח: D-m5a-08 (קל) |
+
+### Skills שהופעלו בפועל (qa-super, הרצה אחרונה: 82 PASS, ‏0 WARN, ‏0 FAIL)
+| Skill | PASS | WARN | FAIL |
+|---|---:|---:|---:|
+| qa-BiDi | 5 | 0 | 0 |
+| qa-table | 4 | 0 | 0 |
+| qa-code | 12 | 0 | 0 |
+| qa-img | 15 | 0 | 0 |
+| qa-typeset | 11 | 0 | 0 |
+| qa-infra | 32 | 0 | 0 |
+| qa-cls-version | 3 | 0 | 0 |
+
+**היסטוריית ההרצות של qa-super:**
+- ההרצה הראשונה: 72/0/6. הכישלונות היו התוכן החסר ו-PLAN/TODO.
+- אחרי writer: 78/0/0.
+- אחרי Fixer: 81/0/1 (חריגה מהשוליים, IR-13).
+- אחרי התיקון: 82/0/0.
+
+**בדיקת qa-code `--rerun`** (שחזור הניסוי): לא הורצה בסבב הזה, כדי לחסוך משאבים. היא זמינה לביקורת הסופית.
+
+### תוצר
+`book.pdf`, ‏46 עמודים, ‏LuaLaTeX ו-biber. נוצר מחדש בפקודה `python scripts/build.py`. בלי push.

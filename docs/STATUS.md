@@ -1,12 +1,32 @@
 # STATUS: מצב הפרויקט והמשך עבודה
 
 > **מטרת הקובץ:** לאפשר המשך עבודה בסשן חדש של Claude Code בלי לאבד מידע.
-> **עודכן:** 2026-11-18. **M3 הושלם:** 7 פרקים ונספח עברו ביקורת ונשמרו ב-commit. הצעד הבא: M4.
+> **עודכן:** 2026-11-18. **M4 ו-M5A הושלמו** (Detector r2: ‏PASS, ‏96). ‏`book.pdf`: ‏46 עמודים. **הצעד הבא: אישור המשתמשת** לפני M5B/M6.
 > **בתחילת סשן חדש קוראים לפי הסדר:**
 > 1. `CLAUDE.md`
 > 2. הקובץ הזה
 > 3. `agents/orchestrator_agent.md`
 > 4. `docs/PRD.md` (גרסה 1.2) ו-`docs/OUTLINE.md`
+
+## 0. נקודת התאוששות: M4 + M5A (הושלם, 2026-11-18)
+> חבילות שהושלמו מסומנות ✅. בהמשך אחרי ניתוק מתחילים מהחבילה הראשונה שלא סומנה, ולא מריצים שוב חבילה שסומנה.
+
+| חבילה | מצב | תוצרים |
+|---|---|---|
+| P1 ניסוי UCI Digits | ✅ | `python/experiment_config.json` (נקבע לפני ההרצה), `python/generate_chart.py`, `python/data/digits_accuracy.csv`, `python/data/digits_summary.json` |
+| P2 איורי Matplotlib 3.1, 4.1, 5.1 | ✅ (כולל תיקון המקרא ב-4.1 והתווית ב-5.1 אחרי הניתוק) | `python/make_figures.py`, `assets/charts/*.pdf` |
+| P3 תשתית: CLS, ממיר, bib, TikZ, בנייה ו-QA | ✅ `python scripts/build.py` עובר (46 עמ'). QA: ‏72 PASS, ‏6 FAIL צפויים (תוכן פרק 5, נספח, PLAN/TODO) | `latex/aibook.cls` v1.0.0, `scripts/{txt2tex,make_bib,qa,build}.py`, `latex/figures/*.tex`, `main.tex`, `.latexmkrc` |
+| P4 מסמכים: PRD 1.5, ‏PLAN, ‏TODO, Skills, Fixer, חקר אירועים | ✅ | `docs/PRD.md` §16, `docs/PLAN.md`, `docs/TODO.md`, `.claude/skills/` (13), `agents/fixer_agent.md`, `.claude/agents/fixer-agent.md`, `docs/INCIDENTS.md` (IR-01 עד IR-08) |
+| P5 writer ← Detector ← Fixer ← Detector | ✅ ‏84 (REVISE) ← 96 (PASS) | `agents/runs/{writer_m4_r1,reviewer_m5a_r1,fixer_m5a_r1,reviewer_m5a_r2}.md` |
+| P6 הידור סופי, נספח, STATUS, ‏PROMPT_HISTORY 010, commit מקומי | ✅ (בלי push) | `git log` |
+
+**תקלה IR-04 (ניתוק API):** ראו `docs/INCIDENTS.md`.
+
+**פתוח, ממתין להחלטת המשתמשת:**
+1. R-ch03-11 (קל, מקורות): עוגן ברשומה S-ch03-01 לטענות על tanh. אפשר להפעיל research-agent או להשאיר כגזירה מתמטית.
+2. D-m5a-08 (קל): רווח לבן בעמוד 29, סביב איור 5.1 וטבלה 5.2.
+3. ‏qa-code `--rerun` (שחזור בית אחר בית) ייבדק בביקורת הסופית.
+4. M6: ‏README עם צילומי מסך. M7: ‏push רק באישור.
 
 ## 1. איפה אנחנו
 | אבן דרך | מצב | ראיות |
@@ -16,8 +36,9 @@
 | M2: מחקר מקורות | ✅ | `docs/SOURCES.md`, ‏`docs/sources/`, ‏`agents/runs/research_*`, רשומה 005 |
 | עדכון PRD ו-OUTLINE לגרסה 1.2, ו-commit של M2 | ✅ | רשומה 006, `git log` |
 | **M3: כתיבת 7 פרקים ונספח** (Writer ו-Reviewer) | ✅ כל היחידות עברו (PASS). ציונים סופיים: 98, 98, 97, 97, 95, 97, 99, ובנספח 99 | רשומות 007–009, `agents/runs/m3_summary.md` |
-| **M4: גרף, טבלה, נוסחה ותרשים** | ⏭️ **הצעד הבא** (11 פריטים ב-`docs/VISUALS.md`) | |
-| M5: LaTeX והידור | ⏳ | |
+| **M4: ניסוי, גרפים, טבלאות ותרשימים** | ✅ | רשומה 010, `python/`, `latex/figures/` |
+| **M5A: CLS, ‏LuaLaTeX, ‏IEEE, ‏Detector ← Fixer, ‏PDF מלא** | ✅ ‏Detector: ‏84 ← 96 (PASS) | רשומה 010, `agents/runs/review_m5a_r2.md` |
+| M5B: ליטוש לפי משוב | ⏭️ **ממתין לאישור המשתמשת** | |
 | M6: ביקורת סופית, README ותיעוד | ⏳ | |
 | M7: push ל-GitHub ‏(`greenlivnat/HW2`) והגשה | ⏳ רק בסוף | D8 |
 

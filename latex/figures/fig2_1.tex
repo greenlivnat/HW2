@@ -1,0 +1,27 @@
+% Figure 2.1: the path of the examples, from collection to the final test (conceptual, no data).
+\begin{bookdiagram}[x=1cm,y=1cm]
+  \tikzset{st/.style={blk,draw=turquoise,text width=2.75cm,minimum height=11mm}}
+  \node[st] (raw)   at (13.6,0)  {דוגמאות גולמיות};
+  \node[st] (clean) at (9.6,0)   {ניקוי};
+  \node[st] (lab)   at (5.6,0)   {תיוג};
+  \node[st] (split) at (1.6,0)   {חלוקה לאימון, אימות ובדיקה};
+  \node[st] (train) at (1.6,-2.2) {אימון};
+  \node[st] (tune)  at (5.6,-2.2) {כיוונון מול קבוצת האימות};
+  \node[st,draw=midnight,line width=1.2pt] (final) at (11.2,-2.2) {בדיקה סופית, חד-פעמית};
+  \node[blk,fill=midnight,text=white,text width=3.4cm,minimum height=11mm] (test) at (11.2,-5.0) {קבוצת הבדיקה};
+  \draw[flow] (raw) -- (clean);
+  \draw[flow] (clean) -- (lab);
+  \draw[flow] (lab) -- (split);
+  \draw[flow] (split) -- (train);
+  \draw[flow] (train) -- (tune);
+  \draw[flow] (tune) -- (final);
+  \draw[flow] (split.west) -- ++(-0.45,0) |- node[pos=0.75,below,font=\footnotesize] {מופרדת מראש} (test.west);
+  % the wall, with the lock where the single legitimate arrow passes
+  \draw[midnight,line width=3pt] (8.6,-3.65) -- (14.2,-3.65);
+  \draw[midnight,line width=3pt] (8.6,-3.65) -- (8.6,-6.0);
+  \draw[flow,draw=midnight] (test.north) -- node[right=4mm,font=\footnotesize] {פעם אחת, בסוף} (final.south);
+  \node[fill=gold,draw=midnight,rounded corners=0.6mm,minimum width=5mm,minimum height=4mm,inner sep=0pt] (lock) at (11.2,-3.65) {};
+  \draw[midnight,line width=1pt] ([xshift=-1.4mm]lock.north) arc (180:0:1.4mm);
+  \draw[loop,line width=1.2pt] (test.west) to[out=180,in=-90] node[pos=0.55,below left,font=\footnotesize\headingfont,text=violet] {זליגה: הדרך האסורה} (tune.south);
+  \node[text=violet,font=\headingfont\Large] at (8.6,-4.55) {\(\times\)};
+\end{bookdiagram}

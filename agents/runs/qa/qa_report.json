@@ -1,0 +1,494 @@
+[
+ {
+  "skill": "qa-BiDi",
+  "status": "PASS",
+  "check": "node direction rule in class",
+  "detail": "he style sets \\textdir only"
+ },
+ {
+  "skill": "qa-BiDi",
+  "status": "PASS",
+  "check": "Hebrew font families without Latin ligatures (IR-10)",
+  "detail": "5 families"
+ },
+ {
+  "skill": "qa-BiDi",
+  "status": "PASS",
+  "check": "no raw tcolorbox outside the class wrappers (IR-11)",
+  "detail": ""
+ },
+ {
+  "skill": "qa-BiDi",
+  "status": "PASS",
+  "check": "content boxes unbreakable (IR-09)",
+  "detail": ""
+ },
+ {
+  "skill": "qa-BiDi",
+  "status": "PASS",
+  "check": "Hebrew text extractable from PDF (page 9)",
+  "detail": "2270 Hebrew chars"
+ },
+ {
+  "skill": "qa-table",
+  "status": "PASS",
+  "check": "table numbers in order of appearance",
+  "detail": "chapter_05.txt: 2 tables"
+ },
+ {
+  "skill": "qa-table",
+  "status": "PASS",
+  "check": "constant column count",
+  "detail": "chapter_05.txt: [4]"
+ },
+ {
+  "skill": "qa-table",
+  "status": "PASS",
+  "check": "constant column count",
+  "detail": "chapter_05.txt: [3]"
+ },
+ {
+  "skill": "qa-table",
+  "status": "PASS",
+  "check": "experiment table matches CSV",
+  "detail": "10 rows; mismatches: []"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "describe_results.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "generate_chart.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "make_figures.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "build.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "make_bib.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "qa.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "txt2tex.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "fixed random seed",
+  "detail": "42"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "scaler fitted on training split only (no leakage)",
+  "detail": ""
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "model never fitted on the test split",
+  "detail": ""
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "summary JSON consistent with CSV",
+  "detail": "40 epochs"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "figure 5.1 newer than its CSV",
+  "detail": ""
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "נ.1 -> latex/figures/figA_1.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "1.1 -> latex/figures/fig1_1.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "2.1 -> latex/figures/fig2_1.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "3.1 -> assets/charts/fig3_1_activations.pdf"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "3.2 -> latex/figures/fig3_2.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "4.1 -> assets/charts/fig4_1_temperature.pdf"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "4.2 -> latex/figures/fig4_2.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "5.1 -> assets/charts/fig5_1_accuracy.pdf"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "6.1 -> latex/figures/fig6_1.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "7.1 -> latex/figures/fig7_1.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "no external images",
+  "detail": "assets/images is empty"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "chart fonts are not Type 3",
+  "detail": "fig3_1_activations.pdf"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "chart fonts are not Type 3",
+  "detail": "fig4_1_temperature.pdf"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "chart fonts are not Type 3",
+  "detail": "fig5_1_accuracy.pdf"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "all PDF fonts embedded",
+  "detail": "0 not embedded"
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "no LaTeX errors",
+  "detail": ""
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "no undefined references or citations",
+  "detail": ""
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "labels stable (no rerun needed)",
+  "detail": ""
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "no missing glyphs",
+  "detail": ""
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "no text beyond the margins (overfull > 5pt)",
+  "detail": "0 overfull, 0 > 5pt, max 0.0pt"
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "at least 25 pages",
+  "detail": "46 pages"
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "no placeholders in TXT sources",
+  "detail": ""
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "no placeholders in generated TeX",
+  "detail": ""
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "TOC lists abstract, 7 chapters, appendix and references",
+  "detail": "10 chapter entries"
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "list of figures populated",
+  "detail": "10 entries"
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "list of tables populated",
+  "detail": "2 entries"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "main.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "latex/aibook.cls"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "references.bib"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": ".latexmkrc"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "scripts/build.py"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "scripts/txt2tex.py"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "scripts/make_bib.py"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "scripts/qa.py"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "python/generate_chart.py"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "python/make_figures.py"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "python/experiment_config.json"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "docs/PRD.md"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "docs/PLAN.md"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "docs/TODO.md"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "docs/STATUS.md"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "docs/INCIDENTS.md"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "required file",
+  "detail": "requirements.txt"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "appendix.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "chapter_01.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "chapter_02.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "chapter_03.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "chapter_04.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "chapter_05.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "chapter_06.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "generated TeX up to date with its TXT",
+  "detail": "chapter_07.tex"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "every cited source has a bib entry",
+  "detail": ""
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "main.tex element",
+  "detail": "\\tableofcontents"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "main.tex element",
+  "detail": "\\listoffigures"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "main.tex element",
+  "detail": "\\listoftables"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "main.tex element",
+  "detail": "\\printbibliography"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "main.tex element",
+  "detail": "\\makecover"
+ },
+ {
+  "skill": "qa-infra",
+  "status": "PASS",
+  "check": "latexmk uses LuaLaTeX",
+  "detail": ""
+ },
+ {
+  "skill": "qa-cls-version",
+  "status": "PASS",
+  "check": "ProvidesClass = \\aibook@version = latest CHANGELOG",
+  "detail": "1.1.0 / 1.1.0 / 1.1.0"
+ },
+ {
+  "skill": "qa-cls-version",
+  "status": "PASS",
+  "check": "ProvidesClass date = latest CHANGELOG date",
+  "detail": ""
+ },
+ {
+  "skill": "qa-cls-version",
+  "status": "PASS",
+  "check": "compiled with this class version",
+  "detail": "v1.1.0 in main.log"
+ }
+]

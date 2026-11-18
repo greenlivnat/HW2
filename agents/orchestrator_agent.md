@@ -102,3 +102,9 @@ sequenceDiagram
 - [ ] בוצע לפחות סבב תיקון אמיתי אחד (REVISE ← תיקון ← PASS), והוא מתועד.
 - [ ] אף סוכן לא כתב מחוץ לתחום שלו.
 - [ ] `docs/PROMPT_HISTORY.md` מתעד כל שלב.
+
+## עדכון M4/M5A (2026-11-18): ‏Detector, ‏Fixer ו-Skills
+- **reviewer-agent** משמש גם **Detector**: מאתר ליקויים בספר המהודר בעזרת `qa-super` (`.claude/skills/qa-*/SKILL.md`, ‏`scripts/qa.py`), ואינו מתקן.
+- **fixer-agent** (`agents/fixer_agent.md`) מתקן במינימום שינוי. ליקוי **שיטתי** עובר ל-Orchestrator ומתוקן בכלי (CLS, ממיר או Skill), עם רשומה ב-`docs/INCIDENTS.md`.
+- מחזור: Detector r1 ← Fixer r1 ← Detector r2. עד 3 סבבים, כמו בכל יחידה.
+- **סוכן אחד בכל רגע** (בקשת המשתמשת, רשומה 010).

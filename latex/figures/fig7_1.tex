@@ -1,0 +1,15 @@
+% Figure 7.1: the reader's decision cycle. The four questions adapt guidelines G1, G2, G11, G9 (S-ch07-06).
+\begin{bookdiagram}[x=1cm,y=1cm]
+  \tikzset{nd/.style={blk,draw=turquoise,line width=1.1pt,text width=2.5cm,minimum height=10mm}}
+  \def\R{2.9}
+  \node[nd] (n1) at (90:\R)   {שואלת};
+  \node[nd] (n2) at (18:\R)   {מקבלת תשובה};
+  \node[nd,draw=violet,line width=1.6pt,fill=violet!8] (n3) at (-54:\R) {בודקת מול מקורות};
+  \node[nd] (n4) at (-126:\R) {מחליטה};
+  \node[nd] (n5) at (162:\R)  {מחדדת את השאלה};
+  \foreach \a/\b in {n1/n2,n2/n3,n3/n4,n4/n5,n5/n1}{\draw[-{Stealth[length=2.6mm]},line width=1pt,midnight] (\a) to[bend left=18] (\b);}
+  \node[draw=gold,line width=1.6pt,rounded corners=2mm,fill=white,font=\headingfont,inner sep=2.5mm] at (0,0) {האדם במעגל};
+  \node[draw=violet,line width=0.8pt,rounded corners=2mm,fill=white,text width=3.3cm,align=right,font=\footnotesize,anchor=west]
+     (q) at (4.0,-2.6) {{\headingfont ארבע שאלות לבדיקה}\par מה המערכת יודעת?\par כמה היא טועה?\par למה ענתה כך?\par איך מתקנים?};
+  \draw[violet,line width=0.8pt,dashed] (n3.east) -- (q.west);
+\end{bookdiagram}

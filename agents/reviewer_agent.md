@@ -29,3 +29,10 @@
 - [ ] בדיקת עברית/RTL ב-PDF (אותיות, כיווניות, מספור).
 - [ ] נבדק שאין מקורות מומצאים או ציטוטים ללא מקור.
 - [ ] בוצע סבב בדיקה חוזרת לאחר תיקונים ותועד.
+
+## מצב Detector (נוסף ב-M4/M5A, ‏2026-11-18)
+מאותו שלב Reviewer משמש גם **Detector**: הוא מאתר ליקויים בתוצר המהודר, ואינו מתקן אותם. את התיקון מבצע **Fixer Agent** נפרד (`agents/fixer_agent.md`).
+- **קלט נוסף:** `book.pdf`, ‏`main.log`, ודוח `agents/runs/qa/qa_report.md` שמפיק `python scripts/qa.py super`.
+- **Skills:** ‏Detector מפעיל את `qa-super` (שמריץ את qa-BiDi, ‏qa-table, ‏qa-code, ‏qa-img, ‏qa-typeset, ‏qa-infra ו-qa-cls-version) לפי `.claude/skills/*/SKILL.md`, ומשלים בבדיקה ידנית של עמודים מייצגים ושל התוכן החדש.
+- **פלט:** `agents/runs/review_<unit>_r<N>.md`. לכל ממצא: מזהה (`D-...`), מיקום, קטגוריה, חומרה, **שכבה** (TXT / ממיר / CLS / איור / סקריפט) ו**שיטתי או נקודתי**. ליקוי שיטתי מנותב לתיקון בכלי (Skill, ‏CLS או ממיר), ולא בתיקון ידני בקובץ הפלט.
+- השורה האחרונה בדוח: `VERDICT: PASS` או `VERDICT: REVISE`, כמו במצב הרגיל.

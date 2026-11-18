@@ -1,0 +1,26 @@
+% Figure A.1 (נ.1): four agents and one table in the middle (star architecture, agents/orchestrator_agent.md).
+\begin{bookdiagram}[x=1cm,y=1cm]
+  \tikzset{ag/.style={blk,draw=turquoise,line width=1.1pt,text width=2.7cm,minimum height=11mm},
+           lbl/.style={font=\scriptsize,fill=white,inner sep=1pt}}
+  \node[blk,draw=midnight,line width=1.6pt,text width=3.3cm,minimum height=13mm,font=\headingfont] (o) at (0,0) {סוכן-העל\\(Orchestrator)};
+  \node[ag,draw=midnight] (u) at (0,3.0) {המשתמשת};
+  \node[ag] (r)  at (5.4,-3.2) {Research};
+  \node[ag] (w)  at (0,-3.6)   {Writer};
+  \node[ag] (v)  at (-5.4,-3.2) {Reviewer};
+  \draw[{Stealth[length=2.4mm]}-{Stealth[length=2.4mm]},line width=1pt,midnight] (u) -- node[lbl,right=2mm] {החלטות ואישורים} (o);
+  \draw[flow] (o) -- node[lbl,sloped] {משימה $\leftarrow$ מקורות} (r);
+  \draw[flow] (o) -- node[lbl] {משימה $\leftarrow$ פרק} (w);
+  \draw[flow] (o) -- node[lbl,sloped] {משימה $\leftarrow$ דוח ו-VERDICT} (v);
+  % revision loop (dashed, violet)
+  \draw[loop] (v.north) to[out=95,in=180] node[pos=0.5,above left,text=violet,font=\scriptsize\headingfont] {REVISE} (o.west);
+  \draw[loop] (o.south east) to[out=-20,in=150] node[pos=0.55,above right,text=violet,font=\scriptsize] {תיקון לפי קטגוריית הליקוי} (r.north west);
+  \node[text=violet,font=\footnotesize\headingfont] at (-5.4,-4.45) {עד 3 סבבים};
+  % PASS exit
+  \node[blk,draw=midnight,text width=2.6cm] (p) at (6.0,0.6) {PASS: היחידה עוברת};
+  \draw[-{Stealth[length=2.6mm]},line width=1.2pt,midnight] (o.east) -- (p.west);
+  \fill[gold] ($(p.west)+(-0.25,0)$) circle (2pt);
+  % documentation store
+  \node[cylinder,shape border rotate=90,draw=midnight,fill=midnight!6,aspect=0.25,minimum width=2.9cm,minimum height=1.4cm,align=center,font=\scriptsize]
+     (db) at (-5.6,1.2) {\texttt{agents/runs/}\\ו-\texttt{PROMPT\_HISTORY}};
+  \draw[-{Stealth[length=2.4mm]},line width=0.8pt,midnight,dashed] (o.north west) -- node[lbl,above,sloped] {תיעוד} (db.east);
+\end{bookdiagram}

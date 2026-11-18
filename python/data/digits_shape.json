@@ -1,0 +1,30 @@
+{
+  "test_declines": [
+    {
+      "epoch": 37,
+      "from": 0.9733,
+      "to": 0.9711
+    }
+  ],
+  "train_declines": [],
+  "max_gap": {
+    "epoch": 8,
+    "train": 0.9198,
+    "test": 0.8822,
+    "gap": 0.0376
+  },
+  "final": {
+    "epoch": 40,
+    "train": 0.9978,
+    "test": 0.9756,
+    "gap": 0.0222
+  },
+  "best_test": {
+    "epoch": 40,
+    "test": 0.9756
+  },
+  "test_range_from_epoch_30": [
+    0.9711,
+    0.9756
+  ]
+}

@@ -1,0 +1,35 @@
+% Figure 3.2: one neuron and a small 3-4-2 network (structure and parameter count after S-ch03-01).
+\begin{bookdiagram}[x=1cm,y=1cm]
+  \tikzset{io/.style={circle,draw=turquoise,line width=0.9pt,fill=white,minimum size=8mm,inner sep=0pt}}
+  % single neuron, read left to right like the formula
+  \node[io] (x1) at (0,1.6) {$x_1$};
+  \node[io] (x2) at (0,0.6) {$x_2$};
+  \node at (0,-0.25) {$\vdots$};
+  \node[io] (xn) at (0,-1.2) {$x_n$};
+  \node[circle,draw=midnight,line width=1.2pt,fill=white,minimum size=11mm,font=\Large] (sum) at (4,0.2) {$\Sigma$};
+  \draw[flow] (x1) -- node[above,sloped,font=\footnotesize] {$w_1$} (sum);
+  \draw[flow] (x2) -- node[above,sloped,font=\footnotesize] {$w_2$} (sum);
+  \draw[flow] (xn) -- node[below,sloped,font=\footnotesize] {$w_n$} (sum);
+  \node[draw=gold,line width=1pt,rounded corners=1mm,fill=white,inner sep=1.5mm] (b) at (4,2.0) {הטיה $b$};
+  \draw[flow] (b) -- (sum);
+  \node[blk,minimum width=13mm,minimum height=10mm] (f) at (6.6,0.2) {$f$};
+  \draw[flow] (sum) -- node[above] {$z$} (f);
+  \node[io] (a) at (9,0.2) {$a$};
+  \draw[flow] (f) -- (a);
+  \node[font=\footnotesize,anchor=north] at (6.6,-0.5) {פונקציית הפעלה};
+  \node[font=\footnotesize,anchor=north] at (9,-0.5) {פלט};
+  \node[font=\footnotesize,anchor=north] at (0,-1.75) {קלטים};
+  % small network 3 -> 4 -> 2
+  \begin{scope}[yshift=-5.4cm]
+    \foreach \j in {1,2,3}{\node[circle,draw=turquoise,line width=0.9pt,fill=white,minimum size=6.5mm] (i\j) at (1.5,{1.15-0.9*(\j-1)}) {};}
+    \foreach \j in {1,2,3,4}{\node[circle,draw=violet,line width=0.9pt,fill=violet!22,minimum size=6.5mm] (h\j) at (4.2,{1.6-0.9*(\j-1)}) {};}
+    \foreach \j in {1,2}{\node[circle,draw=turquoise,line width=0.9pt,fill=white,minimum size=6.5mm] (o\j) at (6.9,{0.7-0.9*(\j-1)}) {};}
+    \foreach \p in {1,2,3}{\foreach \q in {1,2,3,4}{\draw[turquoise,line width=0.6pt] (i\p) -- (h\q);}}
+    \foreach \p in {1,2,3,4}{\foreach \q in {1,2}{\draw[turquoise,line width=0.6pt] (h\p) -- (o\q);}}
+    \node[font=\footnotesize] at (1.5,-1.75) {שכבת קלט};
+    \node[font=\footnotesize] at (4.2,-1.75) {שכבה חבויה};
+    \node[font=\footnotesize] at (6.9,-1.75) {שכבת פלט};
+    \node[draw=gold,line width=1.2pt,rounded corners=1.5mm,fill=white,inner sep=2mm,align=center,font=\headingfont] at (10.0,0.25)
+      {20 משקולות + 6 הטיות\\= 26 פרמטרים};
+  \end{scope}
+\end{bookdiagram}

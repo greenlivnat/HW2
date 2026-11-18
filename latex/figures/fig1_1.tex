@@ -1,0 +1,17 @@
+% Figure 1.1: three nested circles (AI > ML > DL). Book framework, no external data.
+% Gold is used only for marker dots; label text stays Midnight Blue (contrast, R-ch01-16).
+\begin{bookdiagram}
+  \fill[midnight!7,draw=midnight,line width=1.2pt] (0,0) circle (3.3);
+  \fill[turquoise!14,draw=turquoise,line width=1.2pt] (0,-0.95) circle (2.3);
+  \fill[violet!16,draw=violet,line width=1.2pt] (0,-1.95) circle (1.3);
+  \node[font=\headingfont\normalsize] at (0,2.55) {בינה מלאכותית};
+  \node[font=\headingfont\normalsize] at (0,0.75) {למידת מכונה};
+  \node[font=\headingfont\normalsize,align=center] at (0,-1.95) {למידה\\עמוקה};
+  \draw[midnight,line width=0.6pt] (-1.75,2.55) -- (-4.3,2.3);
+  \draw[turquoise,line width=0.6pt] (-1.45,0.75) -- (-4.3,0.5);
+  \draw[violet,line width=0.6pt] (-0.75,-1.95) -- (-4.3,-1.5);
+  \foreach \y in {2.3,0.5,-1.5}{\fill[gold] (-4.3,\y) circle (1.6pt);}
+  \node[anchor=east,text width=4.1cm,align=right,font=\footnotesize] at (-4.45,2.3) {מסיקה מתוך הקלט שהיא מקבלת איך לייצר פלט};
+  \node[anchor=east,text width=4.1cm,align=right,font=\footnotesize] at (-4.45,0.5) {ההתנהגות שלה נבנית מתוך ניסיון};
+  \node[anchor=east,text width=4.1cm,align=right,font=\footnotesize] at (-4.45,-1.5) {ייצוגים שנלמדים בשכבות רבות};
+\end{bookdiagram}

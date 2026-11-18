@@ -1,0 +1,18 @@
+% Figure 4.2: from the question to the answer in nine steps (9 block nodes + generation loop).
+% Read right to left, snaking down; block 8 ("בחירת טוקן") is highlighted in Gold.
+\begin{bookdiagram}[x=1cm,y=1cm]
+  \tikzset{st/.style={blk,text width=3.6cm,minimum height=12mm}}
+  \node[st] (s1) at (12.2,0)    {שאלת משתמש};
+  \node[st] (s2) at (7.1,0)     {קבלת הטקסט};
+  \node[st] (s3) at (2.0,0)     {פירוק לטוקנים};
+  \node[st] (s4) at (2.0,-2.3)  {ייצוג מספרי};
+  \node[st] (s5) at (7.1,-2.3)  {עיבוד קשב};
+  \node[st] (s6) at (12.2,-2.3) {חישוב ציוני טוקנים};
+  \node[st] (s7) at (12.2,-4.6) {המרה להסתברויות};
+  \node[st,draw=gold,line width=2.2pt] (s8) at (7.1,-4.6) {בחירת טוקן};
+  \node[st] (s9) at (2.0,-4.6)  {הרכבת תשובה};
+  \foreach \n in {1,...,9}{\node[num] at ($(s\n.north east)+(-0.08,-0.08)$) {\n};}
+  \foreach \a/\b in {1/2,2/3,3/4,4/5,5/6,6/7,7/8,8/9}{\draw[flow] (s\a) -- (s\b);}
+  \draw[loop,solid,line width=1.4pt] (s8.south) -- ++(0,-0.8) -| ($(s4.west)+(-0.7,0)$) -- (s4.west);
+  \node[font=\footnotesize\headingfont,text=violet] at (7.1,-5.75) {הטוקן שנבחר מצטרף לרצף, והלולאה חוזרת};
+\end{bookdiagram}

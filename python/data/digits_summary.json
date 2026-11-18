@@ -1,0 +1,46 @@
+{
+  "n_samples": 1797,
+  "n_train": 1347,
+  "n_test": 450,
+  "n_features": 64,
+  "identical_images_across_splits": 0,
+  "n_classes": 10,
+  "final_epoch": {
+    "epoch": 40,
+    "train_accuracy": 0.9978,
+    "test_accuracy": 0.9756,
+    "train_loss": 0.0464
+  },
+  "max_test_accuracy": {
+    "epoch": 40,
+    "train_accuracy": 0.9978,
+    "test_accuracy": 0.9756,
+    "train_loss": 0.0464
+  },
+  "final_gap": 0.0222,
+  "max_gap": 0.0376,
+  "versions": {
+    "python": "3.13.2",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.2.4"
+  },
+  "config": {
+    "_note": "Pre-registered before the first run (2026-11-18). Do not tune these values to obtain a desired curve shape (PRD 5).",
+    "dataset": "sklearn.datasets.load_digits (copy of UCI Optical Recognition of Handwritten Digits test set; Alpaydin & Kaynak 1998, CC BY 4.0, DOI 10.24432/C50P49)",
+    "random_seed": 42,
+    "test_size": 0.25,
+    "stratify": true,
+    "scaling": "StandardScaler fitted on the training split only",
+    "model": "MLPClassifier",
+    "hidden_layer_sizes": [
+      32
+    ],
+    "activation": "relu",
+    "solver": "adam",
+    "learning_rate_init": 0.001,
+    "alpha": 0.0001,
+    "batch_size": 64,
+    "epochs": 40,
+    "training_loop": "one partial_fit call over the full training split per epoch; accuracy measured on train and test after every epoch; the test split is never used for fitting, scaling or model selection"
+  }
+}

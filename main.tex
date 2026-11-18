@@ -1,34 +1,52 @@
-% main.tex — שלד מינימלי (שלב M1)
-% הידור: latexmk -xelatex main.tex   (או: xelatex main.tex פעמיים)
-\documentclass[12pt,a4paper]{article}
-
-\usepackage{fontspec}
-\usepackage{polyglossia}
-\setmainlanguage{hebrew}
-\setotherlanguage{english}
-
-% גופן עברי מותקן בפועל במערכת (Assistant, רישיון OFL)
-\newfontfamily\hebrewfont[Script=Hebrew]{Assistant}
-\newfontfamily\hebrewfontsf[Script=Hebrew]{Assistant}
-\setmainfont{Assistant}
-
-\usepackage{xcolor}
-\definecolor{nightblue}{HTML}{14213D}
-\definecolor{turquoise}{HTML}{2EC4B6}
-
-\title{\textcolor{nightblue}{מאחורי הקלעים של הבינה המלאכותית}}
-\author{מהנתון הראשון ועד לתשובה שעל המסך}
-\date{}
+% main.tex: the book. Compile with:  python scripts/build.py   (or: latexmk main.tex, see .latexmkrc)
+% Engine: LuaLaTeX + biber. The class lives in latex/aibook.cls.
+% Chapter files in latex/chapters/ are GENERATED from chapters/*.txt by scripts/txt2tex.py.
+\documentclass{aibook}
+\addbibresource{references.bib}
+\hypersetup{pdftitle={מאחורי הקלעים של הבינה המלאכותית},pdfsubject={ספר מדע פופולרי על בינה מלאכותית},
+  pdfkeywords={בינה מלאכותית, למידת מכונה, מודלי שפה, הערכת מודלים}}
 
 \begin{document}
-\maketitle
 
-\section{שורת בדיקה}
-זוהי שורת בדיקה לעברית מימין לשמאל, עם מונח באנגלית \textenglish{Machine Learning}
-ומספר 2026, ונוסחה:
-\[
-  z = \sum_{i=1}^{n} w_i x_i + b
-\]
-\textcolor{turquoise}{\textbf{הקמת הפרויקט הושלמה.}}
+% ------------------------------------------------------------------ front matter
+\frontmatter
+\makecover{מאחורי הקלעים של הבינה המלאכותית}{מהנתון הראשון ועד לתשובה שעל המסך}{ספר מדע פופולרי · 2026}
+
+\chapter*{תקציר}
+\addcontentsline{toc}{chapter}{תקציר}
+\thispagestyle{frontmatter}
+\IfFileExists{latex/frontmatter/abstract.tex}{\input{latex/frontmatter/abstract.tex}}{\placeholder{התקציר טרם נכתב (chapters/abstract.txt)}}
+
+\begin{keywordsbox}
+\IfFileExists{latex/frontmatter/keywords.tex}{\input{latex/frontmatter/keywords.tex}}{\textcolor{red}{חסר}}
+\end{keywordsbox}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ------------------------------------------------------------------ chapters
+\mainmatter
+\input{latex/chapters/chapter_01}
+\input{latex/chapters/chapter_02}
+\input{latex/chapters/chapter_03}
+\input{latex/chapters/chapter_04}
+\input{latex/chapters/chapter_05}
+\input{latex/chapters/chapter_06}
+\input{latex/chapters/chapter_07}
+
+% ------------------------------------------------------------------ appendix and references
+\bookappendix
+\input{latex/chapters/appendix}
+
+\backmatter
+\chapter*{רשימת מקורות}
+\addcontentsline{toc}{chapter}{רשימת מקורות}
+\markboth{רשימת מקורות}{}
+המקורות ממוספרים לפי סדר הופעתם הראשונה בספר, בסגנון IEEE. המספר בסוגריים מרובעים בגוף הטקסט מפנה לרשומה כאן.
+\begin{english}
+\sloppy % long URLs in IEEE entries (IR-13)
+\printbibliography[heading=none]
+\end{english}
 
 \end{document}

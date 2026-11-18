@@ -17,3 +17,9 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+*.bcf
+*.run.xml
+*.lof
+*.lot
+*.toc
+build_logs/
