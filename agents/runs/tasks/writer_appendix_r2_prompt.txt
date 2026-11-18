@@ -1,0 +1,10 @@
+M3 REVISION, unit appendix, round 2.
+
+Read first: agents/writer_agent.md; docs/STYLE_GUIDE.md; the review report agents/runs/review_appendix_r1.md; your original task agents/runs/tasks/writer_appendix_r1_prompt.txt (all its rules remain binding: every number/event must come from a project file, with a file reference); the current chapters/appendix.txt (frozen copy agents/runs/versions/appendix_r1.txt — do not touch it).
+
+TASK: fix EVERY defect R-app-01 … R-app-06 in chapters/appendix.txt. Write ONLY that file.
+- R-app-01 (medium): the documented gap was in the sources collected for chapter 7 at that point (not "no empirical research at all"); state it as the file states it, consistent with the two studies being added afterwards.
+- Others as suggested in the report (round labels, who sends work back = the Orchestrator routes, the illustration loop, avoid repeating chapter 7's ending).
+Keep 900–1,200 clean words.
+
+FINAL MESSAGE (SHORT, ≤ 200 words): table defect ID → change; rough word-count change.

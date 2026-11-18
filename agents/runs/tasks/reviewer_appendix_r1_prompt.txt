@@ -1,0 +1,14 @@
+M3 REVIEW, unit appendix, round 1.
+
+Read first: agents/reviewer_agent.md; docs/STYLE_GUIDE.md; docs/PRD.md v1.4 §5 (appendix) and §10 (appendix sources = project documentation only); the Writer's task agents/runs/tasks/writer_appendix_r1_prompt.txt; chapters/chapter_07.txt (its ending hands off to the appendix).
+Deliverable: chapters/appendix.txt (= agents/runs/versions/appendix_r1.txt).
+
+Check:
+1. FACTS (highest priority): EVERY number and every described event must be traceable to the referenced project file. Open each referenced file and verify (scores, rounds, counts, the smoke test 80 → 92, M2 record counts, the API disconnection/recovery, the M3 API-limit interruption, the Gender Shades figure episode, the ch01 originality defect). Flag any run described that did not happen, any invented duration/token count, any number without a file reference.
+2. COVERAGE (PRD §5): four agents and roles; hub-and-spoke; dependencies; quality gates; VERDICT loop with max 3 rounds and routing; score improvements; recovery from interruption; the human approval; pending milestones and the [ממתין לעדכון] marker.
+3. STYLE & STRUCTURE: same original voice; opening question; light closure of the dough frame; 1–2 boxes with correct markers; one [איור] line in STYLE_GUIDE §5 format with the palette; "## תובנות מרכזיות" (4–6); "## מקורות לנספח" listing referenced files; Hebrew quality; no Hebrew sentence starting with a Latin word.
+4. LENGTH: 900–1,200 clean words (Python count as in the other units; body before "## מקורות לנספח").
+
+Output: write ONLY agents/runs/review_appendix_r1.md (Hebrew): header; defect table (ID R-app-NN, location, category, severity, description, suggested fix, whether it needs research); a fact-verification table (claim → file → verdict); checklist; `SCORE: <n>/100` (facts 40, structure 20, style 25, length & format 15); LAST line exactly `VERDICT: PASS` or `VERDICT: REVISE`.
+
+Final message (SHORT, ≤ 150 words): path, defect counts, IDs of קריטי/בינוני defects, score, verdict.

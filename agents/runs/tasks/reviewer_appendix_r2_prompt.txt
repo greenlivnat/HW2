@@ -1,0 +1,9 @@
+M3 RE-REVIEW, unit appendix, round 2.
+
+Read first: agents/reviewer_agent.md; your previous report agents/runs/review_appendix_r1.md; the original tasks agents/runs/tasks/writer_appendix_r1_prompt.txt and reviewer_appendix_r1_prompt.txt (same checks apply); docs/STYLE_GUIDE.md.
+Deliverable: chapters/appendix.txt (= agents/runs/versions/appendix_r2.txt). Compare with agents/runs/versions/appendix_r1.txt using read-only `git diff --no-index`.
+
+Tasks: give each of R-app-01 … R-app-06 a status (תוקן / לא תוקן / חלקי); verify every changed or new claim against the referenced project file (in particular PROMPT_HISTORY record 005 for R-app-01 and agents/runs/smoke_test/README.md for the box); check new defects (IDs from R-app-07); length 900–1,200 clean words.
+
+Output: write ONLY agents/runs/review_appendix_r2.md (Hebrew): status table; new defects; `SCORE: <n>/100` (same rubric); LAST line exactly `VERDICT: PASS` or `VERDICT: REVISE`.
+Final message (SHORT, ≤ 120 words): path, statuses, new defects by severity, score, verdict.
