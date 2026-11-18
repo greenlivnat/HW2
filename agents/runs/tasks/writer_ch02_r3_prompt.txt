@@ -1,0 +1,11 @@
+M3 REVISION, unit ch02, round 3.
+
+Read first: agents/writer_agent.md; docs/STYLE_GUIDE.md (binding); the review report agents/runs/review_ch02_r2.md; your original task file agents/runs/tasks/writer_ch02_r1_prompt.txt (ALL its chapter-specific source rules remain binding); the current chapters/chapter_02.txt (a frozen copy of the reviewed version is agents/runs/versions/chapter_02_r2.txt — do not touch it); docs/SOURCES.md and docs/sources/chapter_02.md for every source check.
+
+TASK: revise chapters/chapter_02.txt to fix EVERY defect in the report (critical, medium AND minor). Write ONLY that file.
+
+Orchestrator notes (routing and constraints): FINAL allowed round. R-ch02-10 (medium): REMOVE the '4.4% ב-Adience' figure and do not use any Adience/IJB-A dark-skinned-women percentage (it is being corrected in the record by the research agent in parallel). If you keep the composition point, use only figures already verified in S-ch02-01 and accepted by the reviewer (e.g., PPB 53.6%/46.4% vs. 86.2% lighter-skinned in Adience — check the record), or drop the comparison. Also fix the implication: PPB is a TEST benchmark; its composition revealed the gap, it did not fix bias. R-ch02-09 closes with this fix. Do not touch docs/. Keep 1,400–1,800.
+
+Rules: cite only IDs in SOURCES.md, within access level; no new factual claim without an existing record — if a fix would need a new source, do not write the claim and say so; keep the dough story, voice, boxes (STYLE_GUIDE §4) and illustration lines; stay inside the STYLE_GUIDE §7 length band (the Orchestrator counts with Python — you cannot, so when adding text, also say where you cut).
+
+FINAL MESSAGE (SHORT, ≤ 250 words): table defect ID → what was changed (or why not) for EVERY defect; source ID changes; rough word count change (+/−).

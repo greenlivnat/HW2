@@ -1,0 +1,13 @@
+M3 SOURCE CORRECTION, unit ch02, research round 2 (routed from review defect R-ch02-11).
+
+Read first: agents/research_agent.md; agents/runs/review_ch02_r2.md (defects R-ch02-10 and R-ch02-11); the record S-ch02-01 (Buolamwini & Gebru 2018, Gender Shades) in docs/sources/chapter_02.md, and its row and cross-references in docs/SOURCES.md.
+
+Problem reported by the Reviewer: claim 3 of S-ch02-01 gives "4.4%" for dark-skinned women in Adience. According to the Reviewer, this comes from the caption of Figure 3 in the paper, which contradicts the figure's own bars and §3.5 of the same paper: there 4.4% belongs to IJB-A, and Adience is 7.4%.
+
+TASK:
+1. Verify independently against the official paper (PMLR: proceedings.mlr.press, vol. 81) — fetch the PDF/HTML and read Figure 3, its caption, and §3.5. Do not trust the Reviewer's numbers; report what the paper actually says, with locations.
+2. Correct claim 3 of S-ch02-01 in docs/sources/chapter_02.md: state the verified figure per dataset with location, and document the internal inconsistency in the paper (caption vs. bars/§3.5) and which reading the book should use (or that the figure should not be used). Add an entry to the record's fetch log.
+3. If docs/SOURCES.md repeats the wrong figure anywhere, correct it there too, and note the change in its section 4.2 (inconsistencies).
+Write ONLY docs/sources/chapter_02.md and, if needed, docs/SOURCES.md. Never invent numbers; if you cannot reach the paper, say so and mark the figure "לא לשימוש".
+
+FINAL MESSAGE (SHORT, ≤ 200 words): what the paper says (with locations), exactly what you changed in which file, URLs fetched (OK/FAILED).
