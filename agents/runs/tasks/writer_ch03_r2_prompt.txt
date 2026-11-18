@@ -1,0 +1,11 @@
+M3 REVISION, unit ch03, round 2.
+
+Read first: agents/writer_agent.md; docs/STYLE_GUIDE.md (binding); the review report agents/runs/review_ch03_r1.md; your original task file agents/runs/tasks/writer_ch03_r1_prompt.txt (ALL its chapter-specific source rules remain binding); the current chapters/chapter_03.txt (a frozen copy of the reviewed version is agents/runs/versions/chapter_03_r1.txt — do not touch it); docs/SOURCES.md and docs/sources/chapter_03.md for every source check.
+
+TASK: revise chapters/chapter_03.txt to fix EVERY defect in the report (critical, medium AND minor). Write ONLY that file.
+
+Orchestrator notes (routing and constraints): All 8 defects go to you; none needs a new source (R-ch03-04 is a wording fix). R-ch03-01: add ~150–250 clean words ONLY from existing records (e.g., explain tanh and why centring matters per S-ch03-01; the venue only if it is in the S-ch03-02 record). Target 1,450–1,650. R-ch03-02: vary 'רשימות הקורס' (≤3 uses; e.g. 'CS231n', 'חומרי הקורס של סטנפורד') and 'כפתור' (≤3; chapter 1 owns the mixing-console image — refer back to it once, then use 'משקולת'). R-ch03-06: number figures in order of appearance (first figure = 3.1). R-ch03-07: Gold not for label text (STYLE_GUIDE §6).
+
+Rules: cite only IDs in SOURCES.md, within access level; no new factual claim without an existing record — if a fix would need a new source, do not write the claim and say so; keep the dough story, voice, boxes (STYLE_GUIDE §4) and illustration lines; stay inside the STYLE_GUIDE §7 length band (the Orchestrator counts with Python — you cannot, so when adding text, also say where you cut).
+
+FINAL MESSAGE (SHORT, ≤ 250 words): table defect ID → what was changed (or why not) for EVERY defect; source ID changes; rough word count change (+/−).
