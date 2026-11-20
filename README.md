@@ -20,6 +20,7 @@
 | 🧭 סטטוס | [`docs/STATUS.md`](docs/STATUS.md) |
 | 📜 שינויים | [`CHANGELOG.md`](CHANGELOG.md) |
 | 🧯 תקלות | [`docs/INCIDENTS.md`](docs/INCIDENTS.md) (IR-01 עד IR-19) |
+| 📦 תיעוד חיצוני | [`docs/external/ai_book_documentation/`](docs/external/ai_book_documentation/) (ChatGPT, תהליך וגרסאות קודמות) |
 
 ---
 
@@ -202,10 +203,49 @@ latexmk main.tex                        # הידור בלבד (LuaLaTeX, לפי 
 | D-m5b-03 | נוסחאות ארוכות בתיבת המעבדה בפרק 3 נשברות בין שורות בפסקה מימין לשמאל | התיקון דורש שינוי בשבירת השורות של מתמטיקה בתוך RTL בממיר |
 | D-m5b-06 | ברשומה [60] בביבליוגרפיה כתובת ה-URL נשברת אחרי "https:", ויש מילים בעברית בתוך רשומות באנגלית | נתוני ה-bib ושבירת URL. התיקון שיטתי (make_bib, ‏CLS) |
 
-## 11. חבילת התיעוד החיצונית (ChatGPT)
-> 📦 **מקום שמור.** כאן תשולב חבילת התיעוד החיצונית שהמחברות יצרו באמצעות ChatGPT: דוח הביקורת החיצונית על v0.9 וחומרי התיעוד הנלווים. הקבצים יתווספו לתיקייה `docs/external/`, והקישורים יופיעו כאן.
+## 11. התוצר הסופי מול תיעוד הגרסאות הקודמות
+| | מה זה | איפה |
+|---|---|---|
+| ✅ **התוצר הסופי (v0.95, ‏43 עמ')** | הספר, קוד המקור שלו, הגרפים והתרשימים, וצילומי המסך שבסעיף 7 | [`book.pdf`](book.pdf), ‏[`releases/book_v0.95.pdf`](releases/book_v0.95.pdf), ‏[`screenshots/`](screenshots/) |
+| 🕘 גרסה קודמת (v0.9, ‏46 עמ') | הספר לפני הביקורת החיצונית | [`releases/book_v0.9.pdf`](releases/book_v0.9.pdf) |
+| 🕘 תיעוד תהליך (חיצוני) | חבילת ChatGPT: ביקורת על v0.9, יומן ליווי, צילומי טרמינל מהעבודה, ועמודי טיוטה של v0.9 | [`docs/external/ai_book_documentation/`](docs/external/ai_book_documentation/) |
+| 🕘 תיעוד תהליך (פנימי) | כל הרצה של כל סוכן, דוחות ביקורת ו-QA | [`agents/runs/`](agents/runs/), ‏[`docs/PROMPT_HISTORY.md`](docs/PROMPT_HISTORY.md) |
 
-## 12. רישיונות וקרדיטים
+### גרפים ותרשימים של התוצר הסופי
+- **גרפי Matplotlib** (נוצרים מקוד, ב-[`python/make_figures.py`](python/make_figures.py)):
+  - [פונקציות הפעלה (3.1)](assets/charts/fig3_1_activations.png)
+  - [טמפרטורה (4.1)](assets/charts/fig4_1_temperature.png)
+  - [ניסוי UCI Digits (5.1)](assets/charts/fig5_1_accuracy.png)
+  - [ציוני הביקורת הפנימית (נ.2)](assets/charts/figA_2_scores.png)
+- **תרשימי TikZ** (קוד מקור ב-[`latex/figures/`](latex/figures/), מוצגים בספר): עיגולים מקוננים (1.1), מסלול הדוגמאות (2.1), רשת נוירונים (3.2), מודל שפה ב-9 בלוקים (4.2), גבולות הידע (6.1), האדם במעגל (7.1), ארכיטקטורת הסוכנים (נ.1).
+- **צילומי מסך נבחרים מהספר:**
+  - [כריכה](screenshots/01_cover.png)
+  - [תוכן עניינים](screenshots/02_toc.png)
+  - [פתיחת פרק](screenshots/03_chapter_opener.png)
+  - [נוסחה](screenshots/04_neuron_math.png)
+  - [טמפרטורה](screenshots/05_temperature_chart.png)
+  - [ניסוי](screenshots/06_experiment_chart.png)
+  - [נספח](screenshots/07_appendix_scores.png)
+
+## 12. חבילת התיעוד החיצונית (ChatGPT)
+המחברות ליוו את העבודה בשיחה עם ChatGPT, והתיעוד ממנה שולב כמו שהוא, בלי עריכה, בתיקייה [`docs/external/ai_book_documentation/`](docs/external/ai_book_documentation/). **החבילה מתעדת את התהליך ואת הגרסאות הקודמות.** היא אינה בדיקה עצמאית של התוצר הסופי. לפי ההערה שלה עצמה, ה-PDF בן 43 העמודים לא נבדק בה.
+
+| תיקייה | תוכן | גרסה |
+|---|---|---|
+| [`README.md`](docs/external/ai_book_documentation/README.md) | תיאור החבילה וסייגיה | |
+| [`external_review/EXTERNAL_REVIEW.md`](docs/external/ai_book_documentation/external_review/EXTERNAL_REVIEW.md) | **הביקורת החיצונית** שהובילה ל-M5B | v0.9 (46 עמ') |
+| [`pdf_draft_pages/`](docs/external/ai_book_documentation/pdf_draft_pages/) | 9 עמודים מ-v0.9 שעליהם נכתבה הביקורת (לפני התיקונים) | v0.9 |
+| [`screenshots/`](docs/external/ai_book_documentation/screenshots/) | 16 צילומי טרמינל אמיתיים: הסביבה, ההקמה, ה-Smoke Test, ‏M2, ניתוק ה-API ב-M4 ופקיעת ההתחברות ב-M5B | M1–M5B |
+| [`notes/`](docs/external/ai_book_documentation/notes/) | יומן התקדמות, אינדקס פרומפטים, תוכנית M3, וסיכום v0.95 | M1–v0.95 |
+| [`visuals/`](docs/external/ai_book_documentation/visuals/) | תרשימי סוכנים, גרפי מחקר וציונים (עם קוד Python), ופלטה מוצעת | M1–v0.95 |
+
+**הבהרות:**
+- הגרפים בחבילה מבוססים על דיווחי Claude Code. ‏`overfitting_demo` מבוסס על **נתונים סינתטיים להמחשה**, והוא אינו תוצאת הניסוי של הספר. תוצאות הניסוי נמצאות בסעיף 4.
+- הציונים בחבילה הם ציוני ביקורת פנימית של הסוכנים, לא ציוני הגשה.
+- לפני השילוב נבדקו כל הקבצים, כולל כל 16 צילומי המסך והמטא-דאטה של התמונות. לא נמצא מידע אישי רגיש: אין תעודות זהות, כתובות מייל, שמות משתמש, מפתחות או סיסמאות. מופיעים רק נתיב הפרויקט וגרסאות הכלים.
+- קובץ הדיווח הרשמי למרצה נפרד מהריפו ואינו כלול בו.
+
+## 13. רישיונות וקרדיטים
 - **נתונים:** UCI Optical Recognition of Handwritten Digits (Alpaydin & Kaynak, 1998), ‏CC BY 4.0.
 - **גופן:** Assistant, ‏SIL Open Font License.
 - **מקורות:** רשימה מלאה בסגנון IEEE בסוף הספר, ואינדקס עם רמת הגישה של כל מקור ב-`docs/SOURCES.md`.
