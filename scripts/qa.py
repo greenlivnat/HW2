@@ -38,7 +38,12 @@ def body(p):
 
 
 def run(cmd, **kw):
-    return subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", **kw)
+    # every external tool call is time-limited: an intermittent hang must fail, not block (IR-19)
+    kw.setdefault("timeout", 240)
+    try:
+        return subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", **kw)
+    except subprocess.TimeoutExpired:
+        return subprocess.CompletedProcess(cmd, 124, "", f"timed out after {kw['timeout']}s: {cmd[0]}")
 
 
 # ------------------------------------------------------------------ qa-BiDi
@@ -69,6 +74,8 @@ def qa_bidi():
     (r.ok if not raw else r.fail)("no raw tcolorbox outside the class wrappers (IR-11)", ", ".join(raw))
     base = re.search(r"aibook/base/\.style=\{([^}]*)", cls)
     (r.ok if base and "unbreakable" in base.group(1) else r.fail)("content boxes unbreakable (IR-09)")
+    brk = re.findall(r"\\newenvironment\{(\w+)\}[^\n]*\n?[^\n]*[^n]breakable", cls)
+    (r.ok if not brk else r.fail)("no breakable content boxes (IR-09, IR-15)", ", ".join(brk) or "none")
     if PDF.exists():
         t = run(["pdftotext", "-enc", "UTF-8", "-f", "9", "-l", "9", str(PDF), "-"]).stdout
         heb = len(re.findall(r"[\u0590-\u05FF]", t))
@@ -157,6 +164,26 @@ def qa_img():
         for a, b in ids:
             path = figmap.get(f"{a}.{b}")
             (r.ok if path and (ROOT / path).exists() else r.fail)("figure asset exists", f"{a}.{b} -> {path}")
+    # IR-14: Matplotlib 3.11 lays out Hebrew right-to-left itself; he() must not reverse it again.
+    try:
+        import importlib.util, matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt, numpy as np
+        fig = plt.figure(figsize=(3, 1), dpi=100)
+        fig.text(0.02, 0.3, "ש" + "." * 25, family="Assistant", fontsize=20)
+        fig.canvas.draw()
+        ink = np.asarray(fig.canvas.buffer_rgba())[:, :, 0] < 128
+        plt.close(fig)
+        rows = np.where(ink.any(axis=1))[0]
+        cols = np.where(ink[: rows.min() + 8].any(axis=0))[0]     # the letter is taller than the dots
+        rtl = cols.size and cols.mean() > ink.shape[1] / 2         # RTL: the letter ends up after the dots
+        spec = importlib.util.spec_from_file_location("mf", ROOT / "python" / "make_figures.py")
+        mf = importlib.util.module_from_spec(spec); spec.loader.exec_module(mf)
+        consistent = (mf.he("אב") == "אב") == bool(rtl)
+        (r.ok if consistent else r.fail)("chart Hebrew in correct order (IR-14)",
+                                         f"matplotlib bidi={'yes' if rtl else 'no'}, he() reverses={'no' if mf.he('אב') == 'אב' else 'yes'}")
+    except Exception as e:  # noqa: BLE001
+        r.warn("chart Hebrew in correct order (IR-14)", f"check could not run: {e}")
     ext = [f.name for f in (ROOT / "assets" / "images").glob("*") if f.name != ".gitkeep"]
     (r.ok if not ext else r.warn)("no external images", ", ".join(ext) or "assets/images is empty")
     for f in (ROOT / "assets" / "charts").glob("*.pdf"):
@@ -185,7 +212,27 @@ def qa_typeset():
     over = [float(x) for x in re.findall(r"Overfull \\hbox \(([\d.]+)pt too wide", log)]
     big = [x for x in over if x > 5]
     (r.ok if not big else r.fail)("no text beyond the margins (overfull > 5pt)", f"{len(over)} overfull, {len(big)} > 5pt, max {max(over, default=0):.1f}pt")
-    pages = int(re.search(r"Pages:\s+(\d+)", run(["pdfinfo", str(PDF)]).stdout).group(1))
+    info = run(["pdfinfo", str(PDF)]).stdout
+    pages = int(re.search(r"Pages:\s+(\d+)", info).group(1))
+    auth = re.search(r"Author:\s*(.*)", info)
+    (r.ok if auth and auth.group(1).strip() else r.fail)("PDF author metadata set", auth.group(1).strip() if auth else "")
+    # M5B: every printed page number equals the PDF page index; no raw TeX markup in the text.
+    full = run(["pdftotext", "-enc", "UTF-8", "-layout", str(PDF), "-"]).stdout.split("\f")
+    bad = []
+    for i, pg in enumerate(full[:pages], 1):
+        lines = [l.strip() for l in pg.splitlines() if l.strip()]
+        num = lines[-1] if lines and lines[-1].isdigit() else None
+        if num is not None and int(num) != i:
+            bad.append(f"{i}->{num}")
+    (r.ok if not bad else r.fail)("printed page numbers equal PDF page numbers", ", ".join(bad[:6]) or f"{pages} pages")
+    rawtex = []
+    for i, pg in enumerate(full[:pages], 1):
+        for l in pg.splitlines():
+            if "http" in l or "doi" in l.lower():
+                continue
+            if re.search(r"\\[A-Za-z]+|_\{|\^\{|\b[A-Za-z]_[A-Za-z0-9]\b|\d\^\d|textbackslash|textasciicircum", l):
+                rawtex.append(f"p{i}: {l.strip()[:50]}")
+    (r.ok if not rawtex else r.fail)("no raw TeX markup in the PDF text", "; ".join(rawtex[:4]))
     (r.ok if pages >= MIN_PAGES else r.fail)(f"at least {MIN_PAGES} pages", f"{pages} pages")
     ph = [p.name for p in txt_units() if re.search(r"\[ממתין", body(p))]
     (r.ok if not ph else r.fail)("no placeholders in TXT sources", ", ".join(ph))

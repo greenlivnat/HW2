@@ -6,6 +6,7 @@ Markup (docs/STYLE_GUIDE.md section 5) -> LaTeX:
   "## מקורות לפרק/לנספח"                   -> end of chapter (global IEEE bibliography instead)
   five box markers                         -> behindbox / thinkbox / labbox / conceptbox / mythbox
   [נוסחה] ... [/נוסחה]                     -> equation
+  $...$ inside a line                      -> inline math, raw LaTeX (a literal dollar sign is not allowed)
   [טבלה X: t] rows "a | b" [/טבלה]          -> table + tabularx (first row = header)
   [איור X: t | ...]                        -> figure (asset from FIGURES below)
   [ממתין ...]                              -> \\placeholder (qa-typeset fails the build on it)
@@ -31,6 +32,7 @@ FIGURES = {
     "6.1": ("tikz", "latex/figures/fig6_1.tex"),
     "7.1": ("tikz", "latex/figures/fig7_1.tex"),
     "נ.1": ("tikz", "latex/figures/figA_1.tex"),
+    "נ.2": ("pdf", "assets/charts/figA_2_scores.pdf"),
 }
 BOXES = {
     "מאחורי הקלעים": ("behindbox", True),
@@ -64,7 +66,17 @@ def label_id(x):
     return x.replace("נ", "A")
 
 
+MATH = re.compile(r"\$([^$\n]+)\$")
+
+
 def inline(s):
+    # Inline math "$...$" is passed to LaTeX unescaped (M5B: raw "x_i" / "\sum" leaked into the
+    # PDF as text, page 17 of v0.9). Math is protected by placeholders while the rest is escaped.
+    maths = []
+    def _keep(m):
+        maths.append("$" + m[1] + "$")
+        return f"\x00{len(maths) - 1}\x00"
+    s = MATH.sub(_keep, s)
     s = esc(s)
     s = CITE.sub(lambda m: r"\cite{" + ",".join(CITE_ALL.findall(m.group(0))) + "}", s)
     # project-document references used by the appendix, e.g. [docs/PROMPT_HISTORY.md, רשומה 002]
@@ -80,6 +92,7 @@ def inline(s):
     s = re.sub(r"(\s)-\s", r"\1--\\ ", s)
     if "[" in s and re.search(r"\[[^\]]*\]", s):
         warnings.append(f"unconverted bracket markup: {s[:80]}")
+    s = re.sub(r"\x00(\d+)\x00", lambda m: maths[int(m[1])], s)
     return s
 
 
@@ -160,6 +173,7 @@ def convert(lines, kind):
     while i < len(lines) and not lines[i].strip():
         i += 1
     question = lines[i].strip(); i += 1
+    out.append(f"\\chapterlayout{{{kind}}}\n")   # tight layout per chapter (scripts/layout.py, IR-15)
     out.append(f"\\chapterquestion{{{inline(question)}}}\n\\chapter{{{inline(chapter_title)}}}\\label{{ch:{kind}}}\n")
     insights = False
     while i < len(lines):

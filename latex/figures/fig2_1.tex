@@ -1,4 +1,4 @@
-% Figure 2.1: the path of the examples, from collection to the final test (conceptual, no data).
+% Figure 2.1 (M5B: labels and arrows no longer overlap the wall): the path of the examples, from collection to the final test (conceptual, no data).
 \begin{bookdiagram}[x=1cm,y=1cm]
   \tikzset{st/.style={blk,draw=turquoise,text width=2.75cm,minimum height=11mm}}
   \node[st] (raw)   at (13.6,0)  {דוגמאות גולמיות};
@@ -15,13 +15,13 @@
   \draw[flow] (split) -- (train);
   \draw[flow] (train) -- (tune);
   \draw[flow] (tune) -- (final);
-  \draw[flow] (split.west) -- ++(-0.45,0) |- node[pos=0.75,below,font=\footnotesize] {מופרדת מראש} (test.west);
+  \draw[flow] (split.west) -- ++(-0.45,0) |- node[pos=0.72,below,font=\footnotesize] {מופרדת מראש} ([yshift=-3mm]test.west);
   % the wall, with the lock where the single legitimate arrow passes
   \draw[midnight,line width=3pt] (8.6,-3.65) -- (14.2,-3.65);
   \draw[midnight,line width=3pt] (8.6,-3.65) -- (8.6,-6.0);
-  \draw[flow,draw=midnight] (test.north) -- node[right=4mm,font=\footnotesize] {פעם אחת, בסוף} (final.south);
+  \draw[flow,draw=midnight] (test.north) -- node[pos=0.8,right=4mm,font=\footnotesize,fill=paper,inner sep=1pt] {פעם אחת, בסוף} (final.south);
   \node[fill=gold,draw=midnight,rounded corners=0.6mm,minimum width=5mm,minimum height=4mm,inner sep=0pt] (lock) at (11.2,-3.65) {};
   \draw[midnight,line width=1pt] ([xshift=-1.4mm]lock.north) arc (180:0:1.4mm);
-  \draw[loop,line width=1.2pt] (test.west) to[out=180,in=-90] node[pos=0.55,below left,font=\footnotesize\headingfont,text=violet] {זליגה: הדרך האסורה} (tune.south);
-  \node[text=violet,font=\headingfont\Large] at (8.6,-4.55) {\(\times\)};
+  \draw[loop,line width=1.2pt] ([yshift=3mm]test.west) to[out=180,in=-90] node[pos=0.55,below left,font=\footnotesize\headingfont,text=violet] {זליגה: הדרך האסורה} (tune.south);
+  \node[text=violet,font=\headingfont\Large,fill=paper,inner sep=0.5pt] at (8.6,-4.35) {\(\times\)};
 \end{bookdiagram}

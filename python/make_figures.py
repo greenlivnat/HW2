@@ -1,4 +1,4 @@
-"""Matplotlib figures for the book (figures 3.1, 4.1, 5.1). Palette: docs/STYLE_GUIDE.md section 6.
+"""Matplotlib figures for the book (figures 3.1, 4.1, 5.1, appendix A.2). Palette: docs/STYLE_GUIDE.md section 6.
 
 Run from the project root:  python python/make_figures.py
 Figure 5.1 is drawn from python/data/digits_accuracy.csv (run generate_chart.py first).
@@ -29,20 +29,13 @@ _RTL = re.compile(r"[֐-׿]")
 
 
 def he(text: str) -> str:
-    """Visual-order a one-line label for Matplotlib (which has no bidi support).
+    """Return a label for Matplotlib unchanged.
 
-    Splits into Hebrew and non-Hebrew runs, reverses run order and the characters of
-    Hebrew runs only; Latin words and numbers keep their internal order. Mirrors brackets.
+    Matplotlib 3.11 lays out complex text (bidi) itself, so Hebrew is passed in logical order.
+    Until v0.9 this function reversed Hebrew runs by hand, which reversed them a second time in
+    the PDF (figures 4.1 and 5.1, incident IR-14). qa-img now checks the logical order in the PDFs.
     """
-    runs = re.findall(r"[֐-׿\s'\"״׳-]+|[^֐-׿]+", text)
-    out = []
-    for r in reversed(runs):
-        if _RTL.search(r):
-            out.append(r[::-1])
-        else:
-            out.append(r)
-    s = "".join(out).translate(str.maketrans("()", ")("))
-    return s.strip()
+    return text
 
 
 def _save(fig, name):
@@ -86,6 +79,8 @@ def fig4_1():
     for t in (1.0, 0.5):
         q = softmax_t(p1, t)
         rows[t] = np.concatenate([q[:4], [q[4:].sum()]])
+    for t, r in rows.items():          # every distribution sums to 1 (external review, M5B)
+        assert abs(r.sum() - 1) < 1e-9, (t, r.sum())
     x = np.arange(5)
     w = 0.38
     fig, ax = plt.subplots(figsize=(6.4, 3.0))
@@ -96,8 +91,8 @@ def fig4_1():
                       label=f"t = {t:g}", edgecolor=MIDNIGHT, linewidth=0.4)
         bars[0].set_edgecolor(GOLD); bars[0].set_linewidth(2.4)   # chosen token "כמה"
         for b, v in zip(bars, rows[t]):
-            ax.text(b.get_x() + b.get_width() / 2, v + 0.012, f"{v:.2f}", ha="center", fontsize=8)
-    ax.set_xticks(xr, [he(l) for l in labels] + [he("כל השאר")])
+            ax.text(b.get_x() + b.get_width() / 2, v + 0.012, f"{v:.2f}" if v >= 0.005 * 2 else "<0.01", ha="center", fontsize=8)
+    ax.set_xticks(xr, [he(l) for l in labels] + ["כל השאר" + chr(10) + "(15 טוקנים)"])
     ax.set_ylabel(he("הסתברות"))
     ax.set_ylim(0, 0.88)
     from matplotlib.patches import Patch
@@ -143,7 +138,31 @@ def fig5_1(rows=None):
     return k
 
 
+def figA_2():
+    """Appendix: internal review scores of the agents, first vs final round (python/data/review_scores.csv)."""
+    with (ROOT / "python" / "data" / "review_scores.csv").open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    units = [r["unit"] for r in rows][::-1]          # first unit on top
+    a = [int(r["initial"]) for r in rows][::-1]
+    b = [int(r["final"]) for r in rows][::-1]
+    y = np.arange(len(units))
+    fig, ax = plt.subplots(figsize=(6.4, 3.6))
+    ax.hlines(y, a, b, color="#B9C0CC", lw=2.2, zorder=2)
+    ax.plot(a, y, "o", ms=8, color=VIOLET, mec=PAPER, mew=1.5, zorder=3, label="ציון ראשוני")
+    ax.plot(b, y, "o", ms=8, color=TURQ, mec=PAPER, mew=1.5, zorder=3, label="ציון סופי")
+    for yi, ai, bi in zip(y, a, b):
+        ax.text(ai - 0.6, yi, str(ai), ha="right", va="center", fontsize=8)
+        ax.text(bi + 0.6, yi, str(bi), ha="left", va="center", fontsize=8)
+    ax.set_yticks(y, units)
+    ax.set_xlim(76, 102); ax.set_xlabel("ציון (מתוך 100)")
+    ax.grid(axis="y", visible=False)
+    ax.legend(frameon=False, loc="lower left", ncol=2, bbox_to_anchor=(0, 1.0))
+    fig.tight_layout()
+    _save(fig, "figA_2_scores")
+
+
 if __name__ == "__main__":
     fig3_1()
     print("fig4_1 values:", {t: [round(float(v), 3) for v in r] for t, r in fig4_1().items()})
     fig5_1()
+    figA_2()

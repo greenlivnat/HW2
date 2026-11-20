@@ -483,3 +483,45 @@
 
 ### תוצר
 `book.pdf`, ‏46 עמודים, ‏LuaLaTeX ו-biber. נוצר מחדש בפקודה `python scripts/build.py`. בלי push.
+
+## רשומה 011: ‏M5B + M6: תיקוני הביקורת החיצונית (ChatGPT), נספח, ‏README, גרסאות ו-v0.95 (2026-11-18 עד 2026-11-20)
+
+### הפרומפטים של המשתמשת
+1. `prompts/12_m5b_m6_external_review.txt`: תיקוני עיצוב ומדע לפי ביקורת ChatGPT על v0.9, הרחבת הנספח, גרף ציונים, תגיות, ‏CHANGELOG ו-README. מחברות: ליאת קפהזידר ולבנת בנסון.
+2. `prompts/13_resume_after_login_expiry.txt`: המשך אחרי פקיעת ההתחברות.
+3. בקשת דוח סטטוס בלי שינויים, ואחריה "השלם את M5B ו-M6": תיעוד ה-writer, עימוד שיטתי, Detector ו-Fixer, שחזור, צילומי מסך, ‏README, ‏CHANGELOG, מסמכים, v0.95.
+4. ‏FINALIZATION MODE (פעמיים): סיכום המשימות שנותרו, ואחריו השלמה בלי סוכנים, בלי בדיקות ובלי הידור.
+
+### תקלה והתאוששות (IR-18)
+‏research-agent נעצר ב-`authentication_failed` ("Login expired"). ‏`git status` הראה שלא נכתב שום קובץ. אחרי `/login` אותו סוכן חודש ב-SendMessage עם ההקשר המלא, בלי להפעיל סוכן חדש, ונקודת ההתאוששות ב-STATUS §00 עודכנה. בהמשך תועדו גם היתקעויות מערכת (IR-19), ונוספו מגבלות זמן.
+
+### הפעלות סוכנים (אחד בכל רגע)
+| # | סוכן | קובץ הרצה | תוצאה | טוקנים |
+|---|---|---|---|---:|
+| 1 | research-agent | `agents/runs/research_m5b_r1.md` | ‏S-ch03-05, ‏S-ch05-12, ‏S-ch05-13; ממצא: "generalization error" מקובל גם כשם לפער | 137,008 (אחרי החידוש) |
+| 2 | writer-agent | `agents/runs/writer_m5b_r1.md` | פרקים 3, 4, 5 (מתמטיקה, tanh, פער הכללה, קבוצת הבדיקה, "כל השאר") והנספח (+ איור נ.2) | 137,161 |
+| 3 | reviewer-agent (Detector) | `agents/runs/reviewer_m5b_r1.md`, ‏`review_m5b_r1.md` | ‏93, ‏REVISE: ‏2 בינוניים, ‏5 קלים | 82,407 |
+| 4 | fixer-agent | `agents/runs/fixer_m5b_r1.md` | D-m5b-01, ‏D-m5b-07 | 15,469 |
+
+סך הכול ב-M5B: ‏372,045 טוקנים בארבע הפעלות (בלי החלק של research שלפני הפקיעה, שלא נמסר).
+
+### תיקונים בכלים (Orchestrator)
+- ‏CLS 1.2.0: מספור רציף, מחברות, קרדיטים, ‏pdfauthor, ביבליוגרפיה, עמודי איורים, ‏`\chapterlayout`.
+- ממיר: `$...$` ו-`\chapterlayout`.
+- ‏`make_figures.py`: ‏IR-14, וידוא שכל התפלגות מסתכמת ל-1, ‏"<0.01", איור נ.2.
+- ‏`fig2_1.tex`.
+- ‏`scripts/layout.py`, ‏`scripts/screenshots.py`.
+- מגבלות זמן ב-`build.py`, ‏`qa.py` ו-`layout.py`.
+- בדיקות QA חדשות.
+- ‏D-m5b-02, ‏04, ‏05.
+
+רשומות חקר אירועים: IR-14 עד IR-19.
+
+### אימות סופי
+- ‏`qa.py super --rerun`: ‏**92 PASS, ‏0 WARN, ‏0 FAIL**. הניסוי שוחזר זהה בית אחר בית.
+- הספר נבנה מחדש אחרי `latexmk -C`, והטקסט יצא זהה (md5 של pdftotext: fe54c0ad…).
+- ‏**43 עמודים**, שמור ב-`releases/book_v0.95.pdf`.
+- ליקויים ידועים, קלים ולא חוסמים: D-m5b-03, ‏D-m5b-06.
+
+### תוצר
+commit מקומי ותגית **v0.95**. בלי push. ‏v1.0 ו-M7 רק באישור המשתמשות.

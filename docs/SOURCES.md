@@ -2,6 +2,8 @@
 
 > **תאריך:** 2026-11-17 | **שלב:** M2, הרצת איחוד (unit: all), סבב 1 | **נכתב על ידי:** Research Agent
 >
+> **עדכון M5B, סבב 1 (2026-11-19):** נוספו S-ch03-05, ‏S-ch05-12 ו-S-ch05-13, ועודכנו S-ch03-01, ‏S-ch05-02, ‏S-ch05-08 ו-S-ch05-10 (ציטוטים מילוליים על tanh ועל שגיאת הכללה מול פער הכללה). בהרצה הזו המקורות אוחזרו בפועל, והפירוט המלא נמצא בקבצי הפרקים.
+>
 > **מטרה:** זה האינדקס המאוחד של כל המקורות המאומתים לשבעת פרקי הספר, והוא הקובץ שה-Writer קורא. הוא נבנה מתוך שבעת הקבצים לפי פרק בלבד. בהרצה הזו לא אוחזרו מקורות מחדש, ולא נוסף אף פרט שאינו מופיע בקבצי הפרקים.
 >
 > **הצהרה מחייבת:** הרשומה המלאה של כל מזהה נמצאת ב-`docs/sources/chapter_XX.md`, כולל כל השדות הביבליוגרפיים, הטענות הנתמכות עם מיקום (סעיף, עמוד, טבלה, משוואה), הדוגמאות, הנוסחאות והנתונים, רעיונות ההמחשה, הפערים ויומן האחזורים. קבצי הפרקים הם חלק מבסיס המקורות המאומת. **כל טענה בספר חייבת להיבדק מול הרשומה המלאה בקובץ הפרק לפני שמשתמשים בה.** אם יש סתירה בין הקובץ הזה לקובץ פרק, קובץ הפרק קובע.
@@ -95,10 +97,11 @@
 
 | ID | ציטוט מקוצר | סוג | רמת גישה | אמינות | סטטוס | נושאים עיקריים |
 |---|---|---|---|---|---|---|
-| S-ch03-01 | Stanford CS231n (שנה לא מצוינת). Neural Networks Part 1: Setting up the Architecture | רשימות קורס אוניברסיטאי | טקסט מלא | גבוה (מושגית), בינוני (ביבליוגרפית) | שמיש | מודל הנוירון σ(Σwx+b); משקולות והטיה; פונקציות הפעלה (sigmoid, tanh, ReLU, Leaky ReLU); שכבות; ספירת פרמטרים; מגבלות האנלוגיה למוח |
+| S-ch03-01 | Stanford CS231n (שנה לא מצוינת). Neural Networks Part 1: Setting up the Architecture | רשימות קורס אוניברסיטאי | טקסט מלא | גבוה (מושגית), בינוני (ביבליוגרפית) | שמיש | מודל הנוירון σ(Σwx+b); משקולות והטיה; פונקציות הפעלה (sigmoid, tanh, ReLU, Leaky ReLU); שכבות; ספירת פרמטרים; מגבלות האנלוגיה למוח. **עודכן ב-M5B:** ציטוטים על tanh (טווח [-1, 1], רוויה, zero-centered, "always preferred to the sigmoid"), ותיבת TLDR (ReLU מומלצת, tanh "worse than ReLU/Maxout") |
 | S-ch03-02 | Nair, Hinton (2010). Rectified Linear Units Improve Restricted Boltzmann Machines. ICML 2010 | מאמר כנס שפיט | טקסט מלא (עמ' 1–3) | גבוה | שמיש | הגדרת ReLU, max(0,x), והגרדיאנט שלה; קלט ליחידה x = v·wᵀ + b; סיגמואיד על סכום משוקלל |
 | S-ch03-03 | Rosenblatt (1958). The perceptron: A probabilistic model for information storage and organization in the brain. Psychological Review 65(6) | מאמר בכתב עת שפיט | תקציר בלבד (התקבל כסיכום) | גבוה | שמיש (ברמת התקציר, עובדה היסטורית) | עובדה היסטורית וביבליוגרפית. **אין** לתאר את מבנה הפרספטרון |
 | S-ch03-04 | McCulloch, Pitts (1943). A logical calculus of the ideas immanent in nervous activity | מאמר בכתב עת שפיט | מטא-דאטה בלבד | גבוה (ביבליוגרפי בלבד) | מטא-דאטה בלבד | אזכור היסטורי בלבד |
+| S-ch03-05 | LeCun, Bottou, Orr, Müller (1998). Efficient BackProp. In Neural Networks: Tricks of the Trade, LNCS 1524 (M5B) | פרק בספר אקדמי ערוך (Springer LNCS) | טקסט מלא (עותק באתר Bottou, סעיפים 4.3–4.5) | גבוה | שמיש | מירכוז קלטים ופלטים מאיץ התכנסות; סיגמואידים סימטריים כמו tanh "often converge faster" מהלוגיסטית; חסרונות (משטח שטוח ליד הראשית ורחוק ממנה) |
 
 **פערים עיקריים (מקוצר מקובץ הפרק):**
 1. Goodfellow, Bengio & Courville לא אומת. אין לצטט.
@@ -108,6 +111,7 @@
 5. הנתונים הביולוגיים (86 מיליארד נוירונים, 10^14 עד 10^15 סינפסות) מגיעים מרשימות קורס, ולא ממקור ראשוני.
 6. אין מקור שמפריד במפורש בין z לבין a = f(z). זה סימון דידקטי.
 7. המחבר והשנה של S-ch03-01 לא אומתו, וגם לא DOI של S-ch03-02.
+8. (M5B) אין מקור להשוואה כמותית בין tanh לסיגמואיד. לא אומת אם פרקי *Tricks of the Trade* עברו שיפוט פורמלי. מהדורת 2012 של S-ch03-05 לא נקראה. ראו בקובץ הפרק את הסעיף "מה מותר ומה אסור לטעון על tanh".
 
 ### 3.4 פרק 4: כיצד מודל שפה מייצר תשובה (`docs/sources/chapter_04.md`)
 
@@ -136,16 +140,18 @@
 | ID | ציטוט מקוצר | סוג | רמת גישה | אמינות | סטטוס | נושאים עיקריים |
 |---|---|---|---|---|---|---|
 | S-ch05-01 | scikit-learn developers. 3.4 Metrics and scoring (v1.9.1) | תיעוד רשמי | טקסט מלא (הסעיפים הרלוונטיים) | גבוהה | שמיש | accuracy; מטריצת בלבול (tn, fp, fn, tp = 2, 1, 2, 3); precision, recall ו-F-beta; balanced accuracy |
-| S-ch05-02 | scikit-learn developers. 3.5 Validation curves (v1.9.1) | תיעוד רשמי | טקסט מלא | גבוהה | שמיש | bias ו-variance; פרשנות של underfitting ו-overfitting; learning curve; מספרי Iris |
+| S-ch05-02 | scikit-learn developers. 3.5 Validation curves (v1.9.1) | תיעוד רשמי | טקסט מלא | גבוהה | שמיש | bias ו-variance; פרשנות של underfitting ו-overfitting (ציטוט מילולי של 3.5.1 נוסף ב-M5B. מנוסח מול ציון ולידציה); learning curve; מספרי Iris |
 | S-ch05-03 | scikit-learn developers. Effect of model regularization on training and test error | תיעוד רשמי (דוגמת קוד) | טקסט מלא | גבוהה (נתונים סינתטיים) | שמיש | רגולריזציה, overfitting ו-underfitting; R² = 0.884. העקומה קיימת רק כתמונה |
 | S-ch05-04 | scikit-learn developers. 9.1 Toy datasets (digits, breast cancer) | תיעוד רשמי | טקסט מלא | גבוהה | שמיש | load_digits (1,797 × 64, 10 מחלקות); Breast cancer (212/357) |
 | S-ch05-05 | Alpaydin, Kaynak (1998). Optical Recognition of Handwritten Digits [Dataset]. UCI | מערך נתונים | טקסט מלא (עמוד המאגר) | גבוהה | שמיש | רישיון CC BY 4.0; 5,620 דוגמאות; ציטוט מומלץ; DOI |
 | S-ch05-06 | Google for Developers (MLCC). Classification: Accuracy, recall, precision, and related metrics | חומר לימוד רשמי | טקסט מלא | בינונית-גבוהה | שמיש | נוסחאות; דוגמת 99% בנתונים לא מאוזנים |
 | S-ch05-07 | Google for Developers (MLCC). Thresholds and the confusion matrix | חומר לימוד רשמי | טקסט מלא | בינונית-גבוהה | שמיש | מטריצת בלבול על דוגמת ספאם; סכומי שורות ועמודות |
-| S-ch05-08 | Google for Developers (MLCC). Overfitting | חומר לימוד רשמי | טקסט מלא | בינונית-גבוהה | שמיש | הגדרת overfitting; עקומת הכללה (איור 15); עצים ביער; 70/15/15 כדוגמה. **אותו URL כמו S-ch02-11** |
+| S-ch05-08 | Google for Developers (MLCC). Overfitting | חומר לימוד רשמי | טקסט מלא | בינונית-גבוהה | שמיש | הגדרת overfitting; עקומת הכללה (איור 15); עצים ביער; 70/15/15 כדוגמה; ציטוטים מילוליים של overfitting ו-underfit (M5B). **אותו URL כמו S-ch02-11** |
 | S-ch05-09 | Google for Developers (MLCC). Overfitting: Interpreting loss curves | חומר לימוד רשמי | טקסט מלא | בינונית-גבוהה | שמיש | דפוסים של עקומות הפסד; קשה לפרש עקומות |
-| S-ch05-10 | Zhang, Bengio, Hardt, Recht, Vinyals (2017). Understanding deep learning requires rethinking generalization. ICLR 2017 | מאמר כנס שפיט | טקסט מלא (עמ' 1–7) | גבוהה | שמיש (רישיון arXiv: מספרים עם ייחוס בלבד, בלי איורים) | random labels; שגיאת הכללה; טבלה 1 (CIFAR10); צורך בקבוצת בדיקה מבודדת |
+| S-ch05-10 | Zhang, Bengio, Hardt, Recht, Vinyals (2017). Understanding deep learning requires rethinking generalization. ICLR 2017 | מאמר כנס שפיט | טקסט מלא (עמ' 1–7) | גבוהה | שמיש (רישיון arXiv: מספרים עם ייחוס בלבד, בלי איורים) | random labels; שגיאת הכללה **במובן של הפער** ("generalization error, i.e., difference between “training error” and “test error”", עמ' 1, אומת ב-M5B); טבלה 1 (CIFAR10); צורך בקבוצת בדיקה מבודדת |
 | S-ch05-11 | Sokolova, Lapalme (2009). A systematic analysis of performance measures for classification tasks. IP&M 45(4) | מאמר בכתב עת שפיט | מטא-דאטה בלבד | גבוהה (ביבליוגרפית) | מטא-דאטה בלבד | לכל היותר "קריאה נוספת" |
+| S-ch05-12 | Hardt, Recht (2022). Patterns, Predictions, and Actions. Princeton University Press. פרק 6 "Generalization" (M5B) | ספר לימוד אקדמי (אתר רשמי, CC BY-NC-ND 4.0) | טקסט מלא (סעיף Generalization gap) | גבוהה | שמיש | risk מול empirical risk (training error); הגדרת generalization gap: ‏Δ_gen(f) = R[f] − R_S[f]; "sometimes also called generalization error"; ‏R[f] = R_S[f] + Δ_gen(f) |
+| S-ch05-13 | Hardt, Recht (2022). Patterns, Predictions, and Actions. פרק 8 "Datasets" (M5B) | ספר לימוד אקדמי (אתר רשמי) | טקסט מלא (נקרא בשאלות ממוקדות) | גבוהה | שמיש | שגיאה על מדגם טרי היא "unbiased estimate of the risk"; אימון, ולידציה ובדיקה; holdout; קבוצת בדיקה "בכספת"; שימוש חוזר מוביל להערכת חסר |
 
 **פערים עיקריים (מקוצר מקובץ הפרק):**
 1. אין מקור לנוסחת error rate. מציגים אותה כגזירה: 1 פחות הדיוק.
@@ -154,6 +160,7 @@
 4. אין נתוני אפוקים מספריים במקור פתוח. אסור לחלץ מספרים "בעין" מאיורים. האפשרויות מפורטות בקובץ הפרק: נתונים שמחושבים על UCI Digits, טבלה 1, או נתוני הדגמה מסומנים.
 5. טבלה 2 בנספח של Zhang et al. לא נקראה.
 6. ROC ו-AUC לא נחקרו.
+7. (M5B) אין מקור מאומת להגדרה "generalization error = השגיאה הצפויה על נתונים חדשים". המקורות שנבדקו משתמשים במונח לפער, ו-S-ch05-12 קורא לשגיאה הצפויה risk. DOI ו-ISBN של Hardt & Recht לא אומתו. ראו בקובץ הפרק את הסעיף "מה מותר ומה אסור לטעון על שגיאת הכללה".
 
 ### 3.6 פרק 6: מה AI יודע, ומה לא (`docs/sources/chapter_06.md`)
 
@@ -235,6 +242,8 @@
 | 13 | מסקנות חלק 3 של דוח ה-Copyright Office; שיעורי הזיה; כיול של מודלי שפה גדולים כעובדה | chapter_06 |
 | 14 | נתוני SSRN (S-ch07-12); נתוני נייר העבודה של HBS (Dell'Acqua); הניסוח "more than twice as much" מ-preprint של Research Square | chapter_07 |
 | 15 | גיל ספציפי בהנחיות UNESCO; תחזיות משרות; ה-34% שלא מנייר העבודה של NBER | chapter_07 |
+| 16 | (M5B) ש-tanh "תמיד" עדיפה באופן כללי, או שהיא ברירת המחדל כיום; ייחוס "always" ל-LeCun et al. (הניסוח שם: "often"); ש-tanh פותרת את בעיית הרוויה | chapter_03, S-ch03-01, S-ch03-05 |
+| 17 | (M5B) "שגיאת הכללה" כהפרש אימון-בדיקה בלי לציין את המינוח המקביל "פער הכללה"; ייחוס ל-Hardt & Recht של "generalization error = השגיאה הצפויה"; ששגיאת הבדיקה **שווה** לשגיאה על נתונים חדשים (היא אומדן) | chapter_05, S-ch05-10, S-ch05-12, S-ch05-13 |
 
 ---
 
@@ -306,7 +315,7 @@
 
 ## 5. טיוטת ביבליוגרפיה מאוחדת
 
-> רשומה אחת לכל עבודה, לפי סדר אלפביתי. גרסאות של אותה עבודה מופיעות כתת-פריטים, והגרסה המומלצת לציטוט מסומנת. הפרטים, ה-DOI וה-URL הועתקו מקבצי הפרקים כפי שנרשמו. סה"כ 57 רשומות, שמכסות 73 מזהים.
+> רשומה אחת לכל עבודה, לפי סדר אלפביתי. גרסאות של אותה עבודה מופיעות כתת-פריטים, והגרסה המומלצת לציטוט מסומנת. הפרטים, ה-DOI וה-URL הועתקו מקבצי הפרקים כפי שנרשמו. סה"כ 57 רשומות, שמכסות 73 מזהים. **עדכון M5B:** נוספו 2 רשומות (20א, 26א) שמכסות 3 מזהים חדשים (S-ch03-05, S-ch05-12, S-ch05-13). סה"כ 59 רשומות ו-76 מזהים.
 
 1. Alpaydin, E., & Kaynak, C. (1998). *Optical Recognition of Handwritten Digits* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C50P49. **מזהה:** S-ch05-05
 2. Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., & Horvitz, E. (2019). Guidelines for Human-AI Interaction. In *Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems* (pp. 1–13). ACM. https://doi.org/10.1145/3290605.3300233. ‏URLs: https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/ ; https://www.microsoft.com/en-us/research/wp-content/uploads/2019/01/Guidelines-for-Human-AI-Interaction-camera-ready.pdf. **מזהים:** S-ch07-05, S-ch07-06
@@ -333,6 +342,7 @@
 18. Google for Developers. (n.d.). Overfitting: Interpreting loss curves. *Machine Learning Crash Course*. https://developers.google.com/machine-learning/crash-course/overfitting/interpreting-loss-curves. **מזהה:** S-ch05-09
 19. Google for Developers. (n.d.). Thresholds and the confusion matrix. *Machine Learning Crash Course*. https://developers.google.com/machine-learning/crash-course/classification/thresholding. **מזהה:** S-ch05-07
 20. Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). On Calibration of Modern Neural Networks. In *Proceedings of the 34th International Conference on Machine Learning*, PMLR 70:1321–1330. https://proceedings.mlr.press/v70/guo17a.html (PDF: http://proceedings.mlr.press/v70/guo17a/guo17a.pdf). **מזהים:** S-ch06-04, S-ch06-05
+20א. Hardt, M., & Recht, B. (2022). *Patterns, Predictions, and Actions: A story about machine learning*. Princeton University Press. https://mlstory.org/ (פרק 6 "Generalization": https://mlstory.org/generalization.html; פרק 8 "Datasets": https://mlstory.org/data.html). DOI ו-ISBN לא אומתו. **מזהים:** S-ch05-12, S-ch05-13 (נוסף ב-M5B)
 21. Holtzman, A., Buys, J., Du, L., Forbes, M., & Choi, Y. (2020). The Curious Case of Neural Text Degeneration. *ICLR 2020*. arXiv:1904.09751. https://doi.org/10.48550/arXiv.1904.09751. **מזהה:** S-ch04-03
 22. Hugging Face. (n.d.). Generation strategies. *Transformers documentation*. https://huggingface.co/docs/transformers/generation_strategies. **מזהה:** S-ch04-07
 23. Hugging Face. (n.d.). Tokenization algorithms. *Transformers documentation*. https://huggingface.co/docs/transformers/tokenizer_summary. **מזהה:** S-ch04-06
@@ -341,6 +351,7 @@
 25. Kaufman, S., Rosset, S., Perlich, C., & Stitelman, O. (2012). Leakage in data mining: Formulation, detection, and avoidance. *ACM Transactions on Knowledge Discovery from Data*, 6(4), 1–21. https://doi.org/10.1145/2382577.2382579. **מזהה:** S-ch02-06 **(מומלץ)**
     - גרסת כנס: Kaufman, S., Rosset, S., & Perlich, C. (2011). *Proceedings of the 17th ACM SIGKDD*, 556–563. https://doi.org/10.1145/2020408.2020496. **מזהה:** S-ch02-07
 26. Kestin, G., Miller, K., Klales, A., Milbourne, T., & Ponti, G. (2025). AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting. *Scientific Reports*, 15, 17458. https://doi.org/10.1038/s41598-025-97652-6 (PMC12179260). **מזהה:** S-ch07-13. (ל-preprint ב-Research Square, ‏10.21203/rs.3.rs-4243877/v1, אין מזהה, והוא מוזכר רק בהערה. אין להשתמש בו.)
+26א. LeCun, Y., Bottou, L., Orr, G. B., & Müller, K.-R. (1998). Efficient BackProp. In G. Orr & K.-R. Müller (Eds.), *Neural Networks: Tricks of the Trade* (Lecture Notes in Computer Science, Vol. 1524, pp. 9–50). Springer. https://doi.org/10.1007/3-540-49430-8_2 (עותק המחבר: https://leon.bottou.org/publications/pdf/tricks-1998.pdf). **מזהה:** S-ch03-05 (נוסף ב-M5B)
 27. LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. *Nature*, 521(7553), 436–444. https://doi.org/10.1038/nature14539. **מזהה:** S-ch01-05
 28. *Mata v. Avianca, Inc.*, No. 22-cv-1461 (PKC) (S.D.N.Y. June 22, 2023) (Opinion and Order on Sanctions, ECF Document 54). https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0_1.pdf. **מזהה:** S-ch06-13
 29. McCarthy, J., Minsky, M. L., Rochester, N., & Shannon, C. E. (1955). *A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence*. http://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html. **מזהה:** S-ch01-01
@@ -381,14 +392,15 @@
 |---|---|---|---|---|---|---|---|
 | 1 | 10 | 8 | 2 | 0 | 7 | 1 | 2 |
 | 2 | 14 | 12 | 2 | 0 | 9 | 3 | 2 |
-| 3 | 4 | 3 | 1 | 0 | 2 | 1 | 1 |
+| 3 | 5 | 4 | 1 | 0 | 3 | 1 | 1 |
 | 4 | 8 | 8 | 0 | 0 | 7 | 1 | 0 |
-| 5 | 11 | 10 | 1 | 0 | 10 | 0 | 1 |
+| 5 | 13 | 12 | 1 | 0 | 12 | 0 | 1 |
 | 6 | 13 | 10 | 3 | 0 | 7 | 3 | 3 |
 | 7 | 13 | 10 | 2 | 1 | 4 | 6 | 3 |
-| **סה"כ** | **73** | **61** | **11** | **1** | **46** | **15** | **12** |
+| **סה"כ** | **76** | **64** | **11** | **1** | **49** | **15** | **12** |
 
 הערות:
+- עדכון M5B ‏(2026-11-19): נוספו S-ch03-05, ‏S-ch05-12 ו-S-ch05-13, כולם בטקסט מלא. 76 המזהים ממופים כעת ל-59 רשומות ביבליוגרפיות.
 - "שמישות" כולל רשומות ברמת טקסט מלא וברמת תקציר בלבד. ברמת תקציר הטענות מוגבלות לתקציר.
 - 73 המזהים ממופים ל-57 רשומות ביבליוגרפיות.
 - כפילות אחת בין פרקים: S-ch02-11 = S-ch05-08.

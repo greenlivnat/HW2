@@ -12,12 +12,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LOGS = ROOT / "build_logs"
 PY = sys.executable
+TIMEOUT = 300   # seconds per step; a full LuaLaTeX build takes about 20-90 s
 
 
 def step(name, cmd):
     LOGS.mkdir(exist_ok=True)
     t = time.time()
-    res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    try:   # a LaTeX run that loops must not hang the build (IR-19)
+        res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
+                             errors="replace", timeout=TIMEOUT)
+    except subprocess.TimeoutExpired:
+        print(f"[FAILED] {name}: timed out after {TIMEOUT}s"); sys.exit(124)
     (LOGS / f"{name}.log").write_text(res.stdout + "\n" + res.stderr, encoding="utf-8")
     print(f"[{'ok' if res.returncode == 0 else 'FAILED'}] {name} ({time.time() - t:.0f}s)")
     if res.returncode != 0:
@@ -33,6 +38,10 @@ def main():
     step("bibliography", [PY, "scripts/make_bib.py"])
     step("txt2tex", [PY, "-X", "utf8", "scripts/txt2tex.py"])
     step("latex", ["latexmk", "-g", "main.tex"])
+    for _ in range(3):   # near-empty chapter-end pages: tighten those chapters and rebuild (IR-15)
+        if subprocess.run([PY, "-X", "utf8", "scripts/layout.py"], cwd=ROOT).returncode == 0:
+            break
+        step("latex", ["latexmk", "-g", "main.tex"])
     shutil.copyfile(ROOT / "main.pdf", ROOT / "book.pdf")
     print("book.pdf updated")
     if "--no-qa" not in args:

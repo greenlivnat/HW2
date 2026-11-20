@@ -10,9 +10,14 @@
 %                      "fi" in RTL, IR-10); content boxes unbreakable (frame lost across pages,
 %                      IR-09); keywordsbox environment (raw tcolorbox in main.tex, IR-11);
 %                      \raggedbottom and float fractions (white gaps, D-m5a-08).
+%   1.2.0 (2026-11-18) M5B (external review): continuous arabic page numbering equal to the PDF
+%                      page index; \bookauthors on the cover, credits page, pdfauthor;
+%                      breakable insights box (near-empty pages, IR-15); bibliography ragged-right,
+%                      URLs breakable without stretch, entries kept whole; back-matter opener
+%                      without the appendix label.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{aibook}[2026/11/18 v1.1.0 Hebrew popular-science book class (LuaLaTeX)]
-\def\aibook@version{1.1.0}
+\ProvidesClass{aibook}[2026/11/18 v1.2.0 Hebrew popular-science book class (LuaLaTeX)]
+\def\aibook@version{1.2.0}
 
 \RequirePackage{iftex}
 \ifluatex\else
@@ -68,6 +73,11 @@
 % Bibliography: IEEE numeric style, citation order (biblatex must follow polyglossia)
 \RequirePackage[style=ieee,backend=biber,sorting=none,dashed=false,doi=true,url=true,isbn=false]{biblatex}
 \DeclareFieldFormat{url}{\url{#1}}
+% URLs break after any character with no stretchable glue; each entry stays on one page (M5B).
+\setcounter{biburlnumpenalty}{9000}\setcounter{biburlucpenalty}{9000}\setcounter{biburllcpenalty}{9000}
+\renewcommand*{\bibfont}{\small\raggedright}
+\AtBeginBibliography{\interlinepenalty=10000\relax}
+\setlength{\bibitemsep}{0.3em}
 \linespread{1.18}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.55em plus 0.15em}
@@ -75,6 +85,25 @@
 \raggedbottom                         % no stretched white gaps between paragraphs (D-m5a-08)
 \renewcommand{\topfraction}{0.85}\renewcommand{\bottomfraction}{0.6}
 \renewcommand{\textfraction}{0.12}\renewcommand{\floatpagefraction}{0.75}
+% Float pages: floats packed at the top with a fixed gap, not spread over the page (figure 5.1 and
+% table 5.2 were separated by a large white gap in v0.9).
+\setlength{\@fptop}{0pt}\setlength{\@fpsep}{14pt plus 4pt}\setlength{\@fpbot}{0pt plus 1fil}
+% Chapters listed by scripts/layout.py (latex/layout_tight.tex) are typeset a little tighter so
+% that their last page is not a near-empty page holding only the tail of the insights box (IR-15).
+\newcommand{\aibook@tight}{}
+\newcommand{\tightchapters}[1]{\gdef\aibook@tight{,#1,}}
+\newcommand{\aibook@tighter}{}
+\newcommand{\tighterchapters}[1]{\gdef\aibook@tighter{,#1,}}
+\newcommand{\chapterlayout}[1]{%
+  \edef\aibook@tmp{\noexpand\in@{,#1,}{\aibook@tight}}\aibook@tmp   % both arguments expanded
+  \ifin@\typeout{aibook: tight layout for chapter #1}%
+    \setlength{\parskip}{0.25em plus 0.1em}\linespread{1.1}\selectfont
+    \edef\aibook@tmp{\noexpand\in@{,#1,}{\aibook@tighter}}\aibook@tmp   % level 2
+    \ifin@\typeout{aibook: tighter layout for chapter #1}%
+      \setlength{\parskip}{0.12em plus 0.05em}\linespread{1.05}\selectfont\fi
+    \renewcommand{\aibook@insightsfont}{\footnotesize}%
+  \else\setlength{\parskip}{0.55em plus 0.15em}\linespread{1.18}\selectfont
+    \renewcommand{\aibook@insightsfont}{\small}\fi}
 
 % Hebrew names (explicit, so they do not depend on polyglossia defaults)
 \AtBeginDocument{%
@@ -126,9 +155,13 @@
     before skip=1.5em}{\headingfont מילות מפתח:}\enspace}{\end{aibook@ltrbox}}
 \newcommand{\mythlabel}{{\headingfont\color{violet}מיתוס: }}
 \newcommand{\realitylabel}{{\headingfont\color{turqtext}מציאות: }}
-\newenvironment{insightsbox}{\begin{aibook@ltrbox}{aibook/base,colback=midnight!4!white,colframe=midnight,
-    boxrule=0pt,borderline north={2.5pt}{0pt}{gold},colbacktitle=midnight,coltitle=gold,
-    title={תובנות מרכזיות}}}{\end{aibook@ltrbox}}
+% The insights box stays unbreakable: a broken box loses its frame under LuaLaTeX (IR-09, confirmed
+% again in M5B, IR-15). Near-empty chapter ends are handled by \chapterlayout (scripts/layout.py).
+\newcommand{\aibook@insightsfont}{\small}
+\newenvironment{insightsbox}{\setlist{itemsep=0.1em,topsep=0.1em}\begin{aibook@ltrbox}{aibook/base,
+    colback=midnight!4!white,colframe=midnight,boxrule=0.6pt,
+    colbacktitle=midnight,coltitle=gold,title={תובנות מרכזיות},
+    fontupper=\aibook@insightsfont,top=1.5mm,bottom=1.5mm,before skip=0.8em}}{\end{aibook@ltrbox}}
 % Visible placeholder: the qa-typeset skill fails the build if any remains in the PDF.
 \newcommand{\placeholder}[1]{\begin{aibook@ltrbox}{aibook/base,colback=red!6!white,colframe=red!70!black,
     title={סימון מקום (חסר תוכן)}}#1\end{aibook@ltrbox}}
@@ -147,6 +180,10 @@
 \titlespacing*{\chapter}{0pt}{-12mm}{6mm}
 \newif\ifaibook@app
 \newcommand{\aibook@chapterlabel}{\ifaibook@app נספח\else\ifnum\c@chapter>0 \chaptername\ \thechapter\fi\fi}
+% Continuous arabic numbering: the printed number equals the PDF page index (M5B).
+\renewcommand{\frontmatter}{\clearpage\@mainmatterfalse\pagenumbering{arabic}}
+\renewcommand{\mainmatter}{\clearpage\@mainmattertrue}
+\renewcommand{\backmatter}{\clearpage\@mainmatterfalse\aibook@appfalse\setcounter{chapter}{0}}
 \newcommand{\bookappendix}{\appendix\aibook@apptrue\renewcommand{\thechapter}{נ}\setcounter{chapter}{0}}
 \newcommand{\aibook@chapterbanner}[1]{%
   \hbox dir TLT to \textwidth\bgroup\begin{tikzpicture}
@@ -224,6 +261,12 @@
   {\contentslabel[\textcolor{turqtext}{\thecontentslabel}]{2.2em}}{}{\titlerule*[0.6pc]{.}\contentspage}
 \titlecontents{section}[2.2em]{\small}{\contentslabel{2.6em}}{}{\titlerule*[0.6pc]{.}\contentspage}
 
+\newcommand{\aibook@authors}{}
+\newcommand{\bookauthors}[1]{\gdef\aibook@authors{#1}\hypersetup{pdfauthor={#1}}}
+% Credits page, right after the cover.
+\newenvironment{credits}{\clearpage\thispagestyle{frontmatter}\null\vfill
+  {\headingfont\Large\color{midnight}קרדיטים\par}\vspace{1mm}{\color{gold}\rule{28mm}{1.6pt}}\par
+  \vspace{3mm}\small\setlength{\parskip}{0.45em}}{\par\vspace{10mm}\clearpage}
 % Cover: drawn in TikZ, deterministic (fixed seed), no external images.
 \newcommand{\makecover}[3]{% #1 title, #2 subtitle, #3 bottom line
   \begin{titlepage}\thispagestyle{empty}
@@ -253,9 +296,11 @@
       at ($(current page.south west)+(18.8,7.7)$) {\textdir TRT #1};
     \node[anchor=north east,text=turquoise,font=\lightfont\fontsize{17}{22}\selectfont,text width=16cm,align=right]
       at ($(current page.south west)+(18.8,6.7)$) {\textdir TRT #2};
+    \node[anchor=north east,text=white,font=\headingfont\fontsize{14}{18}\selectfont,align=right]
+      at ($(current page.south west)+(18.8,4.4)$) {\textdir TRT \aibook@authors};
     \node[anchor=south east,text=gold,font=\small,align=right]
       at ($(current page.south west)+(18.8,1.2)$) {\textdir TRT #3};
   \end{tikzpicture}\egroup
-  \end{titlepage}}
+  \end{titlepage}\setcounter{page}{2}}% titlepage resets the counter; the cover is PDF page 1
 
 \endinput

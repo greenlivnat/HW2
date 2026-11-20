@@ -4,6 +4,8 @@
 > נושאים לפי PRD סעיף 5: נוירון מלאכותי; משקולות והטיה; שכבות; פונקציות הפעלה; הנוסחה `z = \sum_{i=1}^{n} w_i x_i + b` ופרשנות לכל רכיב; מגבלות האנלוגיה למוח.
 > שאלת מפתח: איך מספרים מתחברים לחיזוי?
 > סיכום: 4 מקורות מאומתים. שניים בטקסט מלא (S-ch03-01, S-ch03-02), אחד ברמת תקציר (S-ch03-03), אחד ברמת מטא-דאטה בלבד (S-ch03-04).
+>
+> **עדכון M5B, סבב 1 (2026-11-18/19, ליקוי R-ch03-11 וביקורת חיצונית על פסקת tanh):** S-ch03-01 אומת מחדש, ונוספו לו ציטוטים מילוליים על tanh (טענה 9א). נוספה רשומה S-ch03-05 (LeCun, Bottou, Orr & Müller, "Efficient BackProp", 1998, טקסט מלא מעותק באתר של המחבר Bottou). נוסף סעיף "מה מותר ומה אסור לטעון על tanh". סה"כ 5 מקורות מאומתים, שלושה בטקסט מלא.
 
 ---
 
@@ -45,6 +47,15 @@
    - ReLU: ‏f(x) = max(0, x). "It was found to greatly accelerate (e.g. a factor of 6 in Krizhevsky et al.) the convergence". בכיתוב האיור: "indicating the 6x improvement in convergence with the ReLU unit compared to the tanh unit."
    - חיסרון של ReLU: "the ReLU units can irreversibly die during training".
    - Leaky ReLU: ‏f(x) = 𝟙(x < 0)(αx) + 𝟙(x ≥ 0)(x), כאשר α קבוע קטן (בערך 0.01).
+9א. **tanh: ציטוטים מילוליים (אומתו מחדש ב-2026-11-18, סעיף Commonly used activation functions, פסקת Tanh ותיבת TLDR):**
+   - **טווח:** "It squashes a real-valued number to the range [-1, 1]." (פסקת Tanh). כיתוב האיור נפתח ב-"Left: Sigmoid non-linearity squashes real numbers to range between [0,1] Right: The tanh non-linearity squashes", ולפי האחזור הוא ממשיך בטווח [-1,1]. את ההמשך לא קיבלתי כציטוט מילולי, ולכן לציטוט עדיף משפט הפסקה.
+   - **רוויה ומירכוז, באותו משפט:** "Like the sigmoid neuron, its activations saturate, but unlike the sigmoid neuron its output is zero-centered."
+   - **"always preferred", בניסוח המדויק:** "Therefore, in practice the tanh non-linearity is always preferred to the sigmoid nonlinearity."
+     - **ההקשר:** המשפט נפתח ב-"Therefore", כלומר הוא מסקנה מהמשפט הקודם (רוויה כמו סיגמואיד, אבל פלט ממורכז). ההשוואה היא **לסיגמואיד בלבד**, ולא לכל פונקציות ההפעלה.
+   - **הנוסחה:** "Also note that the tanh neuron is simply a scaled sigmoid neuron, in particular the following holds:" ואחריה tanh(x) = 2σ(2x) − 1.
+   - **החיסרון של הסיגמואיד שעליו נשען ה-"Therefore":** "Sigmoid outputs are not zero-centered". בהמשך הפסקה: "This could introduce undesirable zig-zagging dynamics in the gradient updates for the weights." לפי העמוד (פרפרזה), הבעיה פחות חמורה כשמסכמים גרדיאנטים על פני batch.
+   - **סייג חשוב מאותו עמוד (תיבת TLDR: "What neuron type should I use?"):** "Use the ReLU non-linearity, be careful with your learning rates and possibly monitor the fraction of" (dead units, לפי ההמשך). על tanh: "Try tanh, but expect it to work worse than ReLU/Maxout." ועל הסיגמואיד: "Never use sigmoid."
+   - **מסקנה לכותב:** אותו מקור שאומר "always preferred to the sigmoid" ממליץ ב-TLDR על ReLU כברירת מחדל, ומצפה ש-tanh יעבוד גרוע יותר מ-ReLU/Maxout. לכן אסור להציג את ה-"always" כהעדפה כללית של tanh.
 10. **שכבות** (סעיף Neural Network architectures > Layer-wise organization): "Neural Networks are modeled as collections of neurons that are connected in an acyclic graph." בשכבה מחוברת במלואה (fully-connected): "neurons between two adjacent layers are fully pairwise connected, but neurons within a single layer share no connections." כשאומרים רשת בת N שכבות לא סופרים את שכבת הקלט: "Notice that when we say N-layer neural network, we do not count the input layer." לשכבת הפלט בדרך כלל אין פונקציית הפעלה (פרפרזה).
 11. **ספירת פרמטרים בדוגמת האיור** (סעיף Layer-wise organization):
    - רשת שמאלית: שלושה קלטים, שכבה חבויה של 4 נוירונים ושכבת פלט של 2 נוירונים. "4 + 2 = 6 neurons", ‏20 משקלים ו-6 הטיות, סך הכול "26 learnable parameters".
@@ -133,6 +144,63 @@
 
 ---
 
+## רשומה S-ch03-05
+
+| שדה | ערך |
+|---|---|
+| מזהה | S-ch03-05 |
+| מחברים | Yann LeCun, Léon Bottou, Genevieve B. Orr, Klaus-Robert Müller (לפי Crossref ולפי עמוד השער של העותק) |
+| כותרת | Efficient BackProp |
+| שנה | 1998 (Crossref: published-print 1998. תאריך הפרסום המקוון ב-Springer הוא 2002-03-28) |
+| מוציא לאור | פרק בספר *Neural Networks: Tricks of the Trade* (עורכים G. Orr ו-K.-R. Müller, לפי עמוד השער של העותק), Lecture Notes in Computer Science, vol. 1524 (לפי אתר Bottou), Springer Berlin Heidelberg, עמ' 9–50 (Crossref) |
+| DOI / קישור | 10.1007/3-540-49430-8_2, https://doi.org/10.1007/3-540-49430-8_2. טקסט מלא: https://leon.bottou.org/publications/pdf/tricks-1998.pdf (עותק באתר המחבר Léon Bottou, שמקושר מ-https://leon.bottou.org/papers/lecun-98x) |
+| תאריך גישה | 2026-11-18 |
+| סוג | פרק בספר אקדמי ערוך (סדרת LNCS) |
+| רמת גישה | טקסט מלא (עותק המחבר. נקראו עמודי ה-PDF‏ 1–2 ו-8–12, כלומר סעיפים 1, 2 (התחלה), 4.3, 4.4 ותחילת 4.5) |
+| דירוג אמינות | גבוה |
+| נימוק | פרק מצוטט מאוד מאת חוקרים מרכזיים, שפורסם בסדרת LNCS של Springer. המטא-דאטה אומתה ב-Crossref, והעותק לקוח מאתר של אחד המחברים. **הסתייגות:** ספר ערוך, ולא מאמר בכתב עת. לא אומת אם הפרקים עברו שיפוט עמיתים פורמלי. |
+
+**הערות גרסה:**
+- קיימת מהדורה שנייה: DOI ‏10.1007/978-3-642-35289-8_3 (2012, עמ' 9–48, לפי Crossref). היא לא נקראה. הרשומה הזו מתייחסת לגרסת 1998.
+- בעותק של Bottou אין מספרי עמודים מודפסים של הספר. המיקומים כאן הם לפי מספר הסעיף ומספר העמוד בקובץ ה-PDF. בעמוד השער כתוב "originally published in Orr, G. and Müller, K. "Neural Networks: tricks of the trade", Springer, 1998."
+- הקישור http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf נכשל (ECONNREFUSED). עותק במראה של צד שלישי (dcmpx.remotevs.com) הופיע בחיפוש, ולא נעשה בו שימוש כי הוא לא רשמי.
+
+### טענות שהמקור תומך בהן
+1. **מירכוז הקלטים מאיץ התכנסות** (סעיף 4.3 Normalizing the Inputs, עמ' 8 ב-PDF): "Convergence is usually faster if the average of each input variable over the training set is close to zero."
+2. **המנגנון: קלטים חיוביים בלבד מובילים לזיגזג** (סעיף 4.3, עמ' 8): כשכל רכיבי וקטור הקלט חיוביים, "all of the updates of weights that feed into a node will be the same sign". ובהמשך: "if a weight vector must change direction it can only do so by zigzagging which is inefficient and thus very slow."
+3. **העיקרון חל גם על פלטי השכבות** (סעיף 4.3, עמ' 8): "This heuristic should be applied at all layers which means that we want the average of the outputs of a node to be close to zero because these outputs are the inputs to the next layer".
+4. **למה סיגמואיד סימטרית עדיפה** (סעיף 4.4 The Sigmoid, עמ' 10): "Sigmoids that are symmetric about the origin (e.g. see Figure 4b) are preferred for the same reason that inputs should be normalized". הסיבה, באותה פסקה: "they are more likely to produce outputs (which are inputs to the next layer) that are on average close to zero." ובניגוד לפונקציה הלוגיסטית, "whose outputs are always positive and so must have a mean that is positive."
+5. **הניסוח המסויג בתיבת הסיכום** (תיבה "Sigmoids", סעיף 4.4, עמ' 10, פריט 1): "Symmetric sigmoids such as hyperbolic tangent often converge faster than the standard logistic function." המילה היא **often**, ולא "always".
+6. **הסיגמואיד המומלצת** (תיבה "Sigmoids", פריט 2): "A recommended sigmoid [19] is: f(x) = 1.7159 tanh(2/3 x)". כיתוב איור 4: "(a) Not recommended: the standard logistic function".
+7. **חסרונות של סיגמואידים סימטריים** (סעיף 4.4, עמ' 12): "One of the potential problems with using symmetric sigmoids is that the error surface can be very flat near the origin." ובהמשך: "Because of the saturation of the sigmoids, the error surface is also flat far from the origin." תיבה "Sigmoids", פריט 3: "Sometimes it is helpful to add a small linear term, e.g. f(x) = tanh(x)+ ax so as to avoid flat spots."
+8. **ההקשר ההיסטורי** (מבוא, עמ' 1): המאמר מציג "tricks" מעשיים לאימון backprop ומסביר למה הם עובדים, ועוסק ברשתות של 1998. "there is no foolproof recipe for deciding them because they are largely problem and data dependent."
+
+הערות פרשנות (לא עובדה מהמקור):
+- המקור תומך בטענה **מסויגת**: פלט ממורכז סביב אפס (כמו של tanh) עוזר לשכבה הבאה ולכן **לעתים קרובות** מאיץ את ההתכנסות לעומת הסיגמואיד הלוגיסטית. הוא לא תומך בטענה ש-tanh עדיפה תמיד, והוא מציין חסרונות (משטח שגיאה שטוח ליד הראשית ורחוק ממנה).
+- המאמר קודם ל-ReLU (ראו S-ch03-02, 2010), ולכן אינו עוסק בהשוואה ל-ReLU.
+
+---
+
+## מה מותר ומה אסור לטעון על tanh (M5B)
+
+**מותר:**
+- tanh(z) = 2σ(2z) − 1, כלומר סיגמואיד מוזזת ומכווצת (S-ch03-01, פסקת Tanh).
+- הטווח הוא בין 1- ל-1 (S-ch03-01).
+- היא רוויה בקצוות, כמו הסיגמואיד (S-ch03-01; וגם S-ch03-05, סעיף 4.4, עמ' 12).
+- הפלט שלה ממורכז סביב אפס, בניגוד לסיגמואיד (S-ch03-01).
+- פלט ממורכז עוזר לשכבה הבאה, כי הוא הקלט שלה, ובכך **לעתים קרובות** מאיץ את ההתכנסות לעומת הסיגמואיד הלוגיסטית (S-ch03-05, סעיפים 4.3–4.4).
+- רשימות CS231n כותבות שבפועל tanh "always preferred to the sigmoid nonlinearity". מותר לצטט זאת **רק** כהשוואה לסיגמואיד, ובייחוס לקורס (S-ch03-01).
+- אותן רשימות ממליצות להשתמש ב-ReLU, ומצפות ש-tanh תעבוד גרוע יותר מ-ReLU/Maxout (S-ch03-01, TLDR).
+
+**אסור:**
+- לטעון ש-tanh "תמיד" עדיפה באופן כללי, או עדיפה על כל פונקציית הפעלה.
+- לטעון ש-tanh היא ברירת המחדל ברשתות כיום. המקור המאומת (S-ch03-01, TLDR) ממליץ על ReLU.
+- לייחס ל-LeCun et al. את המילה "always". הניסוח שלהם הוא "often converge faster".
+- לטעון ש-tanh פותרת את בעיית הרוויה. שני המקורות אומרים שהיא רוויה.
+- לטעון ש"הסיגמואיד לעולם אינה בשימוש". ה-"Never use sigmoid" ב-CS231n הוא המלצה לשכבות החבויות ברשימות הקורס, ולא עובדה על השימוש בפועל. (פרשנות: העמוד עצמו משתמש בסיגמואיד כפלט הסתברותי במסווג בינארי, טענה 8 ב-S-ch03-01.)
+
+---
+
 ## דוגמאות, נוסחאות ונתונים
 
 | # | פריט | מקור ומיקום |
@@ -149,6 +217,8 @@
 | 10 | כ-86 מיליארד נוירונים במערכת העצבים של האדם, כ-10^14 עד 10^15 סינפסות | S-ch03-01, Biological motivation and connections |
 | 11 | ספירת פרמטרים: רשת 3→4→2 עם 6 נוירונים, 20 משקלים ו-6 הטיות, סך הכול 26 פרמטרים. רשת 3→4→4→1 עם 9 נוירונים, 32 משקלים ו-9 הטיות, סך הכול 41 פרמטרים. | S-ch03-01, Layer-wise organization |
 | 12 | ארבע מגבלות של האנלוגיה הביולוגית (סוגי נוירונים, דנדריטים לא-ליניאריים, סינפסה כמערכת דינמית, תזמון קוצים) | S-ch03-01, Biological motivation and connections |
+| 13 | טווח tanh: [-1, 1]. הפלט ממורכז סביב אפס, והיא רוויה | S-ch03-01, פסקת Tanh (טענה 9א) |
+| 14 | הסיגמואיד המומלצת של LeCun et al.: f(x) = 1.7159 tanh(2x/3) (אופציונלי, היסטורי) | S-ch03-05, סעיף 4.4, תיבה "Sigmoids", עמ' 10 ב-PDF |
 
 **דוגמה מספרית לשימוש הכותב:** אפשר לבנות דוגמה מספרית מומצאת (למשל שלושה קלטים, שלושה משקלים והטיה, וחישוב z ואז ReLU או סיגמואיד). דוגמה כזו לא לקוחה ממקור, ולכן לפי PRD סעיף 10 יש לסמן אותה בטקסט כ"דוגמה להמחשה" ולא להציג אותה כנתון.
 
@@ -170,6 +240,10 @@
 - **אין מקור שמשתמש בסימון z בנפרד** (z = Σ wᵢxᵢ + b ואז a = f(z)) בצורה המדויקת שב-PRD. המקורות כותבים את הביטוי בתוך הפונקציה. ההפרדה היא סימון דידקטי שקול.
 - **מחבר ושנה של S-ch03-01 לא אומתו.**
 - **DOI או עמוד PMLR של S-ch03-02 לא אומתו.** המקור נלקח מאתר המחבר.
+- **(M5B) אין מקור מאומת שמשווה כמותית בין tanh לסיגמואיד ברשתות עכשוויות.** S-ch03-05 משנת 1998 אומר "often converge faster" בלי מספרים בסעיפים שנקראו. אין להביא מספר.
+- **(M5B) לא אומת אם פרקי *Neural Networks: Tricks of the Trade* עברו שיפוט עמיתים פורמלי.** לכן "מקור שפיט" הוא ניסוח לא מדויק עבור S-ch03-05. מדויק יותר: "פרק בספר אקדמי של Springer (LNCS)".
+- **(M5B) מהדורת 2012 של Efficient BackProp** (DOI 10.1007/978-3-642-35289-8_3) אומתה במטא-דאטה בלבד ב-Crossref, ולא נקראה. לא נפתחה לה רשומה.
+- **(M5B) מספרי העמודים המודפסים בספר (9–50) לא ממופים לעמודי ה-PDF** של עותק Bottou. המיקומים הם לפי סעיף ועמוד PDF.
 
 ## יומן אחזורים
 | URL | תוצאה |
@@ -184,3 +258,9 @@
 | https://api.semanticscholar.org/graph/v1/paper/DOI:10.1007/BF02478259?fields=title,authors,year,venue,abstract | FAILED (HTTP 404) |
 | https://api.semanticscholar.org/graph/v1/paper/DOI:10.1037/h0042519?fields=title,authors,year,venue,abstract | OK (ללא תקציר, המוציא לאור הסתיר אותו) |
 | https://link.springer.com/article/10.1007/BF02478259 | FAILED (הפניית 303 לעמוד הזדהות idp.springer.com, לא נעשה מעקב) |
+| https://cs231n.github.io/neural-networks-1/ | OK (M5B, 2026-11-18, שלושה אחזורים ממוקדים: פסקת Tanh, פסקת הסיגמואיד ו-TLDR) |
+| https://api.crossref.org/works?query.bibliographic=Efficient+BackProp+LeCun+Bottou+Orr+Muller&rows=5 | OK (M5B, שתי מהדורות: 1998 ו-2012) |
+| https://api.crossref.org/works/10.1007/3-540-49430-8_2 | OK (M5B, מטא-דאטה של מהדורת 1998) |
+| http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf | FAILED (M5B, ‏ECONNREFUSED אחרי שדרוג ל-HTTPS) |
+| https://leon.bottou.org/papers/lecun-98x | OK (M5B, ציטוט, BibTeX וקישורים ל-PDF) |
+| https://leon.bottou.org/publications/pdf/tricks-1998.pdf | OK (M5B. הממיר לא חילץ טקסט, אבל הקובץ נשמר מקומית ועמודי ה-PDF‏ 1–2 ו-8–12 נקראו ישירות) |

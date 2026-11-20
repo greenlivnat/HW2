@@ -26,8 +26,14 @@
  {
   "skill": "qa-BiDi",
   "status": "PASS",
+  "check": "no breakable content boxes (IR-09, IR-15)",
+  "detail": "none"
+ },
+ {
+  "skill": "qa-BiDi",
+  "status": "PASS",
   "check": "Hebrew text extractable from PDF (page 9)",
-  "detail": "2270 Hebrew chars"
+  "detail": "2507 Hebrew chars"
  },
  {
   "skill": "qa-table",
@@ -81,6 +87,12 @@
   "skill": "qa-code",
   "status": "PASS",
   "check": "compiles",
+  "detail": "layout.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
   "detail": "make_bib.py"
  },
  {
@@ -88,6 +100,12 @@
   "status": "PASS",
   "check": "compiles",
   "detail": "qa.py"
+ },
+ {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "compiles",
+  "detail": "screenshots.py"
  },
  {
   "skill": "qa-code",
@@ -126,10 +144,22 @@
   "detail": ""
  },
  {
+  "skill": "qa-code",
+  "status": "PASS",
+  "check": "experiment reproducible (re-run, byte-identical CSV)",
+  "detail": ""
+ },
+ {
   "skill": "qa-img",
   "status": "PASS",
   "check": "figure asset exists",
   "detail": "נ.1 -> latex/figures/figA_1.tex"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "figure asset exists",
+  "detail": "נ.2 -> assets/charts/figA_2_scores.pdf"
  },
  {
   "skill": "qa-img",
@@ -188,6 +218,12 @@
  {
   "skill": "qa-img",
   "status": "PASS",
+  "check": "chart Hebrew in correct order (IR-14)",
+  "detail": "matplotlib bidi=yes, he() reverses=no"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
   "check": "no external images",
   "detail": "assets/images is empty"
  },
@@ -208,6 +244,12 @@
   "status": "PASS",
   "check": "chart fonts are not Type 3",
   "detail": "fig5_1_accuracy.pdf"
+ },
+ {
+  "skill": "qa-img",
+  "status": "PASS",
+  "check": "chart fonts are not Type 3",
+  "detail": "figA_2_scores.pdf"
  },
  {
   "skill": "qa-img",
@@ -248,8 +290,26 @@
  {
   "skill": "qa-typeset",
   "status": "PASS",
+  "check": "PDF author metadata set",
+  "detail": "ליאת קפהזידר ולבנת בנסון"
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "printed page numbers equal PDF page numbers",
+  "detail": "43 pages"
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
+  "check": "no raw TeX markup in the PDF text",
+  "detail": ""
+ },
+ {
+  "skill": "qa-typeset",
+  "status": "PASS",
   "check": "at least 25 pages",
-  "detail": "46 pages"
+  "detail": "43 pages"
  },
  {
   "skill": "qa-typeset",
@@ -273,7 +333,7 @@
   "skill": "qa-typeset",
   "status": "PASS",
   "check": "list of figures populated",
-  "detail": "10 entries"
+  "detail": "11 entries"
  },
  {
   "skill": "qa-typeset",
@@ -477,7 +537,7 @@
   "skill": "qa-cls-version",
   "status": "PASS",
   "check": "ProvidesClass = \\aibook@version = latest CHANGELOG",
-  "detail": "1.1.0 / 1.1.0 / 1.1.0"
+  "detail": "1.2.0 / 1.2.0 / 1.2.0"
  },
  {
   "skill": "qa-cls-version",
@@ -489,6 +549,6 @@
   "skill": "qa-cls-version",
   "status": "PASS",
   "check": "compiled with this class version",
-  "detail": "v1.1.0 in main.log"
+  "detail": "v1.2.0 in main.log"
  }
 ]
