@@ -14,6 +14,8 @@
   <img src="screenshots/06_experiment_chart.png" width="23%" alt="פרק 5: תוצאות הניסוי">
 </p>
 
+> ✅ **הפרויקט הושלם: גרסה v1.0 (2026-11-20).** הספר אושר להגשה אחרי ביקורת חיצונית סופית של v0.95 ב-ChatGPT.
+
 | | |
 |---|---|
 | 📕 הספר | [`book.pdf`](book.pdf) (גרסה נוכחית), גרסאות קודמות ב-[`releases/`](releases/) |
@@ -147,8 +149,8 @@ latexmk main.tex                        # הידור בלבד (LuaLaTeX, לפי 
 | v0.1 | `32317ba` | הקמה (M1) ומחקר מקורות (M2) | |
 | v0.2 | `57f249d` | השלמת הכתיבה (M3): 7 פרקים ונספח | |
 | v0.9 | `d5b7b50` | ספר מלא לפני הביקורת החיצונית (46 עמ') | [`releases/book_v0.9.pdf`](releases/book_v0.9.pdf) |
-| v0.95 | commit של M5B | אחרי תיקוני הביקורת החיצונית (43 עמ') | [`releases/book_v0.95.pdf`](releases/book_v0.95.pdf) |
-| v1.0 | | גרסת ההגשה, אחרי אישור המחברות | |
+| v0.95 | `498ec46` | אחרי תיקוני הביקורת החיצונית (43 עמ') | [`releases/book_v0.95.pdf`](releases/book_v0.95.pdf) |
+| **v1.0** | `283bd03` ואחריו commit הסיום | **גרסת ההגשה הסופית**. הספר זהה ל-v0.95, ונוספו התיעוד החיצוני ואישור הביקורת החיצונית הסופית | [`releases/book_v1.0.pdf`](releases/book_v1.0.pdf) |
 
 פירוט: [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -206,7 +208,7 @@ latexmk main.tex                        # הידור בלבד (LuaLaTeX, לפי 
 ## 11. התוצר הסופי מול תיעוד הגרסאות הקודמות
 | | מה זה | איפה |
 |---|---|---|
-| ✅ **התוצר הסופי (v0.95, ‏43 עמ')** | הספר, קוד המקור שלו, הגרפים והתרשימים, וצילומי המסך שבסעיף 7 | [`book.pdf`](book.pdf), ‏[`releases/book_v0.95.pdf`](releases/book_v0.95.pdf), ‏[`screenshots/`](screenshots/) |
+| ✅ **התוצר הסופי (v1.0, ‏43 עמ')** | הספר, קוד המקור שלו, הגרפים והתרשימים, וצילומי המסך שבסעיף 7. הספר זהה ל-v0.95 | [`book.pdf`](book.pdf), ‏[`releases/book_v1.0.pdf`](releases/book_v1.0.pdf), ‏[`screenshots/`](screenshots/) |
 | 🕘 גרסה קודמת (v0.9, ‏46 עמ') | הספר לפני הביקורת החיצונית | [`releases/book_v0.9.pdf`](releases/book_v0.9.pdf) |
 | 🕘 תיעוד תהליך (חיצוני) | חבילת ChatGPT: ביקורת על v0.9, יומן ליווי, צילומי טרמינל מהעבודה, ועמודי טיוטה של v0.9 | [`docs/external/ai_book_documentation/`](docs/external/ai_book_documentation/) |
 | 🕘 תיעוד תהליך (פנימי) | כל הרצה של כל סוכן, דוחות ביקורת ו-QA | [`agents/runs/`](agents/runs/), ‏[`docs/PROMPT_HISTORY.md`](docs/PROMPT_HISTORY.md) |
