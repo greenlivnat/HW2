@@ -169,3 +169,8 @@ Experiment reproduction is now verified byte-for-byte. Focused regression 5/5. A
 ## Current scope and status
 
 GO for the local documentation-only contribution. The original v1.0 publication and executable QA match the baseline. The proposed edits are recoverable from [the review evidence](review-evidence/README.md). Commit, push and PR remain pending because the session cannot write Git metadata or reach GitHub through the shell. The remote repository is publicly readable.
+
+
+## Published documentation and Hebrew README follow-up
+
+The documentation-only contribution was committed as `f2aa6d04bf1295390226b38f7810cb46e236b8f4`, pushed to `liat/assignment02-critical-review` and included in [Pull Request #1](https://github.com/greenlivnat/HW2/pull/1). GitHub confirmed the review request to greenlivnat. The README's independent review section is now section 14 in Hebrew. The original book and publication sources remain at the baseline. The earlier pending status is historical.

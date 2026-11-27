@@ -18,3 +18,8 @@ Liat's manual work also restored basic Codex execution and prepared the UTF-8 vi
 Livnat granted collaborator access and Liat verified her GitHub-associated author identity, as reported by Liat. Liat manually recorded HEAD, pulled origin main with fast-forward only, and recorded HEAD again. Output was `From https://github.com/greenlivnat/HW2`, `* branch main -> FETCH_HEAD`, then `Already up to date.` The original screenshot is held by Liat and is not part of this package.
 
 Liat explicitly authorized publishing only the documentation and preserved review evidence. Codex verified that the public repository is accessible, the original book and publication sources match the baseline, and the proposed changes can be reapplied independently. Staging and fetch remain blocked by .git write restrictions. No commit, push, PR, review, merge or post-merge pull occurred in this phase. See [the PR and Git handoff](docs/PULL_REQUEST.md).
+
+
+## Verified GitHub publication
+
+Liat Kafezider authored the 30-file documentation commit `f2aa6d04bf1295390226b38f7810cb46e236b8f4`. Git pushed it to [Liat's personal branch](https://github.com/greenlivnat/HW2/tree/liat/assignment02-critical-review), and the remote hash matched. Codex opened [Pull Request #1](https://github.com/greenlivnat/HW2/pull/1) from that branch into main and GitHub confirmed the review request to greenlivnat. The earlier restrictions above describe the previous attempts. The PR was open when the Hebrew README update began. Merge and post-merge pull remain pending.

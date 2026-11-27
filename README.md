@@ -253,18 +253,16 @@ latexmk main.tex                        # הידור בלבד (LuaLaTeX, לפי 
 - **מקורות:** רשימה מלאה בסגנון IEEE בסוף הספר, ואינדקס עם רמת הגישה של כל מקור ב-`docs/SOURCES.md`.
 - **הפקה:** Claude Code (Anthropic) בהנחיית המחברות.
 
+## 14. ביקורת איכות עצמאית באמצעות Codex ושיתוף פעולה הנדסי
+
+**הספר המקורי בגרסה v1.0 נשאר ללא שינוי. התיקונים המוצעים נשמרו בנפרד כתיעוד של הביקורת העצמאית, ולא שולבו בקובץ ה־PDF של הספר.**
+
+לאחר שלב הפיתוח המקורי בהובלת לבנת באמצעות Claude Code, ליאת הובילה ביקורת עצמאית באמצעות Codex. סוכנים שהתמחו בתוכן אקדמי, בהפקה ובתשתית הטכנית זיהו ליקויים. סוכן ה־Fixer הכין תיקונים ממוקדים, וסוכן Detector עצמאי בדק את הדיוק ואת גבולות התחולה של הטענות המדעיות, את סימון הטקסט משמאל לימין (LTR) ואת כל 64 מפתחות הציטוטים בפרקים. הביקורת עסקה בסימן השאלה בציטוט של טיורינג, בהסברים על ReLU ועל מנגנון הקשב הסיבתי, במגבלות החלוקה של נתוני הניסוי לפי תמונות, וכן ביחידות המדידה ובתחולת הממצאים של שני מחקרים בפרק 7.
+
+קובץ ה־CSV שהתקבל בהרצה החוזרת של הניסוי היה זהה לקובץ המקורי בכל בייט. במסגרת הביקורת עברו 16 בדיקות של הניסוי, 5 בדיקות רגרסיה ממוקדות ו־17 בדיקות עצמאיות של התרשימים. בבדיקת ה־QA הכוללת עברו 75 בדיקות, ובדיקה אחת נכשלה משום שלא הופק קובץ מן ההידור. סוכן ה־Detector אימת את הערכים באיור 5.1. בנפרד, Matplotlib דיווח על שימוש בגופן חלופי משום שהגופן Assistant לא היה זמין. בספר נשמרו האיורים המקוריים.
+
+ליאת ביצעה את פעולת ה־Git Pull הראשונית, יצרה את ענף העבודה האישי והחזירה לפעולה את כלי Python ו־TeX. אתחול הפורמט של LuaLaTeX עדיין נכשל, ולכן ליאת בחרה לשמור על גרסה v1.0 כפי שפורסמה ולדחות את שילוב התיקונים עד שאפשר יהיה להדר ולבדוק אותם. דוח הביקורת מתעד את כשל האתחול, את ההצעות לשיפור בדיקות ה־QA ואת ההבחנה בין הפיתוח המקורי לעבודת ההמשך של ליאת.
+
+[הספר המקורי](book.pdf) | [עמוד 8 בגרסת המקור](screenshots/03_chapter_opener.png) | [דוח הביקורת ותוצאות ה־QA](docs/CODEX_REVIEW.md) | [קובץ התיקונים המוצעים והוראות השחזור](docs/review-evidence/README.md) | [מסמך הדרישות (PRD)](docs/PRD.md) | [תיעוד תקלות](docs/INCIDENTS.md) | [‏Skills של Codex](agents/codex/skills/README.md) | [היסטוריית ההנחיות](docs/PROMPT_HISTORY.md) | [תיעוד שיתוף הפעולה](COLLABORATION.md) | [תיאור ה־Pull Request](docs/PULL_REQUEST.md) | [‏Pull Request מס׳ 1](https://github.com/greenlivnat/HW2/pull/1)
+
 </div>
-
-
-
-## Independent Codex Quality Review and Collaborative Engineering
-
-**The original v1.0 book remains unchanged. Proposed publication corrections are preserved separately as independent review evidence and have not been incorporated into a newly compiled PDF.**
-
-The independent Codex review followed the original Claude Code development workflow. Academic, publication and technical reviewers identified findings. The Fixer prepared targeted changes, and an independent Detector checked their scientific scope, LTR markup and all 64 chapter citation keys. The review addresses the Turing question's punctuation, ReLU and causal attention, the limits of the image-level experiment split, and the units and scope of two Chapter 7 studies.
-
-The experiment CSV reproduced byte for byte. The review workflow recorded 16 experiment checks, 5 focused regressions and 17 independent image checks. Aggregate QA had 75 passes and one failure for missing compiled output. The Detector confirmed Figure 5.1 values. Matplotlib separately reported an Assistant font fallback. The original figures remain in the publication.
-
-Liat performed the initial Git Pull, created the personal branch and recovered the Python and TeX tooling. She chose to preserve the consistent, published v1.0 artifact and defer uncompiled corrections. The review documents the failed format initialization, preventive QA proposals and the separation between the original and follow-up work.
-
-[Original book](book.pdf) | [Baseline page 8](screenshots/03_chapter_opener.png) | [Review and QA evidence](docs/CODEX_REVIEW.md) | [Proposed patch and recovery instructions](docs/review-evidence/README.md) | [PRD](docs/PRD.md) | [Incidents](docs/INCIDENTS.md) | [Codex Skills](agents/codex/skills/README.md) | [Prompt history](docs/PROMPT_HISTORY.md) | [Collaboration](COLLABORATION.md) | [PR description](docs/PULL_REQUEST.md)

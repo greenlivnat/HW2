@@ -570,3 +570,8 @@ commit מקומי ותגית **v0.95**. בלי push. ‏v1.0 ו-M7 רק באיש
 ## Authenticated Codex chat transcript recovery and publication decision
 
 The original session supplied the verbatim [initial assignment](../prompts/15a_codex_initial_assignment.txt), [continuation](../prompts/15b_codex_continue_assignment.txt), [environment recovery](../prompts/15c_codex_environment_recovery.txt), [diagnostic](../prompts/15d_codex_diagnostic.txt), [final build request](../prompts/16_codex_final_build.txt) and [documentation-only scope and GitHub authorization](../prompts/17_codex_documentation_publication.txt). The previously stored final-build summary remains identified as a summary.
+
+
+## 18. Hebrew README compliance
+
+[Verbatim user instruction](../prompts/18_codex_hebrew_readme.txt). Liat asked Codex to meet the lecturer's Hebrew README requirement without changing the original book, and authorized a documentation follow-up on the existing PR branch. The added English section became numbered Hebrew section 14, retaining its findings, figures, citations, QA counts, and caveats. The collaboration log and status now distinguish the recorded first publication from the earlier blocked attempts.
