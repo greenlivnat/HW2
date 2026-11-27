@@ -260,3 +260,19 @@ ai_book_starter/
 | ספרן (ביבליוגרפיה) | ‏IEEE ממספר לפי סדר הופעה; רשומות "מטא-דאטה בלבד" לא אמורות לתמוך בטענות | ‏`references.bib` נוצר מרשימות "מקורות לפרק"; ‏biblatex-ieee עם `sorting=none` |
 
 **סיכונים שזוהו:** הכותרות המעוצבות וסגנון ה-IEEE מוסיפים עמודים. היעד הוא לפחות 25 עמודים, ואין מגבלה עליונה, כי המשתמשת קבעה שלא לדחוס על חשבון העימוד.
+
+
+## Codex expert committee supplement ? v1.0.1 candidate
+
+The chapter text sources, LuaLaTeX typography, historical releases and fixed experiment configuration remain authoritative. Acceptance requires primary-source agreement on magnitude, units and population, explicit next-token indexing, and a clear distinction between the observed image split and writer-level generalization. Generated TeX must preserve explicit LTR punctuation. QA must reject altered final training metrics and reordered epochs. Publication acceptance requires a verified rebuild, a fresh all-page visual review, and independent Detector sign-off. See [findings and verification](CODEX_REVIEW.md).
+
+
+Source acceptance passed for the corrected claims, 64 resolved citation keys, the generated LTR span and selected experiment mutations. PDF acceptance and compiled citation checks remain open. See the independent verdict and QA table in [CODEX_REVIEW.md](CODEX_REVIEW.md).
+
+
+Final follow-up accepted byte-identical experiment CSV reproduction and the numerical values in figure 5.1. Publication acceptance remains blocked by LuaLaTeX format initialization, the Assistant font requirement and missing compiled output.
+
+
+## Final documentation-only acceptance
+
+Liat superseded the corrected-PDF objective with independent review and evidence preservation. The acceptance checks are a byte-identical v1.0 book, no differences in the original publication sources, forward-applicable proposed patch, preserved regression source, and clear separation between historic results and current claims. These local checks passed. Any future application must revalidate the proposed LTR text, research claims, bibliography, fonts, and every corrected page in the rebuilt PDF.

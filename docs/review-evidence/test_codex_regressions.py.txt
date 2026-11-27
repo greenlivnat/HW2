@@ -1,0 +1,44 @@
+"""Focused source-level regressions for the Codex review."""
+
+import csv
+import json
+import unittest
+from copy import deepcopy
+
+from qa import ROOT, experiment_data_agrees
+from txt2tex import inline
+
+
+class CodexRegressions(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        data = ROOT / "python" / "data"
+        with (data / "digits_accuracy.csv").open(encoding="utf-8", newline="") as stream:
+            cls.rows = list(csv.DictReader(stream))
+        cls.summary = json.loads((data / "digits_summary.json").read_text(encoding="utf-8"))
+        cls.epochs = cls.summary["config"]["epochs"]
+
+    def test_experiment_summary(self):
+        self.assertTrue(experiment_data_agrees(self.rows, self.summary, self.epochs))
+
+    def test_reordered_epochs(self):
+        rows = deepcopy(self.rows)
+        rows[1], rows[2] = rows[2], rows[1]
+        self.assertFalse(experiment_data_agrees(rows, self.summary, self.epochs))
+
+    def test_changed_final_training_score(self):
+        rows = deepcopy(self.rows)
+        rows[-1]["train_accuracy"] = "0.9"
+        self.assertFalse(experiment_data_agrees(rows, self.summary, self.epochs))
+
+    def test_changed_max_gap(self):
+        summary = {**self.summary, "max_gap": 0.5}
+        self.assertFalse(experiment_data_agrees(self.rows, summary, self.epochs))
+
+    def test_ltr_keeps_question_mark(self):
+        question = '[LTR:"Can machines think?"]'
+        self.assertIn(r'\textenglish{"Can machines think?"}', inline(question))
+
+
+if __name__ == "__main__":
+    unittest.main()

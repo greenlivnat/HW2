@@ -254,3 +254,17 @@ latexmk main.tex                        # הידור בלבד (LuaLaTeX, לפי 
 - **הפקה:** Claude Code (Anthropic) בהנחיית המחברות.
 
 </div>
+
+
+
+## Independent Codex Quality Review and Collaborative Engineering
+
+**The original v1.0 book remains unchanged. Proposed publication corrections are preserved separately as independent review evidence and have not been incorporated into a newly compiled PDF.**
+
+The independent Codex review followed the original Claude Code development workflow. Academic, publication and technical reviewers identified findings. The Fixer prepared targeted changes, and an independent Detector checked their scientific scope, LTR markup and all 64 chapter citation keys. The review addresses the Turing question's punctuation, ReLU and causal attention, the limits of the image-level experiment split, and the units and scope of two Chapter 7 studies.
+
+The experiment CSV reproduced byte for byte. The review workflow recorded 16 experiment checks, 5 focused regressions and 17 independent image checks. Aggregate QA had 75 passes and one failure for missing compiled output. The Detector confirmed Figure 5.1 values. Matplotlib separately reported an Assistant font fallback. The original figures remain in the publication.
+
+Liat performed the initial Git Pull, created the personal branch and recovered the Python and TeX tooling. She chose to preserve the consistent, published v1.0 artifact and defer uncompiled corrections. The review documents the failed format initialization, preventive QA proposals and the separation between the original and follow-up work.
+
+[Original book](book.pdf) | [Baseline page 8](screenshots/03_chapter_opener.png) | [Review and QA evidence](docs/CODEX_REVIEW.md) | [Proposed patch and recovery instructions](docs/review-evidence/README.md) | [PRD](docs/PRD.md) | [Incidents](docs/INCIDENTS.md) | [Codex Skills](agents/codex/skills/README.md) | [Prompt history](docs/PROMPT_HISTORY.md) | [Collaboration](COLLABORATION.md) | [PR description](docs/PULL_REQUEST.md)

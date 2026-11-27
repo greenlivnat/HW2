@@ -1,0 +1,4115 @@
+# ASSIGNMENT 02 — AUTONOMOUS CODEX MULTI-AGENT CRITICAL REVIEW, PUBLICATION QUALITY IMPROVEMENT AND AUTHENTIC GITHUB COLLABORATION
+
+## 1. MANDATORY AUTONOMOUS EXECUTION PROTOCOL
+
+This is an end-to-end autonomous engineering assignment.
+
+Execute all requested local development, review, correction, testing, documentation, and candidate publication preparation tasks continuously and independently.
+
+**Do not ask Liat questions or wait for her responses during execution.**
+
+The following rules are mandatory:
+
+- Do not request clarification questions.
+- Do not pause for intermediate human approval.
+- Do not stop after presenting an audit, plan, or list of recommendations.
+- Do not ask the user to choose between reasonable implementation alternatives.
+- Make professional, evidence-based decisions independently.
+- Resolve ambiguities using existing project documentation, lecturer requirements, the established visual identity, and engineering best practices.
+- Investigate technical problems and attempt to resolve them independently.
+- If an implementation approach fails, evaluate alternative approaches and continue.
+- If a non-critical task cannot be completed, document the limitation and continue with the remaining tasks.
+- Perform internal review, correction, verification, and regression cycles without human intervention.
+- Provide concise progress updates in Hebrew without requiring a response.
+- Manage tokens, model usage, execution time, memory, and disk space efficiently.
+- Preserve existing project quality and avoid unnecessary modifications.
+- Deliver an actual corrected and tested PDF, not merely a proposed correction plan.
+
+All review findings, implementation decisions, and verification activities should be consolidated into the final report.
+
+This autonomous execution protocol overrides any intermediate approval requirements found in older project documentation or previous task instructions.
+
+### Exceptions
+
+Do not bypass system-enforced permissions or security restrictions.
+
+Do not perform destructive operations.
+
+Do not push changes to GitHub, open a remote Pull Request, merge branches, or create a public release without explicit publication authorization.
+
+These external publication restrictions must not prevent completion of all local work.
+
+If a potentially risky or irreversible decision cannot be made safely, preserve the original implementation, document the issue, and continue with the remaining tasks.
+
+**The only planned stopping point is after completing the corrected local deliverable, documentation, verification, and meaningful local commits.**
+
+---
+
+## 2. PROJECT IDENTITY
+
+**University:** Bar-Ilan University
+
+**Course:** Generative AI
+
+**Assignment:** 02
+
+**Group ID:** LIATLVNT
+
+**Student collaborators:**
+
+- Liat Kafezider — GitHub username: `liatkaf`
+- Livnat Benson — GitHub username: `greenlivnat`
+
+**Shared GitHub repository:**
+
+https://github.com/greenlivnat/HW2
+
+**Local project directory:**
+
+`D:\HW2`
+
+**Liat's existing personal working branch:**
+
+`liat/assignment02-critical-review`
+
+**Verified baseline commit:**
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+**Project title:**
+
+מאחורי הקלעים של הבינה המלאכותית
+
+**Subtitle:**
+
+מהנתון הראשון ועד לתשובה שעל המסך
+
+The project is an existing Hebrew popular-science book about artificial intelligence, developed using LaTeX, LuaLaTeX, Python, and a documented multi-agent AI engineering workflow.
+
+The original project was developed using Claude Code.
+
+Liat's independent contribution must be performed using **OpenAI Codex CLI**.
+
+Do not use Antigravity-specific or Claude Code-specific commands as if they were Codex commands.
+
+The existing published project is the baseline. Verify its actual version and structure before making changes.
+
+---
+
+## 3. ALREADY COMPLETED PREPARATION — DO NOT REPEAT
+
+The following steps have already been performed manually by Liat and verified through terminal screenshots and GitHub account settings.
+
+### 3.1 GitHub access
+
+- Livnat granted Liat Collaborator access to the shared repository.
+- The repository is already cloned locally.
+- No additional Fork is required.
+- No additional Clone is required.
+
+### 3.2 Local repository
+
+The existing local project is located at:
+
+`D:\HW2`
+
+The verified Git remote is:
+
+`https://github.com/greenlivnat/HW2.git`
+
+Both fetch and push URLs point to the shared repository.
+
+### 3.3 Git identity
+
+The configured Git author name is:
+
+`Liat Kafezider`
+
+The configured Git email was verified against Liat's GitHub account and is marked as Verified.
+
+Do not unnecessarily modify the Git identity.
+
+Do not expose the email address, credentials, or authentication tokens in public documentation.
+
+Actual remote push authentication has not yet been independently tested.
+
+### 3.4 Genuine Git Pull already performed
+
+Liat manually executed:
+
+```powershell
+git rev-parse HEAD
+git pull --ff-only origin main
+git rev-parse HEAD
+```
+
+The actual result was:
+
+```text
+From https://github.com/greenlivnat/HW2
+ * branch main -> FETCH_HEAD
+Already up to date.
+```
+
+Commit before the pull:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+Commit after the pull:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+This was a genuine Git synchronization operation.
+
+No new commits were downloaded because the local repository was already up to date.
+
+Liat has actual terminal screenshots documenting the operation.
+
+Record this evidence accurately.
+
+Do not claim that Codex executed the original pull.
+
+Do not claim that new changes were downloaded.
+
+Do not fabricate screenshots.
+
+### 3.5 Existing personal branch
+
+Liat manually executed:
+
+```powershell
+git switch -c liat/assignment02-critical-review
+git branch
+```
+
+The resulting active branch was:
+
+```text
+* liat/assignment02-critical-review
+  main
+```
+
+Do not recreate this branch.
+
+Do not switch to main during development.
+
+### 3.6 GitHub CLI
+
+The `gh` command is not currently available on this computer.
+
+Do not install GitHub CLI unnecessarily.
+
+Use standard Git commands.
+
+Prepare browser-based instructions for opening the Pull Request after the local work is complete.
+
+### 3.7 Starting verification
+
+Perform only a brief verification of:
+
+```powershell
+git status
+git branch --show-current
+git remote -v
+git rev-parse HEAD
+git config user.name
+```
+
+If the current state matches the expected preparation, proceed immediately.
+
+Do not repeat the completed setup process.
+
+---
+
+## 4. PRIMARY MISSION
+
+Your mission is to help Liat make a genuine, independent, technically meaningful contribution to Assignment 02.
+
+Complete all of the following:
+
+1. Conduct an independent critical review of the existing book.
+2. Establish and operate an actual Codex multi-agent review team.
+3. Develop reusable Codex-compatible Skills.
+4. Identify scientific, mathematical, technical, editorial, and visual defects.
+5. Independently determine justified correction priorities.
+6. Implement necessary corrections.
+7. Investigate defects missed by the previous quality assurance process.
+8. Strengthen the existing QA mechanisms.
+9. Rebuild the corrected LaTeX book.
+10. Produce a publication-quality PDF.
+11. Conduct independent final Red Team verification.
+12. Update README, PRD, prompt history, Skills, and project documentation.
+13. Document authentic student collaboration.
+14. Create meaningful local Git commits under Liat's identity.
+15. Prepare a complete Pull Request proposal for Livnat.
+16. Deliver an evidence-based final GO / NO-GO report.
+17. Recommend a justified self-assessment grade.
+
+The objective is not to manufacture evidence of participation.
+
+All documented engineering activities, student contributions, agent executions, findings, test results, and Git operations must correspond to actual events.
+
+---
+
+## 5. LECTURER'S ASSIGNMENT REQUIREMENTS
+
+Use the following academic requirements as the mandatory framework.
+
+### 5.1 Multi-agent engineering
+
+The project must demonstrate:
+
+- Actual operation of a team of specialized AI agents.
+- Clearly defined agent responsibilities.
+- Reusable Skills.
+- An independent Detector agent.
+- A Fixer agent.
+- Automated Red Team review between agents.
+- Documented quality assurance.
+- Incident investigations for missed defects.
+
+For every newly discovered confirmed defect, investigate:
+
+- Why did the defect occur?
+- Why was it not detected previously?
+- Which quality mechanism should have detected it?
+- How can recurrence be prevented?
+
+### 5.2 Expert committee and PRD
+
+Establish an expert committee that:
+
+- Defines professional publication-quality criteria.
+- Reviews the existing PRD.
+- Identifies additional measurable requirements.
+- Evaluates the actual publication against those requirements.
+- Documents acceptance criteria.
+- Demonstrates meaningful engineering judgment.
+
+Preserve original requirements and historical project decisions.
+
+### 5.3 LaTeX project
+
+Maintain:
+
+- A main LaTeX document.
+- Separate chapter-level `.tex` files.
+- A dedicated `.cls` template.
+- Organized source directories.
+- Python-generated graphs.
+- Programmatically generated illustrations.
+- Reproducible LuaLaTeX compilation.
+
+Do not introduce copyrighted images taken from the internet.
+
+Prefer original TikZ diagrams, Python visualizations, and other reproducible code-based illustrations.
+
+### 5.4 Engineering documentation
+
+The repository must include:
+
+- Actual user prompts.
+- Agent-specific prompts.
+- Agent Skills.
+- Actual execution records.
+- Quality assurance reports.
+- Incident investigations.
+- Professional README documentation.
+- Visual examples.
+- Complete LaTeX source.
+- Python source.
+- Final compiled PDF.
+
+### 5.5 Excellence beyond minimum requirements
+
+Evaluate the publication for:
+
+- Originality.
+- Creativity.
+- Professional publication design.
+- Meaningful visualizations.
+- Scientific accuracy.
+- Mathematical accuracy.
+- Hebrew and English bidirectional typography.
+- Reproducibility.
+- Consistent visual identity.
+- Critical thinking.
+- Human supervision.
+- Quality of engineering decisions.
+
+Do not assume that meeting minimum requirements automatically represents academic excellence.
+
+### 5.6 Submission protocol
+
+- Preserve the existing Assignment 02 repository.
+- Preserve both students' authorship.
+- Use group ID `LIATLVNT`.
+- Maintain repository accessibility for the lecturer.
+- Document genuine participation by both students.
+- Maintain the separate official Moodle submission report filename:
+
+`LIATLVNT-ex02.pdf`
+
+The official Moodle report is separate from the actual book PDF.
+
+Do not rename `book.pdf` to the official Moodle submission filename.
+
+Do not modify the official university reporting template unless explicitly requested.
+
+Each student must submit individually.
+
+Do not claim that Moodle submission has occurred.
+
+If supplementary lecturer documents or Assignment 01 feedback are unavailable, report that limitation in the final report and continue working.
+
+Do not invent missing academic requirements or lecturer feedback.
+
+---
+
+## 6. PHASE 0 — ENVIRONMENT AND RESOURCE MANAGEMENT
+
+Verify the required development environment.
+
+Inspect:
+
+- Codex CLI version.
+- Actual subagent capabilities.
+- Skills support.
+- Python version.
+- Existing virtual environment.
+- Available dependencies.
+- Available disk space.
+- LuaLaTeX.
+- latexmk.
+- biber.
+- pdfinfo.
+- pdftotext.
+- pdftoppm.
+- Required fonts.
+- Existing project build instructions.
+
+Reuse the current project environment wherever possible.
+
+Do not unnecessarily install large dependencies or alter global system configuration.
+
+### Resource management
+
+The previous assignment encountered AI usage limits.
+
+Therefore:
+
+- Use no more than two active subagents concurrently.
+- Execute expensive tasks sequentially.
+- Use focused agent assignments.
+- Avoid unnecessary context duplication.
+- Avoid repeatedly compiling the entire book.
+- Reuse valid existing test evidence when appropriate.
+- Clearly distinguish historical tests from newly executed tests.
+- Save progress at meaningful checkpoints.
+- Maintain a local execution status file.
+- Preserve intermediate findings and changes if interrupted.
+- Do not rerun the entire workflow after a recoverable interruption.
+
+If resource limitations occur, prioritize:
+
+1. Confirmed critical and high-severity defects.
+2. Successful reproducible PDF generation.
+3. Regression testing.
+4. Documentation.
+5. Meaningful local commits.
+6. Final reporting.
+
+If a task cannot be completed because of a genuine environment limitation, document the blocker and continue with independent tasks.
+
+---
+
+## 7. PHASE 1 — EXISTING PROJECT INVENTORY AND BASELINE
+
+Inspect the actual repository structure.
+
+Expected components may include:
+
+```text
+HW2/
+├── README.md
+├── book.pdf
+├── main.tex
+├── references.bib
+├── chapters/
+├── latex/
+├── python/
+├── assets/
+├── scripts/
+├── docs/
+├── agents/
+├── prompts/
+├── screenshots/
+├── releases/
+├── .claude/
+├── CHANGELOG.md
+├── requirements.txt
+└── .latexmkrc
+```
+
+Verify actual paths rather than assuming every expected file exists.
+
+Inspect relevant files, including where available:
+
+- `CLAUDE.md`
+- `AGENTS.md`
+- `docs/PRD.md`
+- `docs/SOURCES.md`
+- `docs/INCIDENTS.md`
+- `docs/PROMPT_HISTORY.md`
+- `docs/STATUS.md`
+- `docs/TODO.md`
+- `.claude/agents/`
+- `.claude/skills/`
+- `agents/runs/`
+- `scripts/qa.py`
+- `scripts/build.py`
+- `latex/aibook.cls`
+
+Treat Claude-specific instructions as documentation of the original workflow, not as executable Codex commands.
+
+### Source-of-truth architecture
+
+Determine which files are authoritative sources and which files are generated.
+
+The existing project may use `chapters/*.txt` as authoritative chapter sources, with generated `.tex` files.
+
+Verify this architecture.
+
+If confirmed, modify authoritative content or generation scripts rather than manually patching generated files.
+
+### Baseline record
+
+Record:
+
+- Baseline commit hash.
+- Current project version.
+- Original PDF path.
+- Original PDF page count.
+- Original PDF checksum.
+- Original chapter structure.
+- Existing agent architecture.
+- Existing Skills.
+- Existing QA mechanisms.
+- Existing research experiment.
+- Current build procedure.
+- Existing visual identity.
+- Known limitations.
+- Previous incident investigations.
+
+Preserve the original PDF and previous release artifacts for comparison.
+
+Do not overwrite historical releases.
+
+---
+
+## 8. PHASE 2 — ESTABLISH AN ACTUAL CODEX EXPERT COMMITTEE
+
+Create and operate an actual team of specialized Codex subagents.
+
+Use the actual capabilities supported by the installed Codex CLI.
+
+The parent Codex session serves as the Orchestrator.
+
+Do not merely simulate multiple agents by writing fictional reports from different perspectives.
+
+### Agent A — Academic and Scientific Reviewer
+
+Responsibilities:
+
+- Scientific accuracy.
+- AI and machine-learning concepts.
+- Neural-network explanations.
+- Mathematical definitions.
+- Source verification.
+- Research methodology.
+- Bibliography.
+- Validity of claims.
+- Accuracy of conclusions.
+- Academic integrity.
+
+### Agent B — LaTeX and Publication Reviewer
+
+Responsibilities:
+
+- Hebrew RTL typography.
+- Mixed Hebrew and English text.
+- Mathematical typesetting.
+- Equation presentation.
+- Fonts.
+- Page composition.
+- Figure positioning.
+- Captions.
+- Tables.
+- Headers and footers.
+- Table of contents.
+- Professional publication consistency.
+
+### Agent C — Technical and Reproducibility Reviewer
+
+Responsibilities:
+
+- Python experiment.
+- Dataset and methodology.
+- Dependency management.
+- Build scripts.
+- LuaLaTeX compilation.
+- Generated charts.
+- Existing QA scripts.
+- Source-of-truth architecture.
+- Reproducibility.
+
+### Agent D — Independent Detector and Red Team
+
+Responsibilities:
+
+- Detect defects missed by previous agents.
+- Independently inspect the compiled book.
+- Challenge scientific and mathematical claims.
+- Identify QA coverage gaps.
+- Identify visual defects.
+- Verify lecturer requirements.
+- Independently validate Fixer corrections.
+
+### Agent E — Fixer
+
+Responsibilities:
+
+- Apply confirmed, justified corrections.
+- Make minimal source-level changes.
+- Preserve the book's established identity.
+- Avoid unnecessary refactoring.
+- Maintain scientific accuracy.
+- Rebuild affected outputs.
+- Return corrections to the independent Detector.
+
+The Fixer must not act as the independent reviewer of its own corrections.
+
+### Orchestrator responsibilities
+
+- Define scoped tasks.
+- Assign responsibilities.
+- Manage agent execution.
+- Prevent concurrent edits to the same files.
+- Consolidate findings.
+- Resolve disagreements using evidence.
+- Prioritize confirmed defects.
+- Record decisions.
+- Manage resources.
+- Enforce academic integrity.
+
+### Actual execution evidence
+
+For each agent, record:
+
+- Actual agent role.
+- Assigned task.
+- Actual start and completion status.
+- Files reviewed.
+- Findings.
+- Output files.
+- Verification results.
+- Model information, where available.
+
+If native Codex subagents are unavailable, investigate supported alternatives involving genuine independent Codex sessions or executions.
+
+If no genuine multi-agent mechanism is available, document that limitation and perform as much independent local review as possible.
+
+Do not falsely represent a single-agent workflow as multi-agent execution.
+
+---
+
+## 9. PHASE 3 — CODEX-COMPATIBLE SKILLS
+
+Inspect the original Claude agent definitions and Skills.
+
+Preserve all existing Claude files.
+
+Create a separate Codex-compatible Skill layer using the actual directory structure supported by the installed Codex CLI.
+
+Possible location, subject to verification:
+
+`.agents/skills/`
+
+Create reusable Skills for:
+
+1. `academic-review`
+2. `latex-publication-review`
+3. `experiment-reproducibility`
+4. `detector-red-team`
+5. `targeted-fixer`
+6. `collaboration-evidence`
+
+Each Skill must include:
+
+- Valid `SKILL.md`.
+- Purpose.
+- Inputs.
+- Required procedure.
+- Constraints.
+- Acceptance criteria.
+- Expected outputs.
+- Failure handling.
+- References to relevant existing tools.
+
+Reuse existing QA scripts wherever appropriate.
+
+Do not unnecessarily duplicate existing functionality.
+
+Create a mapping between original Claude Skills and newly developed Codex Skills.
+
+For every actually invoked Skill, record:
+
+- Skill name.
+- Executing agent.
+- Assigned task.
+- Input files.
+- Findings.
+- Output files.
+- Acceptance results.
+
+Clearly distinguish between Skills that were created and Skills that were actually executed.
+
+---
+
+## 10. PHASE 4 — INDEPENDENT CRITICAL REVIEW
+
+Conduct a comprehensive review of the current book before making source-level corrections.
+
+Record the original defects so that meaningful before-and-after comparisons are possible.
+
+### 10.1 Scientific and academic accuracy
+
+Review every chapter for:
+
+- Incorrect definitions.
+- Unsupported scientific claims.
+- Misleading explanations.
+- Oversimplifications that change meaning.
+- Inconsistent terminology.
+- Incorrect explanations of neural networks.
+- Incorrect explanations of machine learning.
+- Incorrect explanations of language models.
+- Incorrect descriptions of token generation.
+- Confusion between training and inference.
+- Confusion between training, validation, and testing.
+- Conclusions that exceed the available evidence.
+
+Verify citations against accessible primary sources where possible.
+
+Never invent references, authors, publication years, DOIs, or research findings.
+
+Distinguish confirmed inaccuracies from sources that could not be independently accessed.
+
+### 10.2 Mathematical formulas
+
+Inspect equations in the authoritative sources, generated LaTeX, and compiled PDF.
+
+Check:
+
+- Broken equations.
+- Incorrect symbols.
+- Missing operators.
+- Missing operands.
+- Incorrect superscripts or subscripts.
+- Undefined variables.
+- Inconsistent mathematical notation.
+- Mixed RTL/LTR ordering.
+- Incorrect line breaks.
+- Missing equation references.
+- Incorrect formula rendering.
+
+For each confirmed defect, record:
+
+- PDF page.
+- Chapter.
+- Source file.
+- Exact source location.
+- Original representation.
+- Correct representation.
+- Explanation.
+- Supporting evidence.
+
+Pay particular attention to formulas that appear correct in source code but are rendered incorrectly in the actual PDF.
+
+### 10.3 Bibliography and citations
+
+Inspect `references.bib` and the existing bibliography-generation process.
+
+Verify:
+
+- Missing citation keys.
+- Broken references.
+- Duplicate references.
+- Incorrect authors.
+- Incorrect years.
+- Incorrect DOI or URL information.
+- Citation consistency.
+- Bibliography rendering.
+- Mixed Hebrew and English.
+- Required citation style.
+
+Preserve the existing citation style unless a confirmed defect requires a correction.
+
+### 10.4 Python research experiment
+
+Inspect the existing handwritten-digit classification experiment and verify its actual configuration.
+
+The existing project reportedly uses:
+
+- scikit-learn `load_digits`.
+- An MLP classifier.
+- A fixed random seed.
+- Stratified dataset splitting.
+- Epoch-based training measurements.
+
+Verify all details against actual source files and stored results.
+
+Check:
+
+- Dataset provenance.
+- Dataset license.
+- Data preprocessing.
+- Reproducibility.
+- Training/test separation.
+- Potential data leakage.
+- Model evaluation methodology.
+- Accuracy calculations.
+- Generalization gap calculations.
+- Epoch-level measurements.
+- Stored results.
+- Graph accuracy.
+- Consistency between experiment outputs and the narrative.
+- Scientific validity of conclusions.
+
+Pay particular attention to whether repeated measurements of the test set influenced model selection or optimization.
+
+Distinguish descriptive monitoring from test-set-driven tuning.
+
+Do not manipulate metrics.
+
+Do not change random seeds or model parameters merely to improve reported results.
+
+If a confirmed methodological problem exists, implement a scientifically justified correction only when it can be done reproducibly without introducing speculative assumptions.
+
+If a methodological change would substantially alter the research design, preserve the original experiment, clarify its limitations, and report the proposed alternative.
+
+### 10.5 Graphs and visualizations
+
+Verify that:
+
+- Graphs are generated using reproducible Python code.
+- Graph values match underlying experiment data.
+- Axes are correctly labeled.
+- Units and scales are appropriate.
+- Legends are understandable.
+- Visualizations do not misrepresent numerical differences.
+- Hebrew and English render correctly.
+- Graphs remain readable in the book.
+- Graph colors are consistent.
+- Visualizations support the narrative.
+- Copyright requirements are satisfied.
+
+Correct confirmed errors.
+
+Where a visualization is technically correct but visually weak, make a targeted improvement only if it preserves the established design and improves readability.
+
+### 10.6 Publication quality
+
+Render and visually inspect every page of the existing PDF.
+
+Do not rely exclusively on extracted text or successful compilation.
+
+Inspect:
+
+- Cover.
+- Table of contents.
+- Chapter openings.
+- Headers and footers.
+- Page numbering.
+- Text alignment.
+- Mathematical formulas.
+- Figures.
+- Tables.
+- Captions.
+- Bibliography.
+- Appendix.
+- Empty pages.
+- Excessive whitespace.
+- Clipped elements.
+- Overfull text.
+- Orphan headings.
+- Widow lines.
+- Inconsistent typography.
+- Hebrew punctuation.
+- English terminology inside Hebrew sentences.
+- Numbers inside RTL text.
+- Mathematical notation inside Hebrew paragraphs.
+
+Record confirmed visual defects with exact page numbers and source locations.
+
+Preserve the book's existing visual identity.
+
+Do not redesign the entire publication merely to demonstrate a personal contribution.
+
+---
+
+## 11. PHASE 5 — AUDIT THE EXISTING EIGHT QA MECHANISMS
+
+Identify and inspect the actual eight QA mechanisms described by the original project.
+
+Do not invent their names or functionality.
+
+Inspect the existing scripts and supported command-line interfaces.
+
+Possible commands include:
+
+```powershell
+python scripts/qa.py super
+```
+
+And:
+
+```powershell
+python scripts/qa.py code --rerun
+```
+
+Verify these commands against the actual repository before executing them.
+
+For each QA mechanism, document:
+
+- Name.
+- Purpose.
+- Implementation.
+- Inputs.
+- Actual execution result.
+- Detected defects.
+- Coverage limitations.
+- False positives.
+- Potential false negatives.
+- Recommended improvements.
+
+Determine whether the existing quality assurance system detects the specific confirmed defects discovered by the independent reviewers.
+
+Do not weaken tests merely to obtain passing results.
+
+Do not report historical results as newly executed tests.
+
+Do not rerun expensive tests unnecessarily.
+
+---
+
+## 12. PHASE 6 — CONSOLIDATE FINDINGS AND UPDATE THE PRD
+
+Consolidate the actual expert committee findings into a structured review report.
+
+For each issue, include:
+
+- Unique issue ID.
+- Reporting agent.
+- Category.
+- Severity.
+- Source file.
+- PDF page.
+- Evidence.
+- Observed behavior.
+- Expected behavior.
+- Root cause, if established.
+- Proposed correction.
+- Relevant lecturer requirement.
+- Acceptance test.
+- Implementation risk.
+
+Use the following severity levels:
+
+- Critical.
+- High.
+- Medium.
+- Low.
+- Informational.
+
+Distinguish between:
+
+- Confirmed defects.
+- Unverified concerns.
+- Optional enhancements.
+- Subjective design preferences.
+
+Do not exaggerate problems merely to demonstrate contribution.
+
+Create an independent Codex expert committee supplement to the existing PRD.
+
+Include:
+
+- Additional requirements.
+- Measurable acceptance criteria.
+- Review findings.
+- Prioritized corrections.
+- Scope limitations.
+- Agent responsibilities.
+
+Preserve the original PRD and historical decisions.
+
+### Autonomous decision rule
+
+Do not stop after completing this report.
+
+Do not present an approval gate.
+
+Independently proceed with all confirmed critical and high-severity corrections, and with justified medium- and low-severity improvements that can be implemented safely.
+
+For speculative, high-risk, or unnecessary changes, preserve the original implementation and document the reason for deferral.
+
+---
+
+## 13. PHASE 7 — IMPLEMENT TARGETED CORRECTIONS
+
+Assign confirmed defects to the Fixer.
+
+Apply the smallest effective source-level correction.
+
+Requirements:
+
+- Modify authoritative source files.
+- Preserve the original narrative.
+- Preserve the book's design.
+- Preserve both students' authorship.
+- Preserve the existing chapter structure unless a confirmed defect requires modification.
+- Maintain academic accuracy.
+- Maintain mathematical accuracy.
+- Maintain reproducibility.
+- Avoid unrelated refactoring.
+- Avoid unnecessary rewriting.
+
+For each corrected issue:
+
+1. Reproduce the original defect.
+2. Identify its root cause.
+3. Apply the correction.
+4. Run a targeted test.
+5. Rebuild the affected output.
+6. Return the correction to the independent Detector.
+7. Record the Detector's verdict.
+8. Repeat the correction if necessary.
+
+Limit repeated repair attempts to three per issue.
+
+If an issue remains unresolved, record it and continue with the other issues.
+
+Do not ask the user to resolve routine implementation decisions.
+
+---
+
+## 14. PHASE 8 — INCIDENT INVESTIGATION AND PREVENTIVE QA IMPROVEMENTS
+
+The lecturer explicitly requires investigation of defects that previous agents or quality mechanisms failed to identify.
+
+Inspect the existing incident documentation.
+
+Preserve all historical incidents.
+
+Append new confirmed incidents chronologically using the next available identifiers.
+
+For each incident, document:
+
+1. Incident description.
+2. Actual defect.
+3. Affected page and source file.
+4. Root cause.
+5. Why the previous process failed to detect it.
+6. Relevant original QA mechanism.
+7. Corrective action.
+8. Preventive action.
+9. Newly implemented or improved QA check.
+10. Verification results.
+11. Remaining limitations.
+
+Implement meaningful preventive quality checks where feasible.
+
+Each new automated check should include:
+
+- A reproducible failing test case.
+- Evidence that the detector recognizes the original defect.
+- Evidence that valid content still passes.
+- Regression verification.
+
+Do not merely fix the visible symptom.
+
+Improve the underlying quality process when justified.
+
+Do not fabricate incidents or attribute a defect to a particular historical agent without evidence.
+
+---
+
+## 15. PHASE 9 — REBUILD THE CORRECTED BOOK
+
+Inspect the existing documented build procedure.
+
+Possible commands include:
+
+```powershell
+python scripts/build.py
+```
+
+Or:
+
+```powershell
+python scripts/build.py --experiment
+```
+
+Verify the actual supported interface.
+
+Use the established LuaLaTeX workflow.
+
+Do not switch to another document-generation technology.
+
+Verify:
+
+- Main LaTeX document.
+- Separate chapter generation.
+- CLS template.
+- Font availability.
+- Bibliography generation.
+- biber execution, where required.
+- TikZ rendering.
+- Python-generated graphs.
+- Cross-references.
+- Page numbering.
+- Compilation warnings.
+- Compilation errors.
+- Final PDF creation.
+
+Do not manually patch the compiled PDF to conceal defects.
+
+All corrections must remain reproducible from the actual source files.
+
+Generate the corrected candidate PDF.
+
+Expected primary deliverable:
+
+`D:\HW2\book.pdf`
+
+Verify the actual generated path.
+
+Preserve previous published release PDFs.
+
+Treat the corrected book as a candidate for v1.0.1, unless the repository uses a different verified versioning convention.
+
+Do not create a public release.
+
+---
+
+## 16. PHASE 10 — FINAL INDEPENDENT RED TEAM REVIEW
+
+After the corrected PDF has been generated, conduct a final independent review.
+
+The Detector must compare:
+
+- Original baseline.
+- Corrected candidate.
+- Original PRD.
+- New PRD supplement.
+- Lecturer requirements.
+- Approved project identity.
+
+Verify:
+
+- Confirmed defects were corrected or explicitly deferred.
+- No new scientific errors.
+- No new mathematical errors.
+- No broken citations.
+- No missing figures.
+- No RTL regressions.
+- No new visual defects.
+- No new layout inconsistencies.
+- Accurate graphs.
+- Reproducible compilation.
+- Functional existing QA mechanisms.
+- Functional new QA mechanisms.
+- Complete and accurate documentation.
+
+Render and visually inspect every page of the corrected PDF.
+
+Use readable-resolution renders.
+
+Create authentic before-and-after screenshots demonstrating meaningful corrections.
+
+Do not create fictional screenshots or synthetic evidence of agent activity.
+
+If the final Detector finds a new confirmed defect, send it back to the Fixer and repeat the relevant checks.
+
+Do not stop and ask the user for permission to correct routine, verified defects.
+
+Continue until the candidate satisfies the measurable acceptance criteria or until genuine technical limitations prevent further progress.
+
+---
+
+## 17. PHASE 11 — PROFESSIONAL README UPDATE
+
+Update the existing `README.md` while preserving its useful original content.
+
+The lecturer explicitly requires an informative and visually professional README.
+
+Add a clearly identified section:
+
+**Independent Codex Review and Collaborative Quality Improvement**
+
+Include:
+
+### Project overview
+
+- Book title.
+- Authors.
+- Group ID LIATLVNT.
+- Assignment number.
+- Project purpose.
+- Existing LaTeX architecture.
+- Current candidate version.
+
+### Liat's independent contribution
+
+Explain the work actually performed, including:
+
+- Independent review.
+- Actual Codex multi-agent management.
+- Skills created.
+- Scientific and mathematical findings.
+- Publication-quality findings.
+- Confirmed corrections.
+- QA improvements.
+- Incident investigations.
+- Reproducibility improvements.
+- Documentation updates.
+
+### Multi-agent architecture
+
+Explain:
+
+- Original Claude Code workflow.
+- Independent Codex workflow.
+- Orchestrator.
+- Expert committee.
+- Detector.
+- Fixer.
+- Review and correction cycle.
+
+Create a professional architecture diagram using reproducible code or an appropriate documentation format.
+
+### Visual evidence
+
+Include actual images showing:
+
+- Relevant original book pages.
+- Corrected book pages.
+- Before-and-after comparisons.
+- Corrected mathematical expressions.
+- Improved layouts.
+- Graphs, if applicable.
+- Actual agent execution evidence.
+- Actual Git collaboration activity.
+
+Select meaningful images rather than generating a large redundant screenshot collection.
+
+Do not expose authentication tokens, personal email addresses, student identification numbers, or unrelated private information in screenshots.
+
+If genuine agent screenshots cannot be captured, use authentic execution logs and explain that limitation.
+
+Never fabricate terminal screenshots.
+
+### QA and reproducibility
+
+Include:
+
+- Actual tests executed.
+- Actual results.
+- Existing QA mechanisms.
+- Newly improved QA mechanisms.
+- Build instructions.
+- Dependency requirements.
+- PDF generation instructions.
+- Known limitations.
+
+### Links
+
+Provide accurate links to:
+
+- Final candidate PDF.
+- PRD.
+- Prompt history.
+- Skills.
+- Agent reports.
+- Incident reports.
+- Collaboration documentation.
+- GitHub Pull Request, once created.
+
+Do not describe pending GitHub actions as completed.
+
+Verify that README image paths and internal links resolve.
+
+---
+
+## 18. PHASE 12 — UPDATE PRD, PROMPTS, SKILLS AND ENGINEERING DOCUMENTATION
+
+### PRD
+
+Update the existing PRD to include:
+
+- Independent expert committee supplement.
+- Additional requirements.
+- Measurable acceptance criteria.
+- Confirmed findings.
+- Implemented improvements.
+- Remaining limitations.
+- Final verification results.
+
+Preserve original project requirements and historical decisions.
+
+Clearly distinguish original requirements from Codex review additions.
+
+### Prompt history
+
+Inspect the existing prompt directory and prompt history document.
+
+Append the exact current user prompt verbatim.
+
+Include:
+
+- Actual user instructions.
+- Actual subagent instructions.
+- Actual Detector instructions.
+- Actual Fixer instructions.
+- Actual correction prompts.
+- Actual review prompts.
+- Actual final verification prompts.
+
+Preserve the original chronological history.
+
+Do not rewrite historical prompts.
+
+Do not invent missing prompts.
+
+Clearly label summaries as summaries.
+
+Do not describe Codex's autonomous decisions as explicit student approvals.
+
+### Skills
+
+Preserve the original Claude Skills.
+
+Add the newly created Codex Skills.
+
+Document actual invocation and execution evidence.
+
+### Agent reports
+
+Store actual independent agent reports in an organized directory that fits the existing repository structure.
+
+Clearly separate original Claude reports from the new Codex review reports.
+
+Include:
+
+- Role.
+- Task.
+- Execution status.
+- Reviewed files.
+- Findings.
+- Corrections.
+- Verification.
+
+### Incident documentation
+
+Append actual new incidents.
+
+Preserve the existing incident numbering and history.
+
+### CHANGELOG and STATUS
+
+Update the current candidate status.
+
+Describe actual changes.
+
+Do not label an unpublished candidate as a released version.
+
+### Assignment 01 feedback
+
+If actual lecturer feedback from Assignment 01 is available, document:
+
+- Original feedback.
+- Improvement introduced in Assignment 02.
+- Supporting evidence.
+- Current status.
+
+If the original feedback is unavailable, document that it could not be verified.
+
+Do not invent lecturer comments.
+
+---
+
+## 19. PHASE 13 — AUTHENTIC COLLABORATION DOCUMENTATION
+
+Create a professional `COLLABORATION.md`.
+
+Its purpose is to demonstrate genuine student participation and an authentic collaborative engineering workflow.
+
+### Team information
+
+- Assignment 02.
+- Group ID LIATLVNT.
+- Liat Kafezider — `liatkaf`.
+- Livnat Benson — `greenlivnat`.
+
+### Division of responsibilities
+
+Describe contributions supported by actual evidence.
+
+Distinguish:
+
+- Original project development.
+- Existing Claude Code workflow.
+- Liat's independent Codex review.
+- Actual corrections.
+- Agent management.
+- Skills development.
+- QA improvements.
+- Documentation work.
+- Git collaboration.
+
+Do not invent or retrospectively assign unverified contributions.
+
+### Initial Git Pull
+
+Record the manually performed operation:
+
+```powershell
+git pull --ff-only origin main
+```
+
+Actual result:
+
+```text
+Already up to date.
+```
+
+Before commit:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+After commit:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+Record that:
+
+- The operation was performed manually by Liat.
+- Actual terminal screenshots exist.
+- The repository was already synchronized.
+- No new commits were received.
+- The operation was not performed by Codex.
+
+### Personal branch
+
+Record the actual creation and use of:
+
+`liat/assignment02-critical-review`
+
+### Git operations
+
+Document genuine:
+
+- Baseline verification.
+- Initial Pull.
+- Branch creation.
+- Local commits.
+- Commit hashes.
+- Push operations, once performed.
+- Pull Request URL, once created.
+- Review comments, once submitted.
+- Merge reference, once completed.
+- Final post-merge Pull, once performed.
+
+Mark future activities as pending.
+
+### Human supervision and autonomous decisions
+
+Distinguish between:
+
+- Liat's actual initial project instructions.
+- Liat's manually performed Git operations.
+- Explicit decisions already made by Liat.
+- Autonomous engineering decisions made by Codex.
+- Future decisions requiring joint publication approval.
+
+Do not manufacture human approvals.
+
+### Evidence
+
+Link to actual:
+
+- Commits.
+- Agent reports.
+- Skills.
+- Prompt files.
+- QA reports.
+- Incident investigations.
+- Before-and-after examples.
+- Corrected PDF.
+- Pull Request, once available.
+
+---
+
+## 20. PHASE 14 — CREATE MEANINGFUL LOCAL COMMITS
+
+Local commits on Liat's personal branch are explicitly authorized.
+
+Do not pause to request approval before creating local commits corresponding to completed and verified work.
+
+Before committing, confirm:
+
+- The active branch is `liat/assignment02-critical-review`.
+- The configured Git author identity belongs to Liat.
+- The baseline remains intact.
+- The Git diff contains only justified changes.
+- No private information or credentials are included.
+- No unrelated generated temporary files are included.
+
+Create meaningful commits reflecting actual completed work.
+
+Possible commit messages, only when supported by actual changes:
+
+```text
+Add independent Codex expert review and acceptance criteria
+
+Add Codex-compatible review skills and agent execution records
+
+Fix verified LaTeX and scientific content defects
+
+Strengthen QA checks for confirmed publication defects
+
+Rebuild independently reviewed book candidate
+
+Document authentic Git collaboration and engineering improvements
+```
+
+Do not create empty commits.
+
+Do not create artificial commits merely to increase contribution counts.
+
+Do not artificially split trivial modifications.
+
+Do not backdate commits.
+
+Do not impersonate Livnat.
+
+Do not modify historical commit authors.
+
+Record actual commit hashes.
+
+Verify commit attribution using Git.
+
+All commits must remain local at this stage.
+
+Never push directly to main.
+
+---
+
+## 21. PHASE 15 — PREPARE THE GITHUB PULL REQUEST
+
+The lecturer requires evidence that both students participated.
+
+The collaboration process must therefore include an actual Pull Request after Liat's local work is approved for publication.
+
+Prepare the complete Pull Request materials now, without creating the remote Pull Request yet.
+
+### Pull Request target
+
+Base repository:
+
+`greenlivnat/HW2`
+
+Base branch:
+
+`main`
+
+Compare branch:
+
+`liat/assignment02-critical-review`
+
+GitHub account:
+
+`liatkaf`
+
+### Suggested Pull Request title
+
+`Assignment 02 — Independent Codex critical review and publication quality improvements`
+
+### Pull Request description
+
+Prepare a complete professional description containing:
+
+- Purpose.
+- Original baseline.
+- Independent review scope.
+- Confirmed defects.
+- Scientific corrections.
+- Mathematical corrections.
+- LaTeX improvements.
+- Visual publication improvements.
+- Actual agent contributions.
+- Codex Skills.
+- Incident investigations.
+- QA improvements.
+- Actual test results.
+- Corrected PDF.
+- Before-and-after examples.
+- Reproducibility.
+- Remaining limitations.
+- Links to relevant documentation.
+
+Save the prepared Pull Request description in an appropriate project documentation file.
+
+Do not claim that the Pull Request has already been created.
+
+### Future publication workflow
+
+After Liat approves remote publication, guide her through the following steps:
+
+#### A. Check upstream updates
+
+```powershell
+git fetch origin
+```
+
+Inspect whether Livnat has added commits to main.
+
+If changes exist, integrate them safely without discarding either student's work.
+
+Resolve straightforward conflicts using actual project evidence.
+
+If a significant conflict cannot be resolved safely, preserve the work and report the blocker.
+
+#### B. Push the personal branch
+
+```powershell
+git push -u origin liat/assignment02-critical-review
+```
+
+This command is not authorized during the current local execution.
+
+Provide it in the final report for the next publication stage.
+
+Never push directly to main.
+
+#### C. Open a Pull Request using the browser
+
+Because GitHub CLI is unavailable, provide exact browser instructions.
+
+The Pull Request comparison URL should use the existing repository and verified branch names.
+
+Guide Liat to:
+
+- Sign in as `liatkaf`.
+- Select the correct base repository.
+- Select main as the base branch.
+- Select her personal branch as the compare branch.
+- Paste the prepared Pull Request description.
+- Create the Pull Request.
+- Request review from Livnat.
+
+#### D. Livnat's review
+
+Livnat should independently review the actual changes.
+
+She may approve, request corrections, or add review comments.
+
+Do not fabricate review comments or approval.
+
+#### E. Merge
+
+Livnat or an explicitly authorized maintainer should merge the Pull Request after review.
+
+Prefer a merge approach that preserves meaningful contribution history and attribution.
+
+Do not merge automatically.
+
+#### F. Final post-merge Git Pull
+
+After the Pull Request has genuinely been merged, Liat should execute:
+
+```powershell
+git switch main
+git rev-parse HEAD
+git pull --ff-only origin main
+git rev-parse HEAD
+git status
+```
+
+Document:
+
+- Actual execution date.
+- Actual command output.
+- Commit before the pull.
+- Commit after the pull.
+- Actual changes received.
+- Pull Request URL.
+- Merge reference.
+- Final working tree status.
+
+This will provide additional genuine evidence of collaborative integration.
+
+Do not manufacture a new upstream change merely to demonstrate a pull.
+
+#### G. Final collaboration evidence
+
+After these future operations actually occur, update the collaboration record through an appropriate approved Git workflow.
+
+Do not document pending activities as completed.
+
+---
+
+## 22. PHASE 16 — FINAL ACADEMIC COMPLIANCE AUDIT
+
+Evaluate the corrected candidate against every known lecturer requirement.
+
+Create a compliance matrix using:
+
+- PASS.
+- PARTIAL.
+- FAIL.
+- NOT VERIFIED.
+
+For each requirement, provide:
+
+- Requirement description.
+- Supporting evidence.
+- Relevant source file.
+- Relevant report.
+- Actual test result.
+- Remaining limitation.
+
+Evaluate:
+
+1. Actual multi-agent execution.
+2. Agent specialization.
+3. Skills.
+4. Expert committee.
+5. PRD quality.
+6. Detector and Fixer separation.
+7. Automated Red Team review.
+8. Incident investigations.
+9. Preventive QA improvements.
+10. LaTeX project organization.
+11. Separate chapter files.
+12. CLS template.
+13. Python-generated graphs.
+14. Original code-generated illustrations.
+15. Hebrew and English typography.
+16. Scientific accuracy.
+17. Mathematical accuracy.
+18. Bibliography.
+19. Research integrity.
+20. Reproducible compilation.
+21. Professional PDF.
+22. Informative README.
+23. Actual screenshots.
+24. Authentic prompt history.
+25. Actual agent execution evidence.
+26. Meaningful student participation.
+27. Git collaboration.
+28. Repository accessibility.
+29. Correct group ID.
+30. Submission readiness.
+
+Mark future Pull Request, merge, and post-merge activities as pending.
+
+If supplementary lecturer requirements cannot be inspected, explicitly identify them as not verified.
+
+Do not claim full academic compliance without supporting evidence.
+
+---
+
+## 23. PHASE 17 — INDEPENDENT SELF-ASSESSMENT GRADE
+
+Recommend an evidence-based self-assessment grade out of 100.
+
+Do not automatically recommend 100.
+
+The lecturer stated that a self-assessment grade of 100 triggers particularly strict evaluation.
+
+A low self-assessment may underestimate an otherwise strong project.
+
+Therefore, provide a balanced grade based on:
+
+- Actual technical implementation.
+- Originality.
+- Publication quality.
+- Scientific accuracy.
+- Mathematical accuracy.
+- Multi-agent engineering.
+- Skills.
+- QA mechanisms.
+- Incident investigations.
+- Reproducibility.
+- Documentation.
+- Actual student collaboration.
+- Remaining limitations.
+- Unverified formal requirements.
+
+Provide:
+
+- Recommended numerical grade.
+- Weighted assessment criteria.
+- Justification.
+- Reasons for any point deductions.
+- Remaining risks that could affect grading.
+
+Also provide a short, clear English justification suitable for the official submission form, if the form contains an appropriate justification field.
+
+Do not present the internal grade as the lecturer's actual grade.
+
+---
+
+## 24. PHASE 18 — FINAL DELIVERABLES AND GO / NO-GO REPORT
+
+Complete all local tasks before presenting the final report.
+
+The final report must be written primarily in Hebrew.
+
+Technical terms, file names, commands, commit messages, and code may remain in English.
+
+### A. Executive summary
+
+Explain:
+
+- What was reviewed.
+- What was discovered.
+- What was corrected.
+- What was improved.
+- Whether the corrected book is ready for review.
+
+### B. Before-and-after comparison
+
+Provide a structured comparison containing:
+
+- Issue ID.
+- Original defect.
+- Original page.
+- Correction.
+- Updated page.
+- Verification result.
+- Before-and-after evidence.
+
+### C. Actual agent execution
+
+Report:
+
+- Agents actually launched.
+- Tasks assigned.
+- Findings.
+- Skills actually invoked.
+- Detector/Fixer interactions.
+- Independent verification results.
+- Any multi-agent limitations.
+
+### D. Scientific and mathematical review
+
+Report:
+
+- Confirmed scientific defects.
+- Confirmed mathematical defects.
+- Implemented corrections.
+- Remaining concerns.
+- Verified sources.
+- Unverified sources.
+
+### E. Publication quality
+
+Report:
+
+- RTL/LTR corrections.
+- Formula corrections.
+- Bibliography corrections.
+- Layout corrections.
+- Graph improvements.
+- Visual inspection results.
+
+### F. QA and incident investigations
+
+Report:
+
+- Existing QA mechanisms.
+- Newly executed tests.
+- New or improved QA checks.
+- New incidents.
+- Root causes.
+- Preventive actions.
+- Final regression results.
+
+### G. Documentation
+
+Confirm actual updates to:
+
+- README.md.
+- PRD.
+- Prompt history.
+- Skills.
+- Agent reports.
+- Incident documentation.
+- CHANGELOG.
+- STATUS.
+- COLLABORATION.md.
+- Prepared Pull Request description.
+
+### H. Candidate PDF
+
+Provide:
+
+- Exact local PDF path.
+- PDF page count.
+- PDF file size.
+- PDF checksum.
+- Original versus corrected version.
+- Instructions for opening the PDF locally.
+
+If possible, open the corrected PDF using the supported local operating-system mechanism.
+
+Provide the relevant screenshot and report locations.
+
+### I. Git contribution evidence
+
+Report:
+
+- Active branch.
+- Original baseline commit.
+- Current commit.
+- Actual local commit hashes.
+- Commit author attribution.
+- Files changed.
+- Working tree status.
+- Initial manual Pull evidence.
+- Remote publication status.
+- Prepared Pull Request instructions.
+
+### J. Decisions made autonomously
+
+List:
+
+- Important engineering decisions.
+- Reasoning and evidence supporting each decision.
+- Assumptions.
+- Deferred high-risk changes.
+- Unresolved limitations.
+- Items requiring future joint publication approval.
+
+Do not falsely attribute autonomous Codex decisions to Liat.
+
+### K. Academic assessment
+
+Provide:
+
+- Lecturer requirement compliance matrix.
+- Recommended self-assessment grade.
+- Concise justification.
+- Remaining submission risks.
+
+### L. Final readiness decision
+
+Provide one of:
+
+**GO FOR HUMAN REVIEW AND PUBLICATION APPROVAL**
+
+or
+
+**NO-GO — REMAINING CRITICAL ISSUES**
+
+A GO decision means that the corrected local candidate is ready for human review.
+
+It does not authorize remote publication.
+
+---
+
+## 25. REQUIRED FINAL LOCAL DELIVERABLES
+
+By the end of this task, provide all applicable completed deliverables:
+
+1. Corrected and compiled `book.pdf`.
+2. Corrected authoritative chapter sources.
+3. Updated LaTeX files and template, where required.
+4. Updated Python code, where justified.
+5. Reproducible generated figures.
+6. Independent expert committee report.
+7. PRD supplement.
+8. Actual Codex Skills.
+9. Actual agent execution reports.
+10. Improved QA checks.
+11. New incident investigations.
+12. Final Red Team report.
+13. Before-and-after screenshots.
+14. Updated README.
+15. Updated PRD.
+16. Updated prompt history.
+17. Updated CHANGELOG and STATUS.
+18. COLLABORATION.md.
+19. Meaningful local Git commits.
+20. Prepared Pull Request description.
+21. Academic compliance matrix.
+22. Final GO / NO-GO report.
+23. Recommended self-assessment grade.
+
+Use existing repository conventions for file locations.
+
+Avoid duplicate reports and unnecessary file proliferation.
+
+If a deliverable cannot be completed, identify the precise reason and provide the closest legitimate alternative.
+
+---
+
+## 26. ABSOLUTE RESTRICTIONS
+
+Do not:
+
+- Modify Assignment 01.
+- Recreate the existing local repository.
+- Recreate Liat's existing personal branch.
+- Modify main directly.
+- Replace the existing book with an unrelated publication.
+- Delete original Claude agents or Skills.
+- Delete historical documentation.
+- Delete prior release artifacts.
+- Rewrite Git history.
+- Force-push.
+- Fabricate Git activity.
+- Fabricate agent executions.
+- Fabricate citations.
+- Fabricate research findings.
+- Fabricate experiments.
+- Fabricate QA results.
+- Fabricate student participation.
+- Fabricate lecturer feedback.
+- Fabricate human approvals.
+- Publish credentials or sensitive personal information.
+- Create meaningless commits.
+- Push changes without explicit publication authorization.
+- Open a remote Pull Request without explicit publication authorization.
+- Merge without approval.
+- Publish a new release without approval.
+
+Preserve all authentic historical evidence.
+
+---
+
+## 27. START EXECUTION IMMEDIATELY
+
+Execute all local phases continuously:
+
+1. Verify the environment and existing Git state.
+2. Inspect the original project.
+3. Establish actual Codex subagents.
+4. Create reusable Skills.
+5. Conduct independent expert reviews.
+6. Identify confirmed defects.
+7. Audit the existing eight QA mechanisms.
+8. Consolidate findings.
+9. Update the PRD.
+10. Implement justified corrections.
+11. Investigate missed defects.
+12. Strengthen preventive QA.
+13. Rebuild the book.
+14. Perform independent final Red Team verification.
+15. Correct any newly discovered routine defects.
+16. Update README and project documentation.
+17. Update prompt history.
+18. Document actual collaboration.
+19. Create meaningful local commits.
+20. Prepare the Pull Request description.
+21. Complete the academic compliance audit.
+22. Recommend a self-assessment grade.
+23. Deliver the corrected PDF and final report.
+
+Do not stop between phases.
+
+Do not ask the user questions.
+
+Do not request intermediate approval.
+
+Do not wait for the user to respond.
+
+Do not deliver only an implementation plan.
+
+If a non-critical issue occurs, make a professional decision, document it, and continue.
+
+If an essential task is blocked by system permissions, missing tools, unavailable sources, or another genuine technical limitation, complete all remaining feasible tasks and report the exact blocker at the end.
+
+Stop only when all feasible local deliverables have been completed and verified.
+
+Do not perform remote publication during this task.
+
+# FINAL SUCCESS CRITERION
+
+Deliver a genuinely improved, reproducible, professionally designed LaTeX book, supported by actual multi-agent engineering, verified corrections, meaningful quality assurance improvements, authentic prompt documentation, and genuine Git contributions under Liat's identity.
+
+The complete local candidate must be ready for a subsequent GitHub Pull Request and independent review by Livnat.
+
+**Quality, originality, academic integrity, engineering evidence, reproducibility, and authentic collaboration are more important than the number of changes or commits.**
+
+**Work autonomously from start to finish. Deliver the actual completed local product.**# ASSIGNMENT 02 — AUTONOMOUS CODEX MULTI-AGENT CRITICAL REVIEW, PUBLICATION QUALITY IMPROVEMENT AND AUTHENTIC GITHUB COLLABORATION
+
+## 1. MANDATORY AUTONOMOUS EXECUTION PROTOCOL
+
+This is an end-to-end autonomous engineering assignment.
+
+Execute all requested local development, review, correction, testing, documentation, and candidate publication preparation tasks continuously and independently.
+
+**Do not ask Liat questions or wait for her responses during execution.**
+
+The following rules are mandatory:
+
+- Do not request clarification questions.
+- Do not pause for intermediate human approval.
+- Do not stop after presenting an audit, plan, or list of recommendations.
+- Do not ask the user to choose between reasonable implementation alternatives.
+- Make professional, evidence-based decisions independently.
+- Resolve ambiguities using existing project documentation, lecturer requirements, the established visual identity, and engineering best practices.
+- Investigate technical problems and attempt to resolve them independently.
+- If an implementation approach fails, evaluate alternative approaches and continue.
+- If a non-critical task cannot be completed, document the limitation and continue with the remaining tasks.
+- Perform internal review, correction, verification, and regression cycles without human intervention.
+- Provide concise progress updates in Hebrew without requiring a response.
+- Manage tokens, model usage, execution time, memory, and disk space efficiently.
+- Preserve existing project quality and avoid unnecessary modifications.
+- Deliver an actual corrected and tested PDF, not merely a proposed correction plan.
+
+All review findings, implementation decisions, and verification activities should be consolidated into the final report.
+
+This autonomous execution protocol overrides any intermediate approval requirements found in older project documentation or previous task instructions.
+
+### Exceptions
+
+Do not bypass system-enforced permissions or security restrictions.
+
+Do not perform destructive operations.
+
+Do not push changes to GitHub, open a remote Pull Request, merge branches, or create a public release without explicit publication authorization.
+
+These external publication restrictions must not prevent completion of all local work.
+
+If a potentially risky or irreversible decision cannot be made safely, preserve the original implementation, document the issue, and continue with the remaining tasks.
+
+**The only planned stopping point is after completing the corrected local deliverable, documentation, verification, and meaningful local commits.**
+
+---
+
+## 2. PROJECT IDENTITY
+
+**University:** Bar-Ilan University
+
+**Course:** Generative AI
+
+**Assignment:** 02
+
+**Group ID:** LIATLVNT
+
+**Student collaborators:**
+
+- Liat Kafezider — GitHub username: `liatkaf`
+- Livnat Benson — GitHub username: `greenlivnat`
+
+**Shared GitHub repository:**
+
+https://github.com/greenlivnat/HW2
+
+**Local project directory:**
+
+`D:\HW2`
+
+**Liat's existing personal working branch:**
+
+`liat/assignment02-critical-review`
+
+**Verified baseline commit:**
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+**Project title:**
+
+מאחורי הקלעים של הבינה המלאכותית
+
+**Subtitle:**
+
+מהנתון הראשון ועד לתשובה שעל המסך
+
+The project is an existing Hebrew popular-science book about artificial intelligence, developed using LaTeX, LuaLaTeX, Python, and a documented multi-agent AI engineering workflow.
+
+The original project was developed using Claude Code.
+
+Liat's independent contribution must be performed using **OpenAI Codex CLI**.
+
+Do not use Antigravity-specific or Claude Code-specific commands as if they were Codex commands.
+
+The existing published project is the baseline. Verify its actual version and structure before making changes.
+
+---
+
+## 3. ALREADY COMPLETED PREPARATION — DO NOT REPEAT
+
+The following steps have already been performed manually by Liat and verified through terminal screenshots and GitHub account settings.
+
+### 3.1 GitHub access
+
+- Livnat granted Liat Collaborator access to the shared repository.
+- The repository is already cloned locally.
+- No additional Fork is required.
+- No additional Clone is required.
+
+### 3.2 Local repository
+
+The existing local project is located at:
+
+`D:\HW2`
+
+The verified Git remote is:
+
+`https://github.com/greenlivnat/HW2.git`
+
+Both fetch and push URLs point to the shared repository.
+
+### 3.3 Git identity
+
+The configured Git author name is:
+
+`Liat Kafezider`
+
+The configured Git email was verified against Liat's GitHub account and is marked as Verified.
+
+Do not unnecessarily modify the Git identity.
+
+Do not expose the email address, credentials, or authentication tokens in public documentation.
+
+Actual remote push authentication has not yet been independently tested.
+
+### 3.4 Genuine Git Pull already performed
+
+Liat manually executed:
+
+```powershell
+git rev-parse HEAD
+git pull --ff-only origin main
+git rev-parse HEAD
+```
+
+The actual result was:
+
+```text
+From https://github.com/greenlivnat/HW2
+ * branch main -> FETCH_HEAD
+Already up to date.
+```
+
+Commit before the pull:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+Commit after the pull:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+This was a genuine Git synchronization operation.
+
+No new commits were downloaded because the local repository was already up to date.
+
+Liat has actual terminal screenshots documenting the operation.
+
+Record this evidence accurately.
+
+Do not claim that Codex executed the original pull.
+
+Do not claim that new changes were downloaded.
+
+Do not fabricate screenshots.
+
+### 3.5 Existing personal branch
+
+Liat manually executed:
+
+```powershell
+git switch -c liat/assignment02-critical-review
+git branch
+```
+
+The resulting active branch was:
+
+```text
+* liat/assignment02-critical-review
+  main
+```
+
+Do not recreate this branch.
+
+Do not switch to main during development.
+
+### 3.6 GitHub CLI
+
+The `gh` command is not currently available on this computer.
+
+Do not install GitHub CLI unnecessarily.
+
+Use standard Git commands.
+
+Prepare browser-based instructions for opening the Pull Request after the local work is complete.
+
+### 3.7 Starting verification
+
+Perform only a brief verification of:
+
+```powershell
+git status
+git branch --show-current
+git remote -v
+git rev-parse HEAD
+git config user.name
+```
+
+If the current state matches the expected preparation, proceed immediately.
+
+Do not repeat the completed setup process.
+
+---
+
+## 4. PRIMARY MISSION
+
+Your mission is to help Liat make a genuine, independent, technically meaningful contribution to Assignment 02.
+
+Complete all of the following:
+
+1. Conduct an independent critical review of the existing book.
+2. Establish and operate an actual Codex multi-agent review team.
+3. Develop reusable Codex-compatible Skills.
+4. Identify scientific, mathematical, technical, editorial, and visual defects.
+5. Independently determine justified correction priorities.
+6. Implement necessary corrections.
+7. Investigate defects missed by the previous quality assurance process.
+8. Strengthen the existing QA mechanisms.
+9. Rebuild the corrected LaTeX book.
+10. Produce a publication-quality PDF.
+11. Conduct independent final Red Team verification.
+12. Update README, PRD, prompt history, Skills, and project documentation.
+13. Document authentic student collaboration.
+14. Create meaningful local Git commits under Liat's identity.
+15. Prepare a complete Pull Request proposal for Livnat.
+16. Deliver an evidence-based final GO / NO-GO report.
+17. Recommend a justified self-assessment grade.
+
+The objective is not to manufacture evidence of participation.
+
+All documented engineering activities, student contributions, agent executions, findings, test results, and Git operations must correspond to actual events.
+
+---
+
+## 5. LECTURER'S ASSIGNMENT REQUIREMENTS
+
+Use the following academic requirements as the mandatory framework.
+
+### 5.1 Multi-agent engineering
+
+The project must demonstrate:
+
+- Actual operation of a team of specialized AI agents.
+- Clearly defined agent responsibilities.
+- Reusable Skills.
+- An independent Detector agent.
+- A Fixer agent.
+- Automated Red Team review between agents.
+- Documented quality assurance.
+- Incident investigations for missed defects.
+
+For every newly discovered confirmed defect, investigate:
+
+- Why did the defect occur?
+- Why was it not detected previously?
+- Which quality mechanism should have detected it?
+- How can recurrence be prevented?
+
+### 5.2 Expert committee and PRD
+
+Establish an expert committee that:
+
+- Defines professional publication-quality criteria.
+- Reviews the existing PRD.
+- Identifies additional measurable requirements.
+- Evaluates the actual publication against those requirements.
+- Documents acceptance criteria.
+- Demonstrates meaningful engineering judgment.
+
+Preserve original requirements and historical project decisions.
+
+### 5.3 LaTeX project
+
+Maintain:
+
+- A main LaTeX document.
+- Separate chapter-level `.tex` files.
+- A dedicated `.cls` template.
+- Organized source directories.
+- Python-generated graphs.
+- Programmatically generated illustrations.
+- Reproducible LuaLaTeX compilation.
+
+Do not introduce copyrighted images taken from the internet.
+
+Prefer original TikZ diagrams, Python visualizations, and other reproducible code-based illustrations.
+
+### 5.4 Engineering documentation
+
+The repository must include:
+
+- Actual user prompts.
+- Agent-specific prompts.
+- Agent Skills.
+- Actual execution records.
+- Quality assurance reports.
+- Incident investigations.
+- Professional README documentation.
+- Visual examples.
+- Complete LaTeX source.
+- Python source.
+- Final compiled PDF.
+
+### 5.5 Excellence beyond minimum requirements
+
+Evaluate the publication for:
+
+- Originality.
+- Creativity.
+- Professional publication design.
+- Meaningful visualizations.
+- Scientific accuracy.
+- Mathematical accuracy.
+- Hebrew and English bidirectional typography.
+- Reproducibility.
+- Consistent visual identity.
+- Critical thinking.
+- Human supervision.
+- Quality of engineering decisions.
+
+Do not assume that meeting minimum requirements automatically represents academic excellence.
+
+### 5.6 Submission protocol
+
+- Preserve the existing Assignment 02 repository.
+- Preserve both students' authorship.
+- Use group ID `LIATLVNT`.
+- Maintain repository accessibility for the lecturer.
+- Document genuine participation by both students.
+- Maintain the separate official Moodle submission report filename:
+
+`LIATLVNT-ex02.pdf`
+
+The official Moodle report is separate from the actual book PDF.
+
+Do not rename `book.pdf` to the official Moodle submission filename.
+
+Do not modify the official university reporting template unless explicitly requested.
+
+Each student must submit individually.
+
+Do not claim that Moodle submission has occurred.
+
+If supplementary lecturer documents or Assignment 01 feedback are unavailable, report that limitation in the final report and continue working.
+
+Do not invent missing academic requirements or lecturer feedback.
+
+---
+
+## 6. PHASE 0 — ENVIRONMENT AND RESOURCE MANAGEMENT
+
+Verify the required development environment.
+
+Inspect:
+
+- Codex CLI version.
+- Actual subagent capabilities.
+- Skills support.
+- Python version.
+- Existing virtual environment.
+- Available dependencies.
+- Available disk space.
+- LuaLaTeX.
+- latexmk.
+- biber.
+- pdfinfo.
+- pdftotext.
+- pdftoppm.
+- Required fonts.
+- Existing project build instructions.
+
+Reuse the current project environment wherever possible.
+
+Do not unnecessarily install large dependencies or alter global system configuration.
+
+### Resource management
+
+The previous assignment encountered AI usage limits.
+
+Therefore:
+
+- Use no more than two active subagents concurrently.
+- Execute expensive tasks sequentially.
+- Use focused agent assignments.
+- Avoid unnecessary context duplication.
+- Avoid repeatedly compiling the entire book.
+- Reuse valid existing test evidence when appropriate.
+- Clearly distinguish historical tests from newly executed tests.
+- Save progress at meaningful checkpoints.
+- Maintain a local execution status file.
+- Preserve intermediate findings and changes if interrupted.
+- Do not rerun the entire workflow after a recoverable interruption.
+
+If resource limitations occur, prioritize:
+
+1. Confirmed critical and high-severity defects.
+2. Successful reproducible PDF generation.
+3. Regression testing.
+4. Documentation.
+5. Meaningful local commits.
+6. Final reporting.
+
+If a task cannot be completed because of a genuine environment limitation, document the blocker and continue with independent tasks.
+
+---
+
+## 7. PHASE 1 — EXISTING PROJECT INVENTORY AND BASELINE
+
+Inspect the actual repository structure.
+
+Expected components may include:
+
+```text
+HW2/
+├── README.md
+├── book.pdf
+├── main.tex
+├── references.bib
+├── chapters/
+├── latex/
+├── python/
+├── assets/
+├── scripts/
+├── docs/
+├── agents/
+├── prompts/
+├── screenshots/
+├── releases/
+├── .claude/
+├── CHANGELOG.md
+├── requirements.txt
+└── .latexmkrc
+```
+
+Verify actual paths rather than assuming every expected file exists.
+
+Inspect relevant files, including where available:
+
+- `CLAUDE.md`
+- `AGENTS.md`
+- `docs/PRD.md`
+- `docs/SOURCES.md`
+- `docs/INCIDENTS.md`
+- `docs/PROMPT_HISTORY.md`
+- `docs/STATUS.md`
+- `docs/TODO.md`
+- `.claude/agents/`
+- `.claude/skills/`
+- `agents/runs/`
+- `scripts/qa.py`
+- `scripts/build.py`
+- `latex/aibook.cls`
+
+Treat Claude-specific instructions as documentation of the original workflow, not as executable Codex commands.
+
+### Source-of-truth architecture
+
+Determine which files are authoritative sources and which files are generated.
+
+The existing project may use `chapters/*.txt` as authoritative chapter sources, with generated `.tex` files.
+
+Verify this architecture.
+
+If confirmed, modify authoritative content or generation scripts rather than manually patching generated files.
+
+### Baseline record
+
+Record:
+
+- Baseline commit hash.
+- Current project version.
+- Original PDF path.
+- Original PDF page count.
+- Original PDF checksum.
+- Original chapter structure.
+- Existing agent architecture.
+- Existing Skills.
+- Existing QA mechanisms.
+- Existing research experiment.
+- Current build procedure.
+- Existing visual identity.
+- Known limitations.
+- Previous incident investigations.
+
+Preserve the original PDF and previous release artifacts for comparison.
+
+Do not overwrite historical releases.
+
+---
+
+## 8. PHASE 2 — ESTABLISH AN ACTUAL CODEX EXPERT COMMITTEE
+
+Create and operate an actual team of specialized Codex subagents.
+
+Use the actual capabilities supported by the installed Codex CLI.
+
+The parent Codex session serves as the Orchestrator.
+
+Do not merely simulate multiple agents by writing fictional reports from different perspectives.
+
+### Agent A — Academic and Scientific Reviewer
+
+Responsibilities:
+
+- Scientific accuracy.
+- AI and machine-learning concepts.
+- Neural-network explanations.
+- Mathematical definitions.
+- Source verification.
+- Research methodology.
+- Bibliography.
+- Validity of claims.
+- Accuracy of conclusions.
+- Academic integrity.
+
+### Agent B — LaTeX and Publication Reviewer
+
+Responsibilities:
+
+- Hebrew RTL typography.
+- Mixed Hebrew and English text.
+- Mathematical typesetting.
+- Equation presentation.
+- Fonts.
+- Page composition.
+- Figure positioning.
+- Captions.
+- Tables.
+- Headers and footers.
+- Table of contents.
+- Professional publication consistency.
+
+### Agent C — Technical and Reproducibility Reviewer
+
+Responsibilities:
+
+- Python experiment.
+- Dataset and methodology.
+- Dependency management.
+- Build scripts.
+- LuaLaTeX compilation.
+- Generated charts.
+- Existing QA scripts.
+- Source-of-truth architecture.
+- Reproducibility.
+
+### Agent D — Independent Detector and Red Team
+
+Responsibilities:
+
+- Detect defects missed by previous agents.
+- Independently inspect the compiled book.
+- Challenge scientific and mathematical claims.
+- Identify QA coverage gaps.
+- Identify visual defects.
+- Verify lecturer requirements.
+- Independently validate Fixer corrections.
+
+### Agent E — Fixer
+
+Responsibilities:
+
+- Apply confirmed, justified corrections.
+- Make minimal source-level changes.
+- Preserve the book's established identity.
+- Avoid unnecessary refactoring.
+- Maintain scientific accuracy.
+- Rebuild affected outputs.
+- Return corrections to the independent Detector.
+
+The Fixer must not act as the independent reviewer of its own corrections.
+
+### Orchestrator responsibilities
+
+- Define scoped tasks.
+- Assign responsibilities.
+- Manage agent execution.
+- Prevent concurrent edits to the same files.
+- Consolidate findings.
+- Resolve disagreements using evidence.
+- Prioritize confirmed defects.
+- Record decisions.
+- Manage resources.
+- Enforce academic integrity.
+
+### Actual execution evidence
+
+For each agent, record:
+
+- Actual agent role.
+- Assigned task.
+- Actual start and completion status.
+- Files reviewed.
+- Findings.
+- Output files.
+- Verification results.
+- Model information, where available.
+
+If native Codex subagents are unavailable, investigate supported alternatives involving genuine independent Codex sessions or executions.
+
+If no genuine multi-agent mechanism is available, document that limitation and perform as much independent local review as possible.
+
+Do not falsely represent a single-agent workflow as multi-agent execution.
+
+---
+
+## 9. PHASE 3 — CODEX-COMPATIBLE SKILLS
+
+Inspect the original Claude agent definitions and Skills.
+
+Preserve all existing Claude files.
+
+Create a separate Codex-compatible Skill layer using the actual directory structure supported by the installed Codex CLI.
+
+Possible location, subject to verification:
+
+`.agents/skills/`
+
+Create reusable Skills for:
+
+1. `academic-review`
+2. `latex-publication-review`
+3. `experiment-reproducibility`
+4. `detector-red-team`
+5. `targeted-fixer`
+6. `collaboration-evidence`
+
+Each Skill must include:
+
+- Valid `SKILL.md`.
+- Purpose.
+- Inputs.
+- Required procedure.
+- Constraints.
+- Acceptance criteria.
+- Expected outputs.
+- Failure handling.
+- References to relevant existing tools.
+
+Reuse existing QA scripts wherever appropriate.
+
+Do not unnecessarily duplicate existing functionality.
+
+Create a mapping between original Claude Skills and newly developed Codex Skills.
+
+For every actually invoked Skill, record:
+
+- Skill name.
+- Executing agent.
+- Assigned task.
+- Input files.
+- Findings.
+- Output files.
+- Acceptance results.
+
+Clearly distinguish between Skills that were created and Skills that were actually executed.
+
+---
+
+## 10. PHASE 4 — INDEPENDENT CRITICAL REVIEW
+
+Conduct a comprehensive review of the current book before making source-level corrections.
+
+Record the original defects so that meaningful before-and-after comparisons are possible.
+
+### 10.1 Scientific and academic accuracy
+
+Review every chapter for:
+
+- Incorrect definitions.
+- Unsupported scientific claims.
+- Misleading explanations.
+- Oversimplifications that change meaning.
+- Inconsistent terminology.
+- Incorrect explanations of neural networks.
+- Incorrect explanations of machine learning.
+- Incorrect explanations of language models.
+- Incorrect descriptions of token generation.
+- Confusion between training and inference.
+- Confusion between training, validation, and testing.
+- Conclusions that exceed the available evidence.
+
+Verify citations against accessible primary sources where possible.
+
+Never invent references, authors, publication years, DOIs, or research findings.
+
+Distinguish confirmed inaccuracies from sources that could not be independently accessed.
+
+### 10.2 Mathematical formulas
+
+Inspect equations in the authoritative sources, generated LaTeX, and compiled PDF.
+
+Check:
+
+- Broken equations.
+- Incorrect symbols.
+- Missing operators.
+- Missing operands.
+- Incorrect superscripts or subscripts.
+- Undefined variables.
+- Inconsistent mathematical notation.
+- Mixed RTL/LTR ordering.
+- Incorrect line breaks.
+- Missing equation references.
+- Incorrect formula rendering.
+
+For each confirmed defect, record:
+
+- PDF page.
+- Chapter.
+- Source file.
+- Exact source location.
+- Original representation.
+- Correct representation.
+- Explanation.
+- Supporting evidence.
+
+Pay particular attention to formulas that appear correct in source code but are rendered incorrectly in the actual PDF.
+
+### 10.3 Bibliography and citations
+
+Inspect `references.bib` and the existing bibliography-generation process.
+
+Verify:
+
+- Missing citation keys.
+- Broken references.
+- Duplicate references.
+- Incorrect authors.
+- Incorrect years.
+- Incorrect DOI or URL information.
+- Citation consistency.
+- Bibliography rendering.
+- Mixed Hebrew and English.
+- Required citation style.
+
+Preserve the existing citation style unless a confirmed defect requires a correction.
+
+### 10.4 Python research experiment
+
+Inspect the existing handwritten-digit classification experiment and verify its actual configuration.
+
+The existing project reportedly uses:
+
+- scikit-learn `load_digits`.
+- An MLP classifier.
+- A fixed random seed.
+- Stratified dataset splitting.
+- Epoch-based training measurements.
+
+Verify all details against actual source files and stored results.
+
+Check:
+
+- Dataset provenance.
+- Dataset license.
+- Data preprocessing.
+- Reproducibility.
+- Training/test separation.
+- Potential data leakage.
+- Model evaluation methodology.
+- Accuracy calculations.
+- Generalization gap calculations.
+- Epoch-level measurements.
+- Stored results.
+- Graph accuracy.
+- Consistency between experiment outputs and the narrative.
+- Scientific validity of conclusions.
+
+Pay particular attention to whether repeated measurements of the test set influenced model selection or optimization.
+
+Distinguish descriptive monitoring from test-set-driven tuning.
+
+Do not manipulate metrics.
+
+Do not change random seeds or model parameters merely to improve reported results.
+
+If a confirmed methodological problem exists, implement a scientifically justified correction only when it can be done reproducibly without introducing speculative assumptions.
+
+If a methodological change would substantially alter the research design, preserve the original experiment, clarify its limitations, and report the proposed alternative.
+
+### 10.5 Graphs and visualizations
+
+Verify that:
+
+- Graphs are generated using reproducible Python code.
+- Graph values match underlying experiment data.
+- Axes are correctly labeled.
+- Units and scales are appropriate.
+- Legends are understandable.
+- Visualizations do not misrepresent numerical differences.
+- Hebrew and English render correctly.
+- Graphs remain readable in the book.
+- Graph colors are consistent.
+- Visualizations support the narrative.
+- Copyright requirements are satisfied.
+
+Correct confirmed errors.
+
+Where a visualization is technically correct but visually weak, make a targeted improvement only if it preserves the established design and improves readability.
+
+### 10.6 Publication quality
+
+Render and visually inspect every page of the existing PDF.
+
+Do not rely exclusively on extracted text or successful compilation.
+
+Inspect:
+
+- Cover.
+- Table of contents.
+- Chapter openings.
+- Headers and footers.
+- Page numbering.
+- Text alignment.
+- Mathematical formulas.
+- Figures.
+- Tables.
+- Captions.
+- Bibliography.
+- Appendix.
+- Empty pages.
+- Excessive whitespace.
+- Clipped elements.
+- Overfull text.
+- Orphan headings.
+- Widow lines.
+- Inconsistent typography.
+- Hebrew punctuation.
+- English terminology inside Hebrew sentences.
+- Numbers inside RTL text.
+- Mathematical notation inside Hebrew paragraphs.
+
+Record confirmed visual defects with exact page numbers and source locations.
+
+Preserve the book's existing visual identity.
+
+Do not redesign the entire publication merely to demonstrate a personal contribution.
+
+---
+
+## 11. PHASE 5 — AUDIT THE EXISTING EIGHT QA MECHANISMS
+
+Identify and inspect the actual eight QA mechanisms described by the original project.
+
+Do not invent their names or functionality.
+
+Inspect the existing scripts and supported command-line interfaces.
+
+Possible commands include:
+
+```powershell
+python scripts/qa.py super
+```
+
+And:
+
+```powershell
+python scripts/qa.py code --rerun
+```
+
+Verify these commands against the actual repository before executing them.
+
+For each QA mechanism, document:
+
+- Name.
+- Purpose.
+- Implementation.
+- Inputs.
+- Actual execution result.
+- Detected defects.
+- Coverage limitations.
+- False positives.
+- Potential false negatives.
+- Recommended improvements.
+
+Determine whether the existing quality assurance system detects the specific confirmed defects discovered by the independent reviewers.
+
+Do not weaken tests merely to obtain passing results.
+
+Do not report historical results as newly executed tests.
+
+Do not rerun expensive tests unnecessarily.
+
+---
+
+## 12. PHASE 6 — CONSOLIDATE FINDINGS AND UPDATE THE PRD
+
+Consolidate the actual expert committee findings into a structured review report.
+
+For each issue, include:
+
+- Unique issue ID.
+- Reporting agent.
+- Category.
+- Severity.
+- Source file.
+- PDF page.
+- Evidence.
+- Observed behavior.
+- Expected behavior.
+- Root cause, if established.
+- Proposed correction.
+- Relevant lecturer requirement.
+- Acceptance test.
+- Implementation risk.
+
+Use the following severity levels:
+
+- Critical.
+- High.
+- Medium.
+- Low.
+- Informational.
+
+Distinguish between:
+
+- Confirmed defects.
+- Unverified concerns.
+- Optional enhancements.
+- Subjective design preferences.
+
+Do not exaggerate problems merely to demonstrate contribution.
+
+Create an independent Codex expert committee supplement to the existing PRD.
+
+Include:
+
+- Additional requirements.
+- Measurable acceptance criteria.
+- Review findings.
+- Prioritized corrections.
+- Scope limitations.
+- Agent responsibilities.
+
+Preserve the original PRD and historical decisions.
+
+### Autonomous decision rule
+
+Do not stop after completing this report.
+
+Do not present an approval gate.
+
+Independently proceed with all confirmed critical and high-severity corrections, and with justified medium- and low-severity improvements that can be implemented safely.
+
+For speculative, high-risk, or unnecessary changes, preserve the original implementation and document the reason for deferral.
+
+---
+
+## 13. PHASE 7 — IMPLEMENT TARGETED CORRECTIONS
+
+Assign confirmed defects to the Fixer.
+
+Apply the smallest effective source-level correction.
+
+Requirements:
+
+- Modify authoritative source files.
+- Preserve the original narrative.
+- Preserve the book's design.
+- Preserve both students' authorship.
+- Preserve the existing chapter structure unless a confirmed defect requires modification.
+- Maintain academic accuracy.
+- Maintain mathematical accuracy.
+- Maintain reproducibility.
+- Avoid unrelated refactoring.
+- Avoid unnecessary rewriting.
+
+For each corrected issue:
+
+1. Reproduce the original defect.
+2. Identify its root cause.
+3. Apply the correction.
+4. Run a targeted test.
+5. Rebuild the affected output.
+6. Return the correction to the independent Detector.
+7. Record the Detector's verdict.
+8. Repeat the correction if necessary.
+
+Limit repeated repair attempts to three per issue.
+
+If an issue remains unresolved, record it and continue with the other issues.
+
+Do not ask the user to resolve routine implementation decisions.
+
+---
+
+## 14. PHASE 8 — INCIDENT INVESTIGATION AND PREVENTIVE QA IMPROVEMENTS
+
+The lecturer explicitly requires investigation of defects that previous agents or quality mechanisms failed to identify.
+
+Inspect the existing incident documentation.
+
+Preserve all historical incidents.
+
+Append new confirmed incidents chronologically using the next available identifiers.
+
+For each incident, document:
+
+1. Incident description.
+2. Actual defect.
+3. Affected page and source file.
+4. Root cause.
+5. Why the previous process failed to detect it.
+6. Relevant original QA mechanism.
+7. Corrective action.
+8. Preventive action.
+9. Newly implemented or improved QA check.
+10. Verification results.
+11. Remaining limitations.
+
+Implement meaningful preventive quality checks where feasible.
+
+Each new automated check should include:
+
+- A reproducible failing test case.
+- Evidence that the detector recognizes the original defect.
+- Evidence that valid content still passes.
+- Regression verification.
+
+Do not merely fix the visible symptom.
+
+Improve the underlying quality process when justified.
+
+Do not fabricate incidents or attribute a defect to a particular historical agent without evidence.
+
+---
+
+## 15. PHASE 9 — REBUILD THE CORRECTED BOOK
+
+Inspect the existing documented build procedure.
+
+Possible commands include:
+
+```powershell
+python scripts/build.py
+```
+
+Or:
+
+```powershell
+python scripts/build.py --experiment
+```
+
+Verify the actual supported interface.
+
+Use the established LuaLaTeX workflow.
+
+Do not switch to another document-generation technology.
+
+Verify:
+
+- Main LaTeX document.
+- Separate chapter generation.
+- CLS template.
+- Font availability.
+- Bibliography generation.
+- biber execution, where required.
+- TikZ rendering.
+- Python-generated graphs.
+- Cross-references.
+- Page numbering.
+- Compilation warnings.
+- Compilation errors.
+- Final PDF creation.
+
+Do not manually patch the compiled PDF to conceal defects.
+
+All corrections must remain reproducible from the actual source files.
+
+Generate the corrected candidate PDF.
+
+Expected primary deliverable:
+
+`D:\HW2\book.pdf`
+
+Verify the actual generated path.
+
+Preserve previous published release PDFs.
+
+Treat the corrected book as a candidate for v1.0.1, unless the repository uses a different verified versioning convention.
+
+Do not create a public release.
+
+---
+
+## 16. PHASE 10 — FINAL INDEPENDENT RED TEAM REVIEW
+
+After the corrected PDF has been generated, conduct a final independent review.
+
+The Detector must compare:
+
+- Original baseline.
+- Corrected candidate.
+- Original PRD.
+- New PRD supplement.
+- Lecturer requirements.
+- Approved project identity.
+
+Verify:
+
+- Confirmed defects were corrected or explicitly deferred.
+- No new scientific errors.
+- No new mathematical errors.
+- No broken citations.
+- No missing figures.
+- No RTL regressions.
+- No new visual defects.
+- No new layout inconsistencies.
+- Accurate graphs.
+- Reproducible compilation.
+- Functional existing QA mechanisms.
+- Functional new QA mechanisms.
+- Complete and accurate documentation.
+
+Render and visually inspect every page of the corrected PDF.
+
+Use readable-resolution renders.
+
+Create authentic before-and-after screenshots demonstrating meaningful corrections.
+
+Do not create fictional screenshots or synthetic evidence of agent activity.
+
+If the final Detector finds a new confirmed defect, send it back to the Fixer and repeat the relevant checks.
+
+Do not stop and ask the user for permission to correct routine, verified defects.
+
+Continue until the candidate satisfies the measurable acceptance criteria or until genuine technical limitations prevent further progress.
+
+---
+
+## 17. PHASE 11 — PROFESSIONAL README UPDATE
+
+Update the existing `README.md` while preserving its useful original content.
+
+The lecturer explicitly requires an informative and visually professional README.
+
+Add a clearly identified section:
+
+**Independent Codex Review and Collaborative Quality Improvement**
+
+Include:
+
+### Project overview
+
+- Book title.
+- Authors.
+- Group ID LIATLVNT.
+- Assignment number.
+- Project purpose.
+- Existing LaTeX architecture.
+- Current candidate version.
+
+### Liat's independent contribution
+
+Explain the work actually performed, including:
+
+- Independent review.
+- Actual Codex multi-agent management.
+- Skills created.
+- Scientific and mathematical findings.
+- Publication-quality findings.
+- Confirmed corrections.
+- QA improvements.
+- Incident investigations.
+- Reproducibility improvements.
+- Documentation updates.
+
+### Multi-agent architecture
+
+Explain:
+
+- Original Claude Code workflow.
+- Independent Codex workflow.
+- Orchestrator.
+- Expert committee.
+- Detector.
+- Fixer.
+- Review and correction cycle.
+
+Create a professional architecture diagram using reproducible code or an appropriate documentation format.
+
+### Visual evidence
+
+Include actual images showing:
+
+- Relevant original book pages.
+- Corrected book pages.
+- Before-and-after comparisons.
+- Corrected mathematical expressions.
+- Improved layouts.
+- Graphs, if applicable.
+- Actual agent execution evidence.
+- Actual Git collaboration activity.
+
+Select meaningful images rather than generating a large redundant screenshot collection.
+
+Do not expose authentication tokens, personal email addresses, student identification numbers, or unrelated private information in screenshots.
+
+If genuine agent screenshots cannot be captured, use authentic execution logs and explain that limitation.
+
+Never fabricate terminal screenshots.
+
+### QA and reproducibility
+
+Include:
+
+- Actual tests executed.
+- Actual results.
+- Existing QA mechanisms.
+- Newly improved QA mechanisms.
+- Build instructions.
+- Dependency requirements.
+- PDF generation instructions.
+- Known limitations.
+
+### Links
+
+Provide accurate links to:
+
+- Final candidate PDF.
+- PRD.
+- Prompt history.
+- Skills.
+- Agent reports.
+- Incident reports.
+- Collaboration documentation.
+- GitHub Pull Request, once created.
+
+Do not describe pending GitHub actions as completed.
+
+Verify that README image paths and internal links resolve.
+
+---
+
+## 18. PHASE 12 — UPDATE PRD, PROMPTS, SKILLS AND ENGINEERING DOCUMENTATION
+
+### PRD
+
+Update the existing PRD to include:
+
+- Independent expert committee supplement.
+- Additional requirements.
+- Measurable acceptance criteria.
+- Confirmed findings.
+- Implemented improvements.
+- Remaining limitations.
+- Final verification results.
+
+Preserve original project requirements and historical decisions.
+
+Clearly distinguish original requirements from Codex review additions.
+
+### Prompt history
+
+Inspect the existing prompt directory and prompt history document.
+
+Append the exact current user prompt verbatim.
+
+Include:
+
+- Actual user instructions.
+- Actual subagent instructions.
+- Actual Detector instructions.
+- Actual Fixer instructions.
+- Actual correction prompts.
+- Actual review prompts.
+- Actual final verification prompts.
+
+Preserve the original chronological history.
+
+Do not rewrite historical prompts.
+
+Do not invent missing prompts.
+
+Clearly label summaries as summaries.
+
+Do not describe Codex's autonomous decisions as explicit student approvals.
+
+### Skills
+
+Preserve the original Claude Skills.
+
+Add the newly created Codex Skills.
+
+Document actual invocation and execution evidence.
+
+### Agent reports
+
+Store actual independent agent reports in an organized directory that fits the existing repository structure.
+
+Clearly separate original Claude reports from the new Codex review reports.
+
+Include:
+
+- Role.
+- Task.
+- Execution status.
+- Reviewed files.
+- Findings.
+- Corrections.
+- Verification.
+
+### Incident documentation
+
+Append actual new incidents.
+
+Preserve the existing incident numbering and history.
+
+### CHANGELOG and STATUS
+
+Update the current candidate status.
+
+Describe actual changes.
+
+Do not label an unpublished candidate as a released version.
+
+### Assignment 01 feedback
+
+If actual lecturer feedback from Assignment 01 is available, document:
+
+- Original feedback.
+- Improvement introduced in Assignment 02.
+- Supporting evidence.
+- Current status.
+
+If the original feedback is unavailable, document that it could not be verified.
+
+Do not invent lecturer comments.
+
+---
+
+## 19. PHASE 13 — AUTHENTIC COLLABORATION DOCUMENTATION
+
+Create a professional `COLLABORATION.md`.
+
+Its purpose is to demonstrate genuine student participation and an authentic collaborative engineering workflow.
+
+### Team information
+
+- Assignment 02.
+- Group ID LIATLVNT.
+- Liat Kafezider — `liatkaf`.
+- Livnat Benson — `greenlivnat`.
+
+### Division of responsibilities
+
+Describe contributions supported by actual evidence.
+
+Distinguish:
+
+- Original project development.
+- Existing Claude Code workflow.
+- Liat's independent Codex review.
+- Actual corrections.
+- Agent management.
+- Skills development.
+- QA improvements.
+- Documentation work.
+- Git collaboration.
+
+Do not invent or retrospectively assign unverified contributions.
+
+### Initial Git Pull
+
+Record the manually performed operation:
+
+```powershell
+git pull --ff-only origin main
+```
+
+Actual result:
+
+```text
+Already up to date.
+```
+
+Before commit:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+After commit:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+Record that:
+
+- The operation was performed manually by Liat.
+- Actual terminal screenshots exist.
+- The repository was already synchronized.
+- No new commits were received.
+- The operation was not performed by Codex.
+
+### Personal branch
+
+Record the actual creation and use of:
+
+`liat/assignment02-critical-review`
+
+### Git operations
+
+Document genuine:
+
+- Baseline verification.
+- Initial Pull.
+- Branch creation.
+- Local commits.
+- Commit hashes.
+- Push operations, once performed.
+- Pull Request URL, once created.
+- Review comments, once submitted.
+- Merge reference, once completed.
+- Final post-merge Pull, once performed.
+
+Mark future activities as pending.
+
+### Human supervision and autonomous decisions
+
+Distinguish between:
+
+- Liat's actual initial project instructions.
+- Liat's manually performed Git operations.
+- Explicit decisions already made by Liat.
+- Autonomous engineering decisions made by Codex.
+- Future decisions requiring joint publication approval.
+
+Do not manufacture human approvals.
+
+### Evidence
+
+Link to actual:
+
+- Commits.
+- Agent reports.
+- Skills.
+- Prompt files.
+- QA reports.
+- Incident investigations.
+- Before-and-after examples.
+- Corrected PDF.
+- Pull Request, once available.
+
+---
+
+## 20. PHASE 14 — CREATE MEANINGFUL LOCAL COMMITS
+
+Local commits on Liat's personal branch are explicitly authorized.
+
+Do not pause to request approval before creating local commits corresponding to completed and verified work.
+
+Before committing, confirm:
+
+- The active branch is `liat/assignment02-critical-review`.
+- The configured Git author identity belongs to Liat.
+- The baseline remains intact.
+- The Git diff contains only justified changes.
+- No private information or credentials are included.
+- No unrelated generated temporary files are included.
+
+Create meaningful commits reflecting actual completed work.
+
+Possible commit messages, only when supported by actual changes:
+
+```text
+Add independent Codex expert review and acceptance criteria
+
+Add Codex-compatible review skills and agent execution records
+
+Fix verified LaTeX and scientific content defects
+
+Strengthen QA checks for confirmed publication defects
+
+Rebuild independently reviewed book candidate
+
+Document authentic Git collaboration and engineering improvements
+```
+
+Do not create empty commits.
+
+Do not create artificial commits merely to increase contribution counts.
+
+Do not artificially split trivial modifications.
+
+Do not backdate commits.
+
+Do not impersonate Livnat.
+
+Do not modify historical commit authors.
+
+Record actual commit hashes.
+
+Verify commit attribution using Git.
+
+All commits must remain local at this stage.
+
+Never push directly to main.
+
+---
+
+## 21. PHASE 15 — PREPARE THE GITHUB PULL REQUEST
+
+The lecturer requires evidence that both students participated.
+
+The collaboration process must therefore include an actual Pull Request after Liat's local work is approved for publication.
+
+Prepare the complete Pull Request materials now, without creating the remote Pull Request yet.
+
+### Pull Request target
+
+Base repository:
+
+`greenlivnat/HW2`
+
+Base branch:
+
+`main`
+
+Compare branch:
+
+`liat/assignment02-critical-review`
+
+GitHub account:
+
+`liatkaf`
+
+### Suggested Pull Request title
+
+`Assignment 02 — Independent Codex critical review and publication quality improvements`
+
+### Pull Request description
+
+Prepare a complete professional description containing:
+
+- Purpose.
+- Original baseline.
+- Independent review scope.
+- Confirmed defects.
+- Scientific corrections.
+- Mathematical corrections.
+- LaTeX improvements.
+- Visual publication improvements.
+- Actual agent contributions.
+- Codex Skills.
+- Incident investigations.
+- QA improvements.
+- Actual test results.
+- Corrected PDF.
+- Before-and-after examples.
+- Reproducibility.
+- Remaining limitations.
+- Links to relevant documentation.
+
+Save the prepared Pull Request description in an appropriate project documentation file.
+
+Do not claim that the Pull Request has already been created.
+
+### Future publication workflow
+
+After Liat approves remote publication, guide her through the following steps:
+
+#### A. Check upstream updates
+
+```powershell
+git fetch origin
+```
+
+Inspect whether Livnat has added commits to main.
+
+If changes exist, integrate them safely without discarding either student's work.
+
+Resolve straightforward conflicts using actual project evidence.
+
+If a significant conflict cannot be resolved safely, preserve the work and report the blocker.
+
+#### B. Push the personal branch
+
+```powershell
+git push -u origin liat/assignment02-critical-review
+```
+
+This command is not authorized during the current local execution.
+
+Provide it in the final report for the next publication stage.
+
+Never push directly to main.
+
+#### C. Open a Pull Request using the browser
+
+Because GitHub CLI is unavailable, provide exact browser instructions.
+
+The Pull Request comparison URL should use the existing repository and verified branch names.
+
+Guide Liat to:
+
+- Sign in as `liatkaf`.
+- Select the correct base repository.
+- Select main as the base branch.
+- Select her personal branch as the compare branch.
+- Paste the prepared Pull Request description.
+- Create the Pull Request.
+- Request review from Livnat.
+
+#### D. Livnat's review
+
+Livnat should independently review the actual changes.
+
+She may approve, request corrections, or add review comments.
+
+Do not fabricate review comments or approval.
+
+#### E. Merge
+
+Livnat or an explicitly authorized maintainer should merge the Pull Request after review.
+
+Prefer a merge approach that preserves meaningful contribution history and attribution.
+
+Do not merge automatically.
+
+#### F. Final post-merge Git Pull
+
+After the Pull Request has genuinely been merged, Liat should execute:
+
+```powershell
+git switch main
+git rev-parse HEAD
+git pull --ff-only origin main
+git rev-parse HEAD
+git status
+```
+
+Document:
+
+- Actual execution date.
+- Actual command output.
+- Commit before the pull.
+- Commit after the pull.
+- Actual changes received.
+- Pull Request URL.
+- Merge reference.
+- Final working tree status.
+
+This will provide additional genuine evidence of collaborative integration.
+
+Do not manufacture a new upstream change merely to demonstrate a pull.
+
+#### G. Final collaboration evidence
+
+After these future operations actually occur, update the collaboration record through an appropriate approved Git workflow.
+
+Do not document pending activities as completed.
+
+---
+
+## 22. PHASE 16 — FINAL ACADEMIC COMPLIANCE AUDIT
+
+Evaluate the corrected candidate against every known lecturer requirement.
+
+Create a compliance matrix using:
+
+- PASS.
+- PARTIAL.
+- FAIL.
+- NOT VERIFIED.
+
+For each requirement, provide:
+
+- Requirement description.
+- Supporting evidence.
+- Relevant source file.
+- Relevant report.
+- Actual test result.
+- Remaining limitation.
+
+Evaluate:
+
+1. Actual multi-agent execution.
+2. Agent specialization.
+3. Skills.
+4. Expert committee.
+5. PRD quality.
+6. Detector and Fixer separation.
+7. Automated Red Team review.
+8. Incident investigations.
+9. Preventive QA improvements.
+10. LaTeX project organization.
+11. Separate chapter files.
+12. CLS template.
+13. Python-generated graphs.
+14. Original code-generated illustrations.
+15. Hebrew and English typography.
+16. Scientific accuracy.
+17. Mathematical accuracy.
+18. Bibliography.
+19. Research integrity.
+20. Reproducible compilation.
+21. Professional PDF.
+22. Informative README.
+23. Actual screenshots.
+24. Authentic prompt history.
+25. Actual agent execution evidence.
+26. Meaningful student participation.
+27. Git collaboration.
+28. Repository accessibility.
+29. Correct group ID.
+30. Submission readiness.
+
+Mark future Pull Request, merge, and post-merge activities as pending.
+
+If supplementary lecturer requirements cannot be inspected, explicitly identify them as not verified.
+
+Do not claim full academic compliance without supporting evidence.
+
+---
+
+## 23. PHASE 17 — INDEPENDENT SELF-ASSESSMENT GRADE
+
+Recommend an evidence-based self-assessment grade out of 100.
+
+Do not automatically recommend 100.
+
+The lecturer stated that a self-assessment grade of 100 triggers particularly strict evaluation.
+
+A low self-assessment may underestimate an otherwise strong project.
+
+Therefore, provide a balanced grade based on:
+
+- Actual technical implementation.
+- Originality.
+- Publication quality.
+- Scientific accuracy.
+- Mathematical accuracy.
+- Multi-agent engineering.
+- Skills.
+- QA mechanisms.
+- Incident investigations.
+- Reproducibility.
+- Documentation.
+- Actual student collaboration.
+- Remaining limitations.
+- Unverified formal requirements.
+
+Provide:
+
+- Recommended numerical grade.
+- Weighted assessment criteria.
+- Justification.
+- Reasons for any point deductions.
+- Remaining risks that could affect grading.
+
+Also provide a short, clear English justification suitable for the official submission form, if the form contains an appropriate justification field.
+
+Do not present the internal grade as the lecturer's actual grade.
+
+---
+
+## 24. PHASE 18 — FINAL DELIVERABLES AND GO / NO-GO REPORT
+
+Complete all local tasks before presenting the final report.
+
+The final report must be written primarily in Hebrew.
+
+Technical terms, file names, commands, commit messages, and code may remain in English.
+
+### A. Executive summary
+
+Explain:
+
+- What was reviewed.
+- What was discovered.
+- What was corrected.
+- What was improved.
+- Whether the corrected book is ready for review.
+
+### B. Before-and-after comparison
+
+Provide a structured comparison containing:
+
+- Issue ID.
+- Original defect.
+- Original page.
+- Correction.
+- Updated page.
+- Verification result.
+- Before-and-after evidence.
+
+### C. Actual agent execution
+
+Report:
+
+- Agents actually launched.
+- Tasks assigned.
+- Findings.
+- Skills actually invoked.
+- Detector/Fixer interactions.
+- Independent verification results.
+- Any multi-agent limitations.
+
+### D. Scientific and mathematical review
+
+Report:
+
+- Confirmed scientific defects.
+- Confirmed mathematical defects.
+- Implemented corrections.
+- Remaining concerns.
+- Verified sources.
+- Unverified sources.
+
+### E. Publication quality
+
+Report:
+
+- RTL/LTR corrections.
+- Formula corrections.
+- Bibliography corrections.
+- Layout corrections.
+- Graph improvements.
+- Visual inspection results.
+
+### F. QA and incident investigations
+
+Report:
+
+- Existing QA mechanisms.
+- Newly executed tests.
+- New or improved QA checks.
+- New incidents.
+- Root causes.
+- Preventive actions.
+- Final regression results.
+
+### G. Documentation
+
+Confirm actual updates to:
+
+- README.md.
+- PRD.
+- Prompt history.
+- Skills.
+- Agent reports.
+- Incident documentation.
+- CHANGELOG.
+- STATUS.
+- COLLABORATION.md.
+- Prepared Pull Request description.
+
+### H. Candidate PDF
+
+Provide:
+
+- Exact local PDF path.
+- PDF page count.
+- PDF file size.
+- PDF checksum.
+- Original versus corrected version.
+- Instructions for opening the PDF locally.
+
+If possible, open the corrected PDF using the supported local operating-system mechanism.
+
+Provide the relevant screenshot and report locations.
+
+### I. Git contribution evidence
+
+Report:
+
+- Active branch.
+- Original baseline commit.
+- Current commit.
+- Actual local commit hashes.
+- Commit author attribution.
+- Files changed.
+- Working tree status.
+- Initial manual Pull evidence.
+- Remote publication status.
+- Prepared Pull Request instructions.
+
+### J. Decisions made autonomously
+
+List:
+
+- Important engineering decisions.
+- Reasoning and evidence supporting each decision.
+- Assumptions.
+- Deferred high-risk changes.
+- Unresolved limitations.
+- Items requiring future joint publication approval.
+
+Do not falsely attribute autonomous Codex decisions to Liat.
+
+### K. Academic assessment
+
+Provide:
+
+- Lecturer requirement compliance matrix.
+- Recommended self-assessment grade.
+- Concise justification.
+- Remaining submission risks.
+
+### L. Final readiness decision
+
+Provide one of:
+
+**GO FOR HUMAN REVIEW AND PUBLICATION APPROVAL**
+
+or
+
+**NO-GO — REMAINING CRITICAL ISSUES**
+
+A GO decision means that the corrected local candidate is ready for human review.
+
+It does not authorize remote publication.
+
+---
+
+## 25. REQUIRED FINAL LOCAL DELIVERABLES
+
+By the end of this task, provide all applicable completed deliverables:
+
+1. Corrected and compiled `book.pdf`.
+2. Corrected authoritative chapter sources.
+3. Updated LaTeX files and template, where required.
+4. Updated Python code, where justified.
+5. Reproducible generated figures.
+6. Independent expert committee report.
+7. PRD supplement.
+8. Actual Codex Skills.
+9. Actual agent execution reports.
+10. Improved QA checks.
+11. New incident investigations.
+12. Final Red Team report.
+13. Before-and-after screenshots.
+14. Updated README.
+15. Updated PRD.
+16. Updated prompt history.
+17. Updated CHANGELOG and STATUS.
+18. COLLABORATION.md.
+19. Meaningful local Git commits.
+20. Prepared Pull Request description.
+21. Academic compliance matrix.
+22. Final GO / NO-GO report.
+23. Recommended self-assessment grade.
+
+Use existing repository conventions for file locations.
+
+Avoid duplicate reports and unnecessary file proliferation.
+
+If a deliverable cannot be completed, identify the precise reason and provide the closest legitimate alternative.
+
+---
+
+## 26. ABSOLUTE RESTRICTIONS
+
+Do not:
+
+- Modify Assignment 01.
+- Recreate the existing local repository.
+- Recreate Liat's existing personal branch.
+- Modify main directly.
+- Replace the existing book with an unrelated publication.
+- Delete original Claude agents or Skills.
+- Delete historical documentation.
+- Delete prior release artifacts.
+- Rewrite Git history.
+- Force-push.
+- Fabricate Git activity.
+- Fabricate agent executions.
+- Fabricate citations.
+- Fabricate research findings.
+- Fabricate experiments.
+- Fabricate QA results.
+- Fabricate student participation.
+- Fabricate lecturer feedback.
+- Fabricate human approvals.
+- Publish credentials or sensitive personal information.
+- Create meaningless commits.
+- Push changes without explicit publication authorization.
+- Open a remote Pull Request without explicit publication authorization.
+- Merge without approval.
+- Publish a new release without approval.
+
+Preserve all authentic historical evidence.
+
+---
+
+## 27. START EXECUTION IMMEDIATELY
+
+Execute all local phases continuously:
+
+1. Verify the environment and existing Git state.
+2. Inspect the original project.
+3. Establish actual Codex subagents.
+4. Create reusable Skills.
+5. Conduct independent expert reviews.
+6. Identify confirmed defects.
+7. Audit the existing eight QA mechanisms.
+8. Consolidate findings.
+9. Update the PRD.
+10. Implement justified corrections.
+11. Investigate missed defects.
+12. Strengthen preventive QA.
+13. Rebuild the book.
+14. Perform independent final Red Team verification.
+15. Correct any newly discovered routine defects.
+16. Update README and project documentation.
+17. Update prompt history.
+18. Document actual collaboration.
+19. Create meaningful local commits.
+20. Prepare the Pull Request description.
+21. Complete the academic compliance audit.
+22. Recommend a self-assessment grade.
+23. Deliver the corrected PDF and final report.
+
+Do not stop between phases.
+
+Do not ask the user questions.
+
+Do not request intermediate approval.
+
+Do not wait for the user to respond.
+
+Do not deliver only an implementation plan.
+
+If a non-critical issue occurs, make a professional decision, document it, and continue.
+
+If an essential task is blocked by system permissions, missing tools, unavailable sources, or another genuine technical limitation, complete all remaining feasible tasks and report the exact blocker at the end.
+
+Stop only when all feasible local deliverables have been completed and verified.
+
+Do not perform remote publication during this task.
+
+# FINAL SUCCESS CRITERION
+
+Deliver a genuinely improved, reproducible, professionally designed LaTeX book, supported by actual multi-agent engineering, verified corrections, meaningful quality assurance improvements, authentic prompt documentation, and genuine Git contributions under Liat's identity.
+
+The complete local candidate must be ready for a subsequent GitHub Pull Request and independent review by Livnat.
+
+**Quality, originality, academic integrity, engineering evidence, reproducibility, and authentic collaboration are more important than the number of changes or commits.**
+
+**Work autonomously from start to finish. Deliver the actual completed local product.**

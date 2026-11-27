@@ -1,0 +1,47 @@
+The computer has been restarted, Codex CLI has been updated successfully, and Python 3.11.9 is now available through the corrected PowerShell PATH.
+
+Resume Assignment 02 from the existing project state.
+
+Project: D:\HW2
+
+Branch: liat/assignment02-critical-review
+
+Checkpoint: docs/CODEX_CONTINUATION_STATUS.md
+
+First, verify that the Windows execution helper is functioning correctly.
+
+Note that two MiKTeX installation directories were detected. Investigate potential PATH conflicts affecting Biber and Latexmk. Use bounded execution timeouts to prevent commands from hanging indefinitely.
+
+Then complete all remaining tasks from the original assignment prompt, including:
+
+- Detector and Fixer review cycles.
+- Scientific and mathematical corrections.
+- LaTeX and RTL corrections.
+- Incident investigations.
+- QA and regression testing.
+- Compilation of the corrected PDF.
+- Visual inspection of all pages.
+- README update.
+- PRD update.
+- PROMPTS and prompt history update.
+- Skills and agent documentation.
+- COLLABORATION.md.
+- Meaningful local Git commits.
+- Pull Request preparation.
+- Final self-assessment grade and GO / NO-GO report.
+
+Work autonomously from start to finish.
+
+Do not ask me questions, request intermediate approvals, or wait for my responses.
+
+Resolve recoverable technical issues independently. If a task is blocked, continue with all remaining feasible tasks and report the limitation at the end.
+
+Do not modify Assignment 01.
+
+Do not bypass security restrictions.
+
+Do not push, merge, or publish to GitHub without explicit authorization.
+
+Preserve all previously completed work and do not repeat unnecessary reviews or tests.
+
+Deliver the actual completed and verified local product.

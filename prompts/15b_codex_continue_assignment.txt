@@ -1,0 +1,49 @@
+# CONTINUE ASSIGNMENT 02 — COMPLETE ALL REMAINING LOCAL DELIVERABLES
+
+The Detector review has completed, but the report indicates that build verification, regression tests, and collaborative integration remain incomplete.
+
+Continue from the current project state at `D:\HW2`, on branch `liat/assignment02-critical-review`.
+
+Do not restart the project or repeat completed reviews.
+
+## Mandatory autonomous execution
+
+- Do not ask me questions.
+- Do not pause for intermediate approvals.
+- Do not wait for my response.
+- Resolve technical issues independently.
+- Continue with all feasible tasks even if an individual task is blocked.
+- Do not stop after producing another review report.
+
+## Complete all remaining tasks
+
+1. Inspect the existing Detector findings and agent reports.
+2. Verify which identified defects have already been corrected.
+3. Assign remaining confirmed defects to the Fixer.
+4. Implement justified scientific, mathematical, typography, bibliography, and LaTeX corrections.
+5. Complete incident investigations and preventive QA improvements.
+6. Rebuild the book using the established LuaLaTeX workflow.
+7. Generate the actual corrected PDF.
+8. Visually inspect every page of the corrected PDF.
+9. Execute the remaining regression and quality assurance tests.
+10. Complete the independent final Red Team review.
+11. Update README.md with actual improvements and before-and-after screenshots.
+12. Update the PRD with additional requirements and verification results.
+13. Update the PROMPTS directory and prompt history with the actual instructions used.
+14. Complete the Codex Skills and genuine agent execution documentation.
+15. Update incident reports, CHANGELOG, and STATUS.
+16. Complete COLLABORATION.md with genuine Git Pull evidence and actual contributions.
+17. Create meaningful local commits under Liat's verified Git identity.
+18. Prepare the final Pull Request description.
+19. Recalculate the recommended self-assessment grade based on the completed corrected product.
+20. Provide the final GO / NO-GO report.
+
+## Final deliverables
+
+Provide the exact local path to the corrected PDF, actual test results, modified files, commit hashes, updated documentation paths, remaining limitations, and recommended self-assessment grade.
+
+Do not claim completion of any task that has not been verified.
+
+Do not push to GitHub, merge branches, or create a public release yet.
+
+**Complete the actual local deliverables autonomously. Do not deliver another plan instead of the finished product.**

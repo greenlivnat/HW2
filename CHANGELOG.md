@@ -74,3 +74,19 @@ M3:
 ## [v0.1] (2026-11-17): הקמה ומחקר (commit `32317ba`)
 - `9092765`: שלד הפרויקט (M1), ארכיטקטורת הסוכנים ו-Smoke Test (‏80 ← 92).
 - `32317ba`: מחקר מקורות מאומת לכל הפרקים (M2), ו-PRD ו-OUTLINE בגרסה 1.2.
+
+
+## Unreleased ? v1.0.1 source candidate
+
+- Corrected study units and scope, causal masking, feed-forward and ReLU descriptions, and the distinction between generalization error and gap.
+- Added explicit LTR spans to the chapter converter and corrected the Turing example.
+- Strengthened experiment consistency checks, added focused regressions and recorded the independent review.
+- PDF compilation and local commits remain blocked by the Windows execution profile. The tracked PDF still matches v1.0.
+
+
+Final verification now includes a byte-identical isolated experiment rerun and independent review of regenerated chart values. PDF and commit blockers are still open.
+
+
+## Unreleased independent review documentation
+
+Preserved the original v1.0 publication. Archived the source-verified proposals and regression tests separately, completed the independent review and collaboration evidence, and prepared the documentation-only PR. The previous source-candidate notes above are historical.

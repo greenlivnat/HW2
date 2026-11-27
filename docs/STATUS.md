@@ -154,3 +154,18 @@
 2. מריצים `git status` ו-`git log --oneline` ומוודאים שהעץ נקי.
 3. מוודאים שהסוכנים `research-agent`, ‏`writer-agent` ו-`reviewer-agent` זמינים.
 4. מתחילים ב-M3 לפי סעיף 5, ומעדכנים את הקובץ הזה בסוף כל שלב.
+
+
+## Independent Codex continuation ? 2026-11-27
+
+**NO-GO for a new PDF candidate.** Source fixes and focused regressions completed. The Windows helper can execute commands in unelevated sandbox mode. MiKTeX format setup and Git index creation still hit permission errors. The v1.0 PDF and historical release artifacts are preserved. See [results and readiness criteria](CODEX_REVIEW.md).
+
+
+### Final build follow-up
+
+Experiment reproduction is now verified byte-for-byte. Focused regression 5/5. Aggregate QA 75 PASS, 0 structured WARN, 1 FAIL. MiKTeX format initialization still blocks the new PDF. Git staging remains blocked. See [the current evidence and updated assessment](CODEX_REVIEW.md).
+
+
+## Current scope and status
+
+GO for the local documentation-only contribution. The original v1.0 publication and executable QA match the baseline. The proposed edits are recoverable from [the review evidence](review-evidence/README.md). Commit, push and PR remain pending because the session cannot write Git metadata or reach GitHub through the shell. The remote repository is publicly readable.

@@ -554,3 +554,19 @@ commit מקומי ותגית **v0.95**. בלי push. ‏v1.0 ו-M7 רק באיש
 - **תגיות ב-GitHub (`git ls-remote`):** v0.1 ← `32317ba`, ‏v0.2 ← `57f249d`, ‏v0.9 ← `d5b7b50`, ‏v0.95 ← `498ec46`, ‏v1.0 ← `f741a0e`.
 - **GitHub Releases:** נוצרו דרך ה-API, כי `gh` אינו מותקן. האימות השתמש באישור הגישה ש-git כבר משתמש בו, בלי להדפיס או לשמור את הטוקן. ‏v0.9 עם `book_v0.9.pdf` (628,514 בתים); ‏v0.95 עם `book_v0.95.pdf` (646,228); ‏v1.0 עם `book_v1.0.pdf` (646,228), ומסומנת latest. גודל כל קובץ שהועלה תואם לקובץ המקומי.
 - commit התיעוד הזה נוסף אחרי התגית v1.0. התגית מצביעה על גרסת ההגשה, וה-commit הזה מתעד רק את ההעלאה.
+
+
+## 15 ? Codex continuation after execution helper recovery (2026-11-27)
+
+- [Verbatim recovery prompt](../prompts/15_codex_recovery.txt).
+- [Agent instructions, outcomes and verification](CODEX_REVIEW.md). The original comprehensive Codex prompt remains in the conversation. This repository contains the recovery prompt verbatim and the review summaries as summaries.
+
+
+## 16 ? Final build, quality verification and autonomous completion
+
+[Summary of the final-build user instruction](../prompts/16_codex_final_build_summary.txt). The exact instruction remains in the conversation. [Verbatim independent follow-up Detector assignment and results](CODEX_REVIEW.md).
+
+
+## Authenticated Codex chat transcript recovery and publication decision
+
+The original session supplied the verbatim [initial assignment](../prompts/15a_codex_initial_assignment.txt), [continuation](../prompts/15b_codex_continue_assignment.txt), [environment recovery](../prompts/15c_codex_environment_recovery.txt), [diagnostic](../prompts/15d_codex_diagnostic.txt), [final build request](../prompts/16_codex_final_build.txt) and [documentation-only scope and GitHub authorization](../prompts/17_codex_documentation_publication.txt). The previously stored final-build summary remains identified as a summary.

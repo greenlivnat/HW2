@@ -1,0 +1,193 @@
+# ASSIGNMENT 02 — RESUME AND COMPLETE ALL REMAINING DELIVERABLES
+
+## Execution Environment Recovered
+
+The Windows execution helper issue has been resolved for the initial diagnostic checks by launching Codex in Windows unelevated sandbox mode.
+
+All five diagnostic commands completed successfully with exit code 0:
+
+- Get-Location
+- git status --short
+- git branch --show-current
+- python --version
+- cmd.exe /c ver
+
+Python 3.11.9 is available.
+
+Project directory: D:\HW2
+
+Active branch: `liat/assignment02-critical-review`
+
+Group ID: `LIATLVNT`
+
+Baseline commit: `0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+## 1. Resume Existing Work
+
+Read and preserve the existing checkpoint files:
+
+- `docs/CODEX_CONTINUATION_STATUS.md`
+- `docs/CODEX_EXECUTION_STATUS.md`
+- `docs/CODEX_REVIEW.md`
+
+Inspect all previously completed agent findings and existing project documentation.
+
+Do not restart the assignment.
+
+Do not repeat completed reviews unnecessarily.
+
+Resume the original comprehensive Assignment 02 prompt from the last verified checkpoint.
+
+## 2. Resolve Remaining Environment Issues
+
+Two MiKTeX installation directories were previously detected:
+
+- MiKTeX
+- MiKTeX-New
+
+Biber and Latexmk previously appeared to hang.
+
+Investigate and resolve the issue independently.
+
+- Inspect executable resolution and PATH precedence.
+- Identify the correct working MiKTeX installation.
+- Use bounded execution timeouts.
+- Prefer temporary, process-local PATH corrections.
+- Verify LuaLaTeX, Biber, Latexmk, Python dependencies, and required fonts.
+- Use an isolated project-local Python environment if additional dependencies are needed.
+- Do not modify the Python installation or dependencies belonging to Assignment 01.
+- Do not uninstall existing software or alter global system settings unnecessarily.
+- Do not disable security protections.
+
+If Latexmk remains unavailable, investigate a compatible direct LuaLaTeX and Biber compilation sequence while preserving the project's reproducible LaTeX architecture.
+
+## 3. Complete All Remaining Assignment Tasks
+
+Execute all remaining phases of the original comprehensive prompt:
+
+1. Operate genuine Codex subagents.
+2. Complete the independent expert committee review.
+3. Create and invoke the required Codex-compatible Skills.
+4. Consolidate existing Detector findings.
+5. Assign confirmed defects to the Fixer.
+6. Correct verified scientific and mathematical inaccuracies.
+7. Correct broken formulas, bibliography, citations, RTL/LTR typography, and layout issues.
+8. Verify the Python experiment and its scientific conclusions.
+9. Investigate confirmed incidents and their root causes.
+10. Improve preventive QA mechanisms.
+11. Rebuild the book using LuaLaTeX.
+12. Generate the actual corrected PDF.
+13. Visually inspect every PDF page.
+14. Execute relevant QA and regression tests.
+15. Perform an independent final Red Team review.
+16. Resolve newly discovered confirmed defects.
+17. Produce the final local candidate for v1.0.1.
+
+Preserve the original book's visual identity, narrative, chapter structure, authorship, and existing high-quality features.
+
+Make targeted, evidence-based improvements rather than unnecessary changes.
+
+## 4. Mandatory Documentation Updates
+
+Complete and verify updates to:
+
+- README.md
+- PRD and expert committee acceptance criteria
+- PROMPTS directory and prompt history
+- Codex Skills
+- Actual agent execution reports
+- Incident investigations
+- QA documentation
+- CHANGELOG
+- STATUS
+- CODEX_REVIEW.md
+- COLLABORATION.md
+- Prepared Pull Request description
+
+Append this recovery prompt to the authentic prompt history.
+
+Preserve all of Livnat's original documentation, prompts, Skills, and development history.
+
+Include genuine before-and-after screenshots in the README.
+
+Document the Windows execution helper failure as an actual engineering incident, including its observed symptoms, attempted recovery steps, successful workaround, and remaining verification limitations.
+
+Do not fabricate evidence or claim that unresolved issues have been fixed.
+
+## 5. Authentic Git Collaboration
+
+Preserve the evidence of Liat's previously completed manual Git Pull:
+
+`git pull --ff-only origin main`
+
+Actual result:
+
+`Already up to date.`
+
+The before and after commit was:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+Create meaningful local commits under Liat's verified Git identity on:
+
+`liat/assignment02-critical-review`
+
+Local commits are authorized.
+
+Prepare the complete Pull Request description and instructions for subsequent publication.
+
+Do not push to GitHub yet.
+
+Do not modify main.
+
+Do not merge or create a public release.
+
+## 6. Mandatory Autonomous Execution
+
+Execute all remaining local tasks continuously and independently.
+
+- Do not ask me questions.
+- Do not request intermediate approval.
+- Do not pause to wait for my response.
+- Do not stop after presenting another audit or implementation plan.
+- Make reasonable, evidence-based decisions independently.
+- Investigate and resolve recoverable technical problems.
+- Use alternative implementation approaches when appropriate.
+- Continue with all feasible tasks if one task is blocked.
+- Limit concurrent subagents to two.
+- Preserve completed work.
+- Avoid unnecessary repeated tests and compilations.
+- Respect system-enforced security permissions.
+
+The only planned stopping point is after completing all feasible local deliverables and meaningful local commits, before remote publication.
+
+## 7. Final Deliverables
+
+Provide:
+
+- Actual corrected PDF and its exact local path.
+- Before-and-after comparison.
+- Actual agent execution evidence.
+- Scientific and mathematical review results.
+- Visual publication quality results.
+- QA and regression test results.
+- Incident investigations.
+- Updated README, PRD, PROMPTS, and Skills.
+- Collaboration documentation.
+- Local commit hashes.
+- Prepared Pull Request description.
+- Lecturer requirements compliance matrix.
+- Recommended self-assessment grade.
+- Final GO / NO-GO report.
+- Decisions made independently.
+- Remaining limitations and unresolved blockers.
+
+Write the final report in English to avoid Hebrew RTL rendering issues in the Windows terminal.
+
+Do not change the Hebrew language of the book.
+
+Do not claim successful completion without actual verification.
+
+Do not push, merge, or publish anything remotely without explicit authorization.
+
+**Resume the existing assignment immediately. Work autonomously from start to finish and deliver the actual completed local product, not another plan.**
