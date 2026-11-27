@@ -1,0 +1,11 @@
+# Assignment 02 - Independent Codex Quality Review and Collaborative Engineering Documentation
+
+Base: `greenlivnat/HW2:main`. Compare: `liat/assignment02-critical-review`. Contributor: `liatkaf`. Requested reviewer: `greenlivnat`. Group: LIATLVNT. Verified baseline: `0d5a0ad11e1b3216792b98892ee0f163cf390c1c`.
+
+This Pull Request adds independent quality review, engineering documentation, and collaboration evidence. It does not replace or modify the original published book. Proposed publication corrections are preserved separately for potential future implementation.
+
+The original Claude Code project history is preserved. Liat directed the separate Codex review, performed environment recovery and chose to retain the v1.0 publication. Codex reviewers, Fixer and independent Detector examined LTR punctuation, neural-network and causal-attention explanations, generalization terminology, and Chapter 7 research units and populations. The actual proposals and regression source are archived under review-evidence. Source verification resolved all 64 generated chapter citation keys.
+
+The earlier verification reproduced the experiment CSV byte for byte, with 16 experiment checks, 5 focused regressions and 17 independent image checks. Aggregate QA recorded 75 passes, zero structured warnings and one missing-compiled-output failure. Matplotlib separately warned about the Assistant font. The original figures and book remain byte-identical. See [the review and requirements matrix](CODEX_REVIEW.md), [patch](review-evidence/README.md), [PRD](PRD.md), [incidents](INCIDENTS.md), [Skills](../agents/codex/skills/README.md), [prompt history](PROMPT_HISTORY.md) and [collaboration record](../COLLABORATION.md).
+
+Liat's initial manual pull returned Already up to date with the same before/after hash shown above. Current publication remains pending; no PR has been verified. Follow [the locally verified publication sequence](review-evidence/PUBLISH.md). After the branch has been pushed, sign in as liatkaf, check for an equivalent open PR and use [GitHub Compare](https://github.com/greenlivnat/HW2/compare/main...liat/assignment02-critical-review?expand=1). Verify main as base, select the personal branch as compare, paste the title and description above, and request greenlivnat's review. Leave the PR open for Livnat.

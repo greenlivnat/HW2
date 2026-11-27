@@ -1,0 +1,21 @@
+We have restarted Codex using the alternative Windows unelevated sandbox mode.
+
+Perform a minimal execution environment diagnostic.
+
+Run the following read-only commands:
+
+- Get-Location
+- git status --short
+- git branch --show-current
+- python --version
+- cmd.exe /c ver
+
+Report whether each command executed successfully.
+
+Do not modify any files.
+Do not install anything.
+Do not commit or push.
+Do not restart the assignment.
+Do not ask questions or wait for intermediate responses.
+
+Provide the diagnostic results in English to avoid Hebrew RTL rendering issues in the terminal.

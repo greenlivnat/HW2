@@ -1,0 +1,3 @@
+Summary of the actual follow-up instruction, not a verbatim transcript.
+
+Liat reported a recovered project venv, updated MiKTeX and Perl, and instructed Codex to resume the experiment regression, full build, corrected-book visual inspection, independent Detector review, documentation, and local Git contribution. She required bounded execution, no publication, preservation of historical work and exact safe manual Git commands if staging remained blocked.

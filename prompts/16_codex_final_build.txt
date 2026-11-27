@@ -1,0 +1,365 @@
+# ASSIGNMENT 02 — FINAL BUILD, QUALITY VERIFICATION AND AUTONOMOUS COMPLETION
+
+## 1. Environment Recovery Completed
+
+The previously reported Windows development environment issues have been addressed manually.
+
+The following tools have been successfully verified in PowerShell:
+
+- Python 3.11.9
+- NumPy 2.4.6
+- Matplotlib 3.11.2
+- scikit-learn 1.9.1
+- SciPy 1.17.1
+- MiKTeX 26.5
+- LuaHBTeX 1.25.7
+- Strawberry Perl 5.42.3
+- Latexmk 4.89
+- Biber 2.22
+
+The Python dependency import test returned:
+
+`Python dependencies OK`
+
+The project-specific Python virtual environment is located at:
+
+`D:\HW2\.venv`
+
+The updated MiKTeX installation has priority in PATH:
+
+`%LOCALAPPDATA%\Programs\MiKTeX-New\miktex\bin\x64`
+
+The current PowerShell environment includes the correct PATH configuration and:
+
+`PYTHONUTF8=1`
+
+Codex is being launched using Windows unelevated sandbox mode, which previously passed all five basic execution diagnostic checks.
+
+Do not reinstall these tools or repeat the environment recovery process unnecessarily.
+
+Successful version checks do not yet establish successful full-book compilation. Verify the actual build.
+
+## 2. Existing Project State
+
+Project directory:
+
+`D:\HW2`
+
+Active branch:
+
+`liat/assignment02-critical-review`
+
+Group ID:
+
+`LIATLVNT`
+
+Baseline commit:
+
+`0d5a0ad11e1b3216792b98892ee0f163cf390c1c`
+
+Repository:
+
+https://github.com/greenlivnat/HW2
+
+Previous execution completed scientific and mathematical corrections in Chapters 1, 3, 4, 5, and 7 and regenerated the corresponding LaTeX files.
+
+The separate Detector verified:
+
+- Scientific wording corrections.
+- Generated LTR markup.
+- All 64 chapter citation keys.
+- Experiment-data regression cases.
+- Five focused regression tests.
+- Git diff consistency.
+
+The previous aggregate QA result was:
+
+- 73 passed.
+- 1 warning.
+- 2 failures.
+
+The unresolved issues involved missing Python dependencies, chart verification, missing compiled output, LaTeX environment failures, and Git index-lock creation.
+
+The existing `book.pdf` still represented the original v1.0 release.
+
+The previous provisional self-assessment was 81/100.
+
+Continue from this state. Do not repeat the complete independent audit.
+
+## 3. Mandatory Autonomous Execution
+
+Execute all remaining local tasks autonomously and continuously.
+
+- Do not ask me questions.
+- Do not request intermediate approval.
+- Do not pause to wait for my response.
+- Make reasonable, evidence-based decisions independently.
+- Resolve recoverable technical issues independently.
+- Use alternative approaches when appropriate.
+- Continue with all feasible tasks if one task remains blocked.
+- Avoid unnecessary repeated tests and compilations.
+- Use no more than two concurrent subagents.
+- Preserve all completed work.
+- Respect system-enforced permissions and security restrictions.
+- Report all assumptions, decisions, and unresolved limitations at the end.
+
+Do not stop after providing another audit or implementation plan.
+
+Deliver the actual completed local product.
+
+## 4. Resume From Existing Checkpoints
+
+Read the current Git status and existing project documentation, including:
+
+- `docs/CODEX_REVIEW.md`
+- `docs/CODEX_CONTINUATION_STATUS.md`
+- `docs/CODEX_EXECUTION_STATUS.md`
+- `docs/PRD.md`
+- `docs/INCIDENTS.md`
+- `docs/STATUS.md`
+- `docs/PROMPT_HISTORY.md`
+- `COLLABORATION.md`
+- `docs/PULL_REQUEST.md`
+
+Preserve all previously completed corrections and evidence.
+
+Verify which tasks are genuinely incomplete.
+
+Do not overwrite Livnat's original work or historical documentation.
+
+## 5. Complete Python Experiment Verification
+
+Use the project-specific Python interpreter:
+
+`D:\HW2\.venv\Scripts\python.exe`
+
+Complete the previously blocked experiment and chart verification.
+
+- Verify all dependencies.
+- Record actual dependency versions.
+- Run the project's existing experiment regression checks.
+- Verify reproducibility.
+- Compare regenerated results against the original stored results.
+- Verify graph accuracy and scientific conclusions.
+- Investigate any differences caused by dependency versions.
+- Preserve the original experimental configuration and random seed.
+
+Do not modify research results merely to obtain passing tests.
+
+Investigate the legacy chart timestamp failure and correct the underlying issue if justified.
+
+Do not manipulate timestamps or weaken QA checks to manufacture successful results.
+
+## 6. Build the Corrected LaTeX Book
+
+Use the established repository build procedure.
+
+Verify the actual supported build commands before execution.
+
+Use the updated LuaLaTeX, Latexmk, Biber, and Perl environment.
+
+Ensure that every tool resolves to the intended installation.
+
+Complete:
+
+- Authoritative chapter source generation.
+- LaTeX compilation.
+- Bibliography generation.
+- Python-generated figures.
+- Mathematical formulas.
+- Cross-references.
+- Table of contents.
+- Font verification.
+- Final PDF generation.
+
+Use bounded execution timeouts.
+
+If Latexmk fails, investigate the cause and use a compatible direct LuaLaTeX and Biber compilation sequence when justified.
+
+Preserve the original published PDF as historical evidence.
+
+Produce the corrected candidate at the project's established PDF output location.
+
+Do not describe the original PDF as the corrected candidate.
+
+Verify that the new PDF actually contains the five corrected chapters.
+
+## 7. Final Visual Inspection and Red Team
+
+Use a genuine independent Detector agent to review the corrected PDF.
+
+Render and visually inspect every page.
+
+Pay particular attention to:
+
+- Chapter 1: corrected Turing question and LTR direction.
+- Chapters 3–4: corrected scientific explanations.
+- Chapter 5: experimental limitations and generalization terminology.
+- Chapter 7: corrected percentage-point interpretation.
+- Hebrew RTL typography.
+- English terminology.
+- Mathematical expressions.
+- Bibliography.
+- Figures and graphs.
+- Page layout.
+- Headers and footers.
+- Table of contents.
+- Page numbering.
+
+Create genuine before-and-after screenshots for meaningful corrections.
+
+If new confirmed defects are found, assign them to the Fixer and repeat the relevant verification.
+
+Do not claim visual inspection of pages that were not actually rendered and examined.
+
+## 8. Complete QA and Regression Testing
+
+Execute the remaining applicable QA mechanisms.
+
+Resolve confirmed failures through legitimate corrections.
+
+Verify the previously reported:
+
+- Matplotlib-dependent chart warning.
+- Legacy chart timestamp failure.
+- Missing compiled output failure.
+- Experiment reproduction failure.
+
+Run the final aggregate QA suite and relevant focused regression tests.
+
+Report the actual number of passed checks, warnings, and failures.
+
+Distinguish previous results from newly executed tests.
+
+Verify actual Codex Skill discovery and invocation where supported.
+
+Do not claim that portable Skill manifests were automatically discovered or invoked unless this is verified.
+
+## 9. Mandatory Documentation Updates
+
+Complete and verify the following:
+
+- README.md
+- PRD and expert committee supplement
+- PROMPTS directory
+- Prompt history
+- Codex Skills
+- Actual agent execution reports
+- CODEX_REVIEW.md
+- INCIDENTS.md
+- CHANGELOG
+- STATUS
+- COLLABORATION.md
+- Prepared Pull Request description
+
+Append this prompt to the authentic prompt history.
+
+Update README with genuine screenshots of the corrected PDF and meaningful before-and-after comparisons.
+
+Document the actual environment recovery performed by Liat:
+
+- Codex execution helper recovery.
+- Python PATH correction.
+- Creation of the project-specific virtual environment.
+- UTF-8 encoding correction.
+- Python dependency installation.
+- MiKTeX updates.
+- Resolution of conflicting executable precedence.
+- Strawberry Perl installation.
+- Successful Latexmk and Biber version checks.
+
+Distinguish Liat's manually performed technical work from autonomous Codex activities.
+
+Preserve Livnat's existing contributions and documentation.
+
+## 10. Complete Local Git Contributions
+
+The previous execution could not create `.git/index.lock`.
+
+Inspect the actual repository state and investigate the cause.
+
+Verify:
+
+- Active personal branch.
+- Git author identity.
+- Working tree changes.
+- Appropriate Git permissions.
+- Whether another process is using the repository.
+- Whether `.venv` and temporary build files are excluded from Git.
+
+Do not delete an active lock file, change repository permissions indiscriminately, or bypass sandbox restrictions.
+
+Local commits are authorized.
+
+If permitted, create meaningful local commits under Liat's verified identity.
+
+Do not include the virtual environment, credentials, temporary compilation files, or unrelated artifacts.
+
+If Git staging remains blocked by the Codex sandbox, complete all other tasks and provide the exact safe PowerShell staging and commit commands for manual execution.
+
+Do not allow the Git restriction to prevent completion of the corrected PDF and documentation.
+
+## 11. Authentic Pull Request Preparation
+
+Preserve the evidence of Liat's original manual Git Pull and personal branch creation.
+
+Update the prepared Pull Request description with:
+
+- Actual corrections.
+- Actual agent contributions.
+- Actual QA results.
+- Actual PDF improvements.
+- Actual incident investigations.
+- Actual documentation updates.
+- Actual local commits, if successful.
+- Remaining limitations.
+
+Prepare publication instructions for:
+
+`liat/assignment02-critical-review` into `main`
+
+Do not push or create the remote Pull Request yet.
+
+Do not merge branches.
+
+Do not create a public release.
+
+## 12. Final Deliverables
+
+Provide a consolidated final report in English to avoid Hebrew RTL rendering problems in the terminal.
+
+Include:
+
+1. Exact path to the corrected PDF.
+2. PDF page count, file size, and checksum.
+3. Confirmation that the corrected PDF differs from the original v1.0 release.
+4. Before-and-after comparisons.
+5. Actual experiment verification results.
+6. Actual QA and regression results.
+7. Independent Detector and Fixer execution evidence.
+8. Confirmation of README, PRD, PROMPTS, and Skills updates.
+9. Updated collaboration evidence.
+10. Local commit hashes, if successful.
+11. Exact manual Git instructions if staging remains blocked.
+12. Prepared Pull Request description.
+13. Lecturer requirements compliance matrix.
+14. Updated evidence-based self-assessment grade.
+15. Final GO / NO-GO decision.
+16. Decisions made independently.
+17. Remaining limitations and unresolved blockers.
+
+Recalculate the previous provisional score of 81/100 based on the actual completed product.
+
+Do not inflate the grade or automatically target 100.
+
+## Final Success Criterion
+
+Deliver an actual corrected, reproducibly compiled, visually inspected, and quality-verified Hebrew LaTeX book, with complete academic documentation and authentic evidence of Liat's contribution.
+
+Complete every feasible local task before stopping.
+
+Do not ask questions or wait for intermediate approval.
+
+Do not publish remotely without explicit authorization.
+
+**Resume execution immediately. Finish the assignment rather than producing another plan.**

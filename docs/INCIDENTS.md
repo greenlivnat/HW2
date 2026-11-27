@@ -132,3 +132,30 @@
   - בכל המקרים בנייה או קריאה חוזרת, בלי שום שינוי בקבצים, הצליחה.
 - **השערה (לא הוכחה):** בעיה ברמת המערכת, למשל סריקת קבצים, ולא באג בכלי מסוים. ההשערה הקודמת, לולאה בתיבה ניתנת לשבירה, נחלשה אחרי (2) ו-(3).
 - **מניעה:** מגבלת זמן בכל שלב של `build.py` (‏300 שניות), בכל קריאה לכלי חיצוני ב-`qa.py` (‏240 שניות) וב-`layout.py` (‏60 שניות). תקלה כזו נכשלת עכשיו במפורש במקום להיתקע.
+
+
+## IR-20 ? Windows execution helper failed before command startup
+
+PowerShell, cmd.exe and Node failed even for working-directory and Git reads. The execution helper reported `helper_unknown_error: setup refresh had errors`. Retrying in both shells and restarting Windows plus updating Codex did not restore the managed execution path. Launching Codex in Windows unelevated sandbox mode restored five read-only diagnostics. This establishes recovery of process startup. MiKTeX execution and restricted paths require their own verification. The specific cause of the original helper failure was not established.
+
+## IR-21 ? Quantitative and causal claims escaped structural checks
+
+CR-01 through CR-03 resulted from loss of units or scope when translating results and mechanisms into prose. Source-key checks could validate the presence of citations but could not compare the claim to its primary passage. The committee now requires result-unit, population, comparator and mask-index checks against the original study. See [the evidence table](CODEX_REVIEW.md).
+
+## IR-22 ? Mixed-direction question punctuation
+
+The automatic Latin detector wrapped letters without the adjacent question mark in the Turing example. The resulting punctuation traveled with the RTL context. The preventive check is an explicit full-phrase LTR span, checked both in generated TeX and the rendered PDF.
+
+## IR-23 ? Experiment summary validated only partially
+
+The legacy code QA compared row count and final test score. The strengthened test compares ordered epochs, final and best row data, and derived gaps. Reruns now report a failed process or missing artifact explicitly. Byte equality can still depend on numerical package versions. Chart freshness remains a separate check.
+
+
+### IR-20 follow-up ? environment recovery and residual build limits
+
+Liat reported recovering basic execution in the unelevated sandbox, correcting Python PATH, creating the HW2 virtual environment, setting PYTHONUTF8, installing Python dependencies, updating MiKTeX, prioritizing MiKTeX-New, installing Strawberry Perl and passing Latexmk/Biber version probes. Codex verified Python imports and executable resolution, reproduced the experiment, and exercised the real build. Latexmk advanced to LuaLaTeX, but format initialization still failed with access denied. A direct run with bounded timeout and workspace-local caches hit registry setup permissions. Git staging independently failed on index.lock creation while no pre-existing lock was visible.
+
+
+### Final management decision
+
+The updated tool versions and Python environment made dependency imports, chart generation and byte-identical experiment reproduction possible. LuaLaTeX format initialization still failed with access denied. Liat chose to retain the original consistent PDF and sources and archive the proposals. This limits publication risk and avoids further work on the local TeX setup. The Git restriction also persisted in the documentation phase: staging could not create index.lock, fetch could not open FETCH_HEAD, and the shell's GitHub connection failed at its configured proxy. No stale index lock was present. The exact registry permission cause beyond the observed denials was not established.
